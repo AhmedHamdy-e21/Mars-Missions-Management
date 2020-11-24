@@ -6,9 +6,15 @@
 #define MARS_MISSIONS_MANAGEMENT_MISSION_H
 
 
+<<<<<<< HEAD
 class Mission
 {
     
+=======
+class Mission { 
+	//HEllo all
+
+>>>>>>> main
 
 };
 
