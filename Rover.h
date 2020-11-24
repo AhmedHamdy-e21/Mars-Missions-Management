@@ -7,6 +7,11 @@
 
 
 class Rover {
+private: 
+
+
+public:
+
 
 };
 
