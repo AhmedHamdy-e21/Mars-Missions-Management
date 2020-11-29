@@ -140,6 +140,9 @@
   <ItemGroup>
     <ClInclude Include="..\Mission.h" />
     <ClInclude Include="..\Rover.h" />
+    <ClInclude Include="Emergency_rovers.h" />
+    <ClInclude Include="Mountainous_rovers.h" />
+    <ClInclude Include="Polar_rovers.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Mission.cpp" />

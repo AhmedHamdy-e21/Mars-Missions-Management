@@ -21,6 +21,15 @@
     <ClInclude Include="..\Rover.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Mountainous_rovers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Emergency_rovers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Polar_rovers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Mission.cpp">

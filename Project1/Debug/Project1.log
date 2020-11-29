@@ -1,0 +1,5 @@
+﻿  Mission.cpp
+D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\Mission.h(9,1): error C2059: syntax error: '<<'
+D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\Mission.h(11,1): error C2143: syntax error: missing ';' before '{'
+D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\Mission.h(11,1): error C2447: '{': missing function header (old-style formal list?)
+D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\Mission.cpp(6,1): fatal error C1004: unexpected end-of-file found
