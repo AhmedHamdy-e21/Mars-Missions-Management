@@ -9,7 +9,7 @@ class Mountainous_rovers : public Rover
 	public:
     Mountainous_rovers(int Speed,int check_up_duration)
     {
-        setSpeed(speed);
+        setSpeed(Speed);
         setCheckupDuration(check_up_duration);
     }
     void setSpeed(int speed)
@@ -20,7 +20,10 @@ class Mountainous_rovers : public Rover
     {
         this-> check_up_duration= check_up_duration;
     }
-
+    void PrintMountanious()
+    {
+        cout<<"\n I'm Mountanous "<< this->speed<< this->check_up_duration;
+    }
 
 
 };

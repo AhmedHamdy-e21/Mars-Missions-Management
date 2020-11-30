@@ -13,18 +13,34 @@ class Mission
 {
 protected:
     bool  FormulationDayStamp=true;
-    string TargetLocation;
-    float MissionDuration;
-    float Significance;
+    int TargetLocation;
+    int MissionDuration;
+    int Significance;
     bool CompletedMission;
 
 public:
-    Mission()
+    Mission(int TargetLocation,int MissionDuration,int Significance)
     {
-        this->CompletedMission= false;
+
+        setCompletedMission(true);
+        setMisisonDuration(MissionDuration);
+        setSignificance(Significance);
+        setTargetLocation(TargetLocation);
     }
 
 
+    void setTargetLocation(int TargetLocation)
+    {
+        this->TargetLocation=TargetLocation;
+    }
+    void setMisisonDuration(int MissionDuration)
+    {
+        this->MissionDuration=MissionDuration;
+    }
+    void setSignificance(int Significance)
+    {
+        this->Significance=Significance;
+    }
 
     // Calculate completed missions according to ..
     void setCompletedMission(bool BOOL)

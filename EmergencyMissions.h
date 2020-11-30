@@ -8,6 +8,8 @@
 
 class EmergencyMissions : public Mission
 {
+public:
+    EmergencyMissions(int TargetLocation,int MissionDuration,int Significance):Mission( TargetLocation, MissionDuration,Significance){};
 
 
 };

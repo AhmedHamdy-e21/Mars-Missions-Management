@@ -26,9 +26,11 @@ void loadFile() {
     char F,TYP;
 
     inputFile >> M;
+
     inputFile >> P;
     inputFile >> E;
     inputFile >> SM;
+    cout<<"Mountanous is M speed;"<<SM;
     inputFile >> SP;
     inputFile >> SE;
     inputFile >> N;
@@ -37,7 +39,9 @@ void loadFile() {
     inputFile >> CE;
     inputFile >> AutoP;
     RoverList RL(M,P,E,SM,SP,SE, CM,CP, CE);
-
+    RL.PrintRovers();
+    cout<<"Done with print rover";
+    MissionList* ML;
     inputFile >> EV;
     for (int j = 0; j < EV; j++)
     {
@@ -51,19 +55,22 @@ void loadFile() {
             inputFile>> TLOC;
             inputFile>> MIDUR;
             inputFile>> SIG;
-//            cout<<TYP<<ED<<ID<<TLOC<<MIDUR<<SIG<<"\n";
+            ML->AddMission(TLOC,MIDUR,SIG,TYP);
+
 
         }
         else if (type == "X")
         {
             inputFile>> ED;
             inputFile>> ID;
+            ML->CancelMission(ED,ID);
 
         }
         else if (type == "P")
         {
             inputFile>> ED;
             inputFile>> ID;
+            ML->PromoteMission(ED,ID);
         }
     }
 
@@ -92,64 +99,8 @@ void initializeRover(int NoOfRover);
 void ReadFile();
 
 int main() {
-    int DayRefresh=0;
 
-    int NoofM=3;
-    int NoofP=3;
-    int NoofE=2;
-
-
-    int SpeedM=1;
-    int SpeedP=2;
-    int SpeedE=2;
-
-    int NoOFMissions=3;
-    int CheckupDurationM=9;
-    int CheckupDurationP=8;
-    int CheckupDurationE=7;
-
-    int AutoP=25;
-
-//    int Noevent=8;
-    char F='F';
-    char M='M';
-    int EventDay=2;
-    int ID=1;
-    int TargetLocation=100;
-    int MissionRequirementDuration=4;
-    int Significance=5;
-
-    int MMissions=3;
-    int PMissions=2;
-    int EMissions=1;
     loadFile();
-
-    Mission  MTest;
-
-//    ReadFile(); // Give the file as an argument
-//// This becomes
-
-
-//// Missions initializations
-
-    MissionList ML();
-
-//
-//    while(true)
-//    {
-//
-//
-//
-//        cout<<"Choose the Mode, 1 for interactive, 2 for step-by-step, 3 for silent mode\n";
-//        int mode;
-//        cin>>mode;
-//        int CompletedMission=MTest.getCompletedMission();
-//        Mission* executionList; //
-//        cout<<"";
-//
-//
-//
-//    }
 
 
 

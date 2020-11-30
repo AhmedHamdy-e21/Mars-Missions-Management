@@ -20,6 +20,9 @@ public:
     {
         this-> check_up_duration= check_up_duration;
     }
-
+    void PrintPolar()
+    {
+        cout<<"\n I'm Polar "<< this->speed<< this->check_up_duration;
+    }
 
 };

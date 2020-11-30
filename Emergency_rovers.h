@@ -3,8 +3,8 @@
 class Emergency_rovers : public Rover
 {
 private:
-	int check_up_duration; // 10 for example;
-	int speed; //for example
+	int check_up_duration;
+	int speed;
 public:
     Emergency_rovers(int speed,int check_up_duration)
     {
@@ -19,6 +19,10 @@ public:
     void setCheckupDuration(int  check_up_duration)
     {
         this-> check_up_duration= check_up_duration;
+    }
+    void PrintEmergency()
+    {
+        cout<<"\n I'm Emergency "<< this->speed<< this->check_up_duration;
     }
 
 
