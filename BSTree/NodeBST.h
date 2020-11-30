@@ -1,23 +1,23 @@
 #pragma once
 
-class Node
+class NodeBST
 {
 private:
 	int data;
-	Node *left;
-	Node *right;
+	NodeBST *left;
+	NodeBST *right;
 public:
-	Node(int val);
+	NodeBST(int val);
 	void setdata(int d);
 	int getdata();
 
-	void setright(Node* p);
-	Node*& getright();
+	void setright(NodeBST* p);
+	NodeBST*& getright();
 	//returns a pointer by reference
 	//Reason for that is explained in file BSTree.cpp as a note written
 	//inside the body of function BSTree::rec_insertBST
 
-	void setleft(Node* p);	
-	Node*& getleft();
+	void setleft(NodeBST* p);
+	NodeBST*& getleft();
 };
 
