@@ -224,6 +224,33 @@ Emergency_rovers.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Emergency_rovers.cpp.s
 .PHONY : Emergency_rovers.cpp.s
 
+Load.o: Load.cpp.o
+
+.PHONY : Load.o
+
+# target to build an object file
+Load.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Load.cpp.o
+.PHONY : Load.cpp.o
+
+Load.i: Load.cpp.i
+
+.PHONY : Load.i
+
+# target to preprocess a source file
+Load.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Load.cpp.i
+.PHONY : Load.cpp.i
+
+Load.s: Load.cpp.s
+
+.PHONY : Load.s
+
+# target to generate assembly for a file
+Load.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Load.cpp.s
+.PHONY : Load.cpp.s
+
 Mission.o: Mission.cpp.o
 
 .PHONY : Mission.o
@@ -458,6 +485,9 @@ help:
 	@echo "... Emergency_rovers.o"
 	@echo "... Emergency_rovers.i"
 	@echo "... Emergency_rovers.s"
+	@echo "... Load.o"
+	@echo "... Load.i"
+	@echo "... Load.s"
 	@echo "... Mission.o"
 	@echo "... Mission.i"
 	@echo "... Mission.s"

@@ -4,9 +4,7 @@
 
 #include<iostream>
 using namespace std;
-
-#ifndef MARS_MISSIONS_MANAGEMENT_ROVER_H
-#define MARS_MISSIONS_MANAGEMENT_ROVER_H
+#pragma once
 
 
 class Rover {
@@ -29,6 +27,4 @@ public:
 	void set_current_mission_duration(int duration);
 	int get_current_mission_duration();
 
-
-#endif //MARS_MISSIONS_MANAGEMENT_ROVER_H
 };

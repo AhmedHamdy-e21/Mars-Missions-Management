@@ -27,7 +27,7 @@ public:
 
 
     // Calculate completed missions according to ..
-    int setCompletedMission(bool BOOL)
+    void setCompletedMission(bool BOOL)
     {
         CompletedMission=BOOL;
 

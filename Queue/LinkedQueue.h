@@ -7,7 +7,7 @@ a frontPtr pointer for the front of the queue and a backPtr pointer for the back
 
 /*
 
-				The Node: item of type T and a "next" pointer
+				The NodeBST: item of type T and a "next" pointer
 					------------- 
 					| item| next | --->
 					-------------
@@ -28,7 +28,7 @@ Empty Case:
 					---- NULL ------
 
 
-Single Node Case:
+Single NodeBST Case:
                  frontPtr	 backPtr
 					\		/	
 					 \	   /			
@@ -42,15 +42,15 @@ Single Node Case:
 #define LINKED_QUEUE_
 
 
-#include "Node.h"
+#include "NodeQ.h"
 #include "QueueADT.h"
 
 template <typename T>
 class LinkedQueue:public QueueADT<T>
 {
 private :
-	Node<T>* backPtr;
-	Node<T>* frontPtr;
+	NodeBST<T>* backPtr;
+	NodeBST<T>* frontPtr;
 public :
 	LinkedQueue();	
 	bool isEmpty() const ;
@@ -101,7 +101,7 @@ Output: True if the operation is successful; otherwise false.
 template <typename T>
 bool LinkedQueue<T>::enqueue( const T& newEntry)
 {
-	Node<T>* newNodePtr = new Node<T>(newEntry);
+	NodeBST<T>* newNodePtr = new NodeBST<T>(newEntry);
 	// Insert the new node
 	if (isEmpty())	//special case if this is the first node to insert
 		frontPtr = newNodePtr; // The queue is empty
@@ -129,7 +129,7 @@ bool LinkedQueue<T>:: dequeue(T& frntEntry)
 	if(isEmpty())
 		return false;
 
-	Node<T>* nodeToDeletePtr = frontPtr;
+	NodeBST<T>* nodeToDeletePtr = frontPtr;
 	frntEntry = frontPtr->getItem();
 	frontPtr = frontPtr->getNext();
 	// Queue is not empty; remove front
