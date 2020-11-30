@@ -41,7 +41,6 @@ public:
     void IncrementMcount()
     {
         this->countMountanous++;
-
     }
 
 
@@ -87,11 +86,11 @@ public:
 
     void Print_Inexecution_Missions()
     {
-        cout<<"In-Execution Missions: "<<
+        cout<<"In-Execution Missions: ";
     }
     void Print_Completed_missions()
     {
-        cout<<"Completed_missions: "<<
+        cout<<"Completed_missions: ";
     }
 
 
