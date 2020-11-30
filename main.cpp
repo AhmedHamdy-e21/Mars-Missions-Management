@@ -39,10 +39,12 @@ void loadFile() {
     inputFile >> CE;
     inputFile >> AutoP;
     RoverList RL(M,P,E,SM,SP,SE, CM,CP, CE);
-    RL.PrintRovers();
+//    RL.PrintRovers();
     cout<<"Done with print rover";
-    MissionList* ML;
+
+
     inputFile >> EV;
+    MissionList ML(EV);
     for (int j = 0; j < EV; j++)
     {
         string type;
@@ -55,22 +57,23 @@ void loadFile() {
             inputFile>> TLOC;
             inputFile>> MIDUR;
             inputFile>> SIG;
-            ML->AddMission(TLOC,MIDUR,SIG,TYP);
-
-
+            cout<<"I finished adding missions\n";
+            ML.AddMission(TLOC,MIDUR,SIG,TYP);
+            cout<<"I finished adding missions\n";
         }
+
         else if (type == "X")
         {
             inputFile>> ED;
             inputFile>> ID;
-            ML->CancelMission(ED,ID);
+            ML.CancelMission(ED,ID);
 
         }
         else if (type == "P")
         {
             inputFile>> ED;
             inputFile>> ID;
-            ML->PromoteMission(ED,ID);
+            ML.PromoteMission(ED,ID);
         }
     }
 
@@ -96,12 +99,24 @@ void loadFile() {
 
 void initializeRover(int NoOfRover);
 
-void ReadFile();
 
 int main() {
-
     loadFile();
+    int Day=0;
 
+
+    while (false)
+    {
+
+
+
+
+
+
+        Day++;
+
+
+    }
 
 
     return 0;

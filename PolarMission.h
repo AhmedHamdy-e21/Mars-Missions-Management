@@ -8,6 +8,8 @@
 
 class PolarMission : public Mission
 {
+public:
+    PolarMission(int TargetLocation,int MissionDuration,int Significance):Mission( TargetLocation, MissionDuration,Significance){};
 
 };
 

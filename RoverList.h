@@ -13,6 +13,7 @@
 class RoverList
 
 {
+
 private:
     int NoofM;
     int NoofP;
@@ -21,6 +22,10 @@ private:
     Emergency_rovers** ERoverList;
     Polar_rovers** PRoverList;
     Mountainous_rovers** MRoverList;
+    LinkedQueue<Rover> AvailableEQueue;
+    LinkedQueue<Rover> AvailableMQueue;
+    LinkedQueue<Rover> AvailablePQueue;
+
 
 
 
@@ -35,6 +40,7 @@ public:
         cout<<"SM"<<SpeedM<<endl;
         setMRoverList(NoofM,SpeedM,CheckupDurationM);
         setPRoverList(NoofP,SpeedP,CheckupDurationP);
+        cout<<"Number of polar is "<< NoofP;
 
         // I need to add all rovers to the availability Queues
         // Then dequeue the ones who got missions.
@@ -42,12 +48,14 @@ public:
 
         //// initialize 3 queues for each available type rovers
 
-        LinkedQueue<Rover> AvailableEQueue;
-        LinkedQueue<Rover> AvailableMQueue;
-        LinkedQueue<Rover> AvailablePQueue;
-        cout<<"I'm here\n";
+
+
         //// These initializations will be conducted in RoverList class.
         // Then there will queue and dequeue functions there.
+        Queueit();
+    }
+    void Queueit()
+    {
         for (int i = 0; i < NoofE ; ++i)
         {
             AvailableEQueue.enqueue(*ERoverList[i]);
@@ -60,12 +68,11 @@ public:
         for (int i = 0; i < NoofP ; ++i)
         {
             AvailablePQueue.enqueue(*PRoverList[i]);
+            cout<<i<<endl;
         }
-        cout<<"I'm hereeeeeee\n";
-        PrintRovers();
-
-
     }
+
+
     void setNoofE(int NoofE)
     {
         this->NoofE=NoofE;
@@ -102,7 +109,7 @@ public:
         }
     }
 
-    
+
 
     void setMRoverList(int NoofM,int SpeedM,int CheckupDurationM)
     {
@@ -129,8 +136,11 @@ public:
 
         for (int i = 0; i <NoofP; ++i)
         {
+            cout<<"NO of  p"<<NoofP;
            PRoverList[i]->PrintPolar();
+            cout<<endl<<i<<endl;
         }
+        cout<<"Done with printingggg";
 
     }
 
