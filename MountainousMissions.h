@@ -9,7 +9,7 @@
 class MountainousMissions : public Mission
         {
 public:
-            MountainousMissions(int TargetLocation,int MissionDuration,int Significance):Mission( TargetLocation, MissionDuration,Significance){};
+    MountainousMissions(int TargetLocation, int MissionDuration, int Significance);
 
 };
 

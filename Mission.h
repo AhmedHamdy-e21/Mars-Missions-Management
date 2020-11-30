@@ -19,39 +19,14 @@ protected:
     bool CompletedMission;
 
 public:
-    Mission(int TargetLocation,int MissionDuration,int Significance)
-    {
-
-        setCompletedMission(true);
-        setMisisonDuration(MissionDuration);
-        setSignificance(Significance);
-        setTargetLocation(TargetLocation);
-    }
-
-
-    void setTargetLocation(int TargetLocation)
-    {
-        this->TargetLocation=TargetLocation;
-    }
-    void setMisisonDuration(int MissionDuration)
-    {
-        this->MissionDuration=MissionDuration;
-    }
-    void setSignificance(int Significance)
-    {
-        this->Significance=Significance;
-    }
+    Mission(int TargetLocation, int MissionDuration, int Significance);
+    void setTargetLocation(int TargetLocation);
+    void setMisisonDuration(int MissionDuration);
+    void setSignificance(int Significance);
 
     // Calculate completed missions according to ..
-    void setCompletedMission(bool BOOL)
-    {
-        CompletedMission=BOOL;
-
-    }
-    bool getCompletedMission()
-    {
-        return CompletedMission;
-    }
+    void setCompletedMission(bool BOOL);
+    bool getCompletedMission();
 
 };
 

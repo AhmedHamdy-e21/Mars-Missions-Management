@@ -16,6 +16,7 @@ public:
     NodeBST()
     {
         left=right=parent= nullptr;
+        priority = 0;
     }
 
     void setKey(T key)

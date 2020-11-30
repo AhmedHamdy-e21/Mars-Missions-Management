@@ -138,15 +138,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\BSTree.h" />
+    <ClInclude Include="..\EmergencyMissions.h" />
+    <ClInclude Include="..\Emergency_rovers.h" />
+    <ClInclude Include="..\MarsStation.h" />
     <ClInclude Include="..\Mission.h" />
+    <ClInclude Include="..\MissionList.h" />
+    <ClInclude Include="..\MountainousMissions.h" />
+    <ClInclude Include="..\Mountainous_rovers.h" />
+    <ClInclude Include="..\NodeBST.h" />
+    <ClInclude Include="..\PolarMission.h" />
+    <ClInclude Include="..\Polar_rovers.h" />
     <ClInclude Include="..\Rover.h" />
-    <ClInclude Include="Emergency_rovers.h" />
-    <ClInclude Include="Mountainous_rovers.h" />
-    <ClInclude Include="Polar_rovers.h" />
+    <ClInclude Include="..\RoverList.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\BSTree.cpp" />
+    <ClCompile Include="..\EmergencyMissions.cpp" />
+    <ClCompile Include="..\Emergency_rovers.cpp" />
+    <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="..\MarsStation.cpp" />
     <ClCompile Include="..\Mission.cpp" />
+    <ClCompile Include="..\MissionList.cpp" />
+    <ClCompile Include="..\MountainousMissions.cpp" />
+    <ClCompile Include="..\Mountainous_rovers.cpp" />
+    <ClCompile Include="..\NodeBST.cpp" />
+    <ClCompile Include="..\PolarMission.cpp" />
+    <ClCompile Include="..\Polar_rovers.cpp" />
     <ClCompile Include="..\Rover.cpp" />
+    <ClCompile Include="..\RoverList.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
