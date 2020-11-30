@@ -1,0 +1,14 @@
+//
+// Created by raspberry on 2020-11-30.
+//
+
+#ifndef MARS_MISSIONS_MANAGEMENT_MISSIONLIST_H
+#define MARS_MISSIONS_MANAGEMENT_MISSIONLIST_H
+
+
+class MissionList {
+
+};
+
+
+#endif //MARS_MISSIONS_MANAGEMENT_MISSIONLIST_H

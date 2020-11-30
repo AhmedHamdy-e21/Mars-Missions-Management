@@ -12,13 +12,30 @@ using namespace std;
 class Mission
 {
 protected:
-    bool  FormulationDayStamp;
+    bool  FormulationDayStamp=true;
     string TargetLocation;
     float MissionDuration;
     float Significance;
+    bool CompletedMission;
 
 public:
+    Mission()
+    {
+        this->CompletedMission= false;
+    }
 
+
+
+    // Calculate completed missions according to ..
+    int setCompletedMission(bool BOOL)
+    {
+        CompletedMission=BOOL;
+
+    }
+    bool getCompletedMission()
+    {
+        return CompletedMission;
+    }
 
 };
 

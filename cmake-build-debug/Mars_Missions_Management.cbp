@@ -82,10 +82,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/BinarySearchTree.cpp">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/BinarySearchTree.h">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/EmergencyMissions.cpp">
 			<Option target="Mars_Missions_Management"/>
 		</Unit>
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/EmergencyMissions.h">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Emergency_rovers.cpp">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Emergency_rovers.h">
 			<Option target="Mars_Missions_Management"/>
 		</Unit>
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Mission.cpp">
@@ -94,10 +106,40 @@
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Mission.h">
 			<Option target="Mars_Missions_Management"/>
 		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MissionList.cpp">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MissionList.h">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Mountainous_rovers.cpp">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Mountainous_rovers.h">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/NodeBST.cpp">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/NodeBST.h">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/PolarMission.cpp">
 			<Option target="Mars_Missions_Management"/>
 		</Unit>
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/PolarMission.h">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Polar_rovers.cpp">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Polar_rovers.h">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/RoverList.cpp">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/RoverList.h">
 			<Option target="Mars_Missions_Management"/>
 		</Unit>
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/main.cpp">
