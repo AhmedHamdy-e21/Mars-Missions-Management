@@ -143,6 +143,87 @@ Mars_Missions_Management/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/build
 .PHONY : Mars_Missions_Management/fast
 
+EmergencyMissions.o: EmergencyMissions.cpp.o
+
+.PHONY : EmergencyMissions.o
+
+# target to build an object file
+EmergencyMissions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/EmergencyMissions.cpp.o
+.PHONY : EmergencyMissions.cpp.o
+
+EmergencyMissions.i: EmergencyMissions.cpp.i
+
+.PHONY : EmergencyMissions.i
+
+# target to preprocess a source file
+EmergencyMissions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/EmergencyMissions.cpp.i
+.PHONY : EmergencyMissions.cpp.i
+
+EmergencyMissions.s: EmergencyMissions.cpp.s
+
+.PHONY : EmergencyMissions.s
+
+# target to generate assembly for a file
+EmergencyMissions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/EmergencyMissions.cpp.s
+.PHONY : EmergencyMissions.cpp.s
+
+Mission.o: Mission.cpp.o
+
+.PHONY : Mission.o
+
+# target to build an object file
+Mission.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission.cpp.o
+.PHONY : Mission.cpp.o
+
+Mission.i: Mission.cpp.i
+
+.PHONY : Mission.i
+
+# target to preprocess a source file
+Mission.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission.cpp.i
+.PHONY : Mission.cpp.i
+
+Mission.s: Mission.cpp.s
+
+.PHONY : Mission.s
+
+# target to generate assembly for a file
+Mission.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission.cpp.s
+.PHONY : Mission.cpp.s
+
+PolarMission.o: PolarMission.cpp.o
+
+.PHONY : PolarMission.o
+
+# target to build an object file
+PolarMission.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/PolarMission.cpp.o
+.PHONY : PolarMission.cpp.o
+
+PolarMission.i: PolarMission.cpp.i
+
+.PHONY : PolarMission.i
+
+# target to preprocess a source file
+PolarMission.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/PolarMission.cpp.i
+.PHONY : PolarMission.cpp.i
+
+PolarMission.s: PolarMission.cpp.s
+
+.PHONY : PolarMission.s
+
+# target to generate assembly for a file
+PolarMission.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/PolarMission.cpp.s
+.PHONY : PolarMission.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +260,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Mars_Missions_Management"
+	@echo "... EmergencyMissions.o"
+	@echo "... EmergencyMissions.i"
+	@echo "... EmergencyMissions.s"
+	@echo "... Mission.o"
+	@echo "... Mission.i"
+	@echo "... Mission.s"
+	@echo "... PolarMission.o"
+	@echo "... PolarMission.i"
+	@echo "... PolarMission.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

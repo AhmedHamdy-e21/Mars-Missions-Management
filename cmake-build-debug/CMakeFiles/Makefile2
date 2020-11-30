@@ -94,12 +94,12 @@ clean: CMakeFiles/Mars_Missions_Management.dir/clean
 CMakeFiles/Mars_Missions_Management.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=1,2 "Built target Mars_Missions_Management"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=1,2,3,4,5 "Built target Mars_Missions_Management"
 .PHONY : CMakeFiles/Mars_Missions_Management.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Mars_Missions_Management.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Mars_Missions_Management.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/Mars_Missions_Management.dir/rule
