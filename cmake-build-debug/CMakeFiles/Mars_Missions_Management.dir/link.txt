@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Mars_Missions_Management.dir/main.cpp.o  -o Mars_Missions_Management 

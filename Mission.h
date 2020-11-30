@@ -4,17 +4,21 @@
 
 #ifndef MARS_MISSIONS_MANAGEMENT_MISSION_H
 #define MARS_MISSIONS_MANAGEMENT_MISSION_H
+#include <iostream>
+using namespace std;
 
 
-<<<<<<< HEAD
+
 class Mission
 {
-    
-=======
-class Mission { 
-	//HEllo all
+protected:
+    bool  FormulationDayStamp;
+    string TargetLocation;
+    float MissionDuration;
+    float Significance;
 
->>>>>>> main
+public:
+
 
 };
 
