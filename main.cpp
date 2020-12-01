@@ -104,10 +104,13 @@ void loadFile(RoverList& RL,MissionList& ML,LinkedQueue<Mission>& CurrentE,Linke
 }
 
 
-
+// This will be eliminated when implementing this array using linkedlist
 #define MAX_size 100
+
+void Interactive(LinkedQueue<struct Rover> queue, LinkedQueue<struct Mission> queue1);
+
 template<typename T>
-void Interactive(LinkedQueue <T> rovers, LinkedQueue<T> missions) {
+void Interactive(LinkedQueue<T> rovers, LinkedQueue<T> missions) {
     T Rovers, Missions;
     int i = 0;
     int j = 0;
@@ -161,6 +164,9 @@ int main() {
    LinkedQueue<Mission> CurrentM;
    LinkedQueue<Mission> CurrentP;
 
+    LinkedQueue<Rover> AvailableEQueue;
+    LinkedQueue<Rover> AvailableMQueue;
+    LinkedQueue<Rover> AvailablePQueue;
 
 
     int Day=5;
@@ -183,16 +189,21 @@ int main() {
         cout<<"Enter The mode \n1- Interactive\n2-Silent\n3step_by-step\n";
         cin>>Mode;
         ////Mission cancellation function
+        AvailableEQueue=RL.getAvailableEQueue();
         if(Mode==1)
         {
             printInteractiveMode(Day);
-            Interactive(LinkedQueue <RoverList> RL,  CurrentE)
+            Interactive(AvailableEQueue,CurrentE);
         }
         Day++;
     }
 
 
     return 0;
+}
+
+void Interactive(LinkedQueue<struct Rover> queue, LinkedQueue<struct Mission> queue1) {
+
 }
 
 

@@ -140,6 +140,21 @@ public:
         }
         cout<<"Done with printingggg";
     }
+
+    LinkedQueue<Rover> getAvailableEQueue()
+    {
+        return this->AvailableEQueue;
+    }
+
+    LinkedQueue<Rover> getAvailablePQueue()
+    {
+        return this->AvailablePQueue;
+    }
+
+    LinkedQueue<Rover> getAvailableMQueue()
+    {
+        return this->AvailableMQueue;
+    }
 };
 
 
