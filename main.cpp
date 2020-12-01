@@ -152,6 +152,12 @@ void Interactive(LinkedQueue<T> rovers, LinkedQueue<T> missions) {
 
     void printInteractiveMode(int Day)
 {
+
+    int Emergency, Mountain, Polar, currentday;
+    cout << "Avaliable Rovers: " <<"( "<< Polar << " )  "<<"[ "<< Emergency<<" ]  "<< Mountain<<"  " <<endl;
+    cout << "Waiting Missions: " << "( " << Polar << " )  " << "[ " << Emergency << " ]  " << Mountain << "  " << endl;
+    cout << "In=Execution Missions: " << "( " << Polar << " )  " << "[ " << Emergency << " ]  " << Mountain << "  " << endl;
+    cout << "Completed Missions: " << "( " << Polar << " )  " << "[ " << Emergency << " ]  " << Mountain << "  " << endl;
     cout<<"Current Day:   "<<Day<<endl;
 }
 
