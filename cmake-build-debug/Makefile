@@ -170,59 +170,32 @@ BinarySearchTree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/BinarySearchTree.cpp.s
 .PHONY : BinarySearchTree.cpp.s
 
-EmergencyMissions.o: EmergencyMissions.cpp.o
+BinarySearchTree/NodeBST.o: BinarySearchTree/NodeBST.cpp.o
 
-.PHONY : EmergencyMissions.o
-
-# target to build an object file
-EmergencyMissions.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/EmergencyMissions.cpp.o
-.PHONY : EmergencyMissions.cpp.o
-
-EmergencyMissions.i: EmergencyMissions.cpp.i
-
-.PHONY : EmergencyMissions.i
-
-# target to preprocess a source file
-EmergencyMissions.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/EmergencyMissions.cpp.i
-.PHONY : EmergencyMissions.cpp.i
-
-EmergencyMissions.s: EmergencyMissions.cpp.s
-
-.PHONY : EmergencyMissions.s
-
-# target to generate assembly for a file
-EmergencyMissions.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/EmergencyMissions.cpp.s
-.PHONY : EmergencyMissions.cpp.s
-
-Emergency_rovers.o: Emergency_rovers.cpp.o
-
-.PHONY : Emergency_rovers.o
+.PHONY : BinarySearchTree/NodeBST.o
 
 # target to build an object file
-Emergency_rovers.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Emergency_rovers.cpp.o
-.PHONY : Emergency_rovers.cpp.o
+BinarySearchTree/NodeBST.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/BinarySearchTree/NodeBST.cpp.o
+.PHONY : BinarySearchTree/NodeBST.cpp.o
 
-Emergency_rovers.i: Emergency_rovers.cpp.i
+BinarySearchTree/NodeBST.i: BinarySearchTree/NodeBST.cpp.i
 
-.PHONY : Emergency_rovers.i
+.PHONY : BinarySearchTree/NodeBST.i
 
 # target to preprocess a source file
-Emergency_rovers.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Emergency_rovers.cpp.i
-.PHONY : Emergency_rovers.cpp.i
+BinarySearchTree/NodeBST.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/BinarySearchTree/NodeBST.cpp.i
+.PHONY : BinarySearchTree/NodeBST.cpp.i
 
-Emergency_rovers.s: Emergency_rovers.cpp.s
+BinarySearchTree/NodeBST.s: BinarySearchTree/NodeBST.cpp.s
 
-.PHONY : Emergency_rovers.s
+.PHONY : BinarySearchTree/NodeBST.s
 
 # target to generate assembly for a file
-Emergency_rovers.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Emergency_rovers.cpp.s
-.PHONY : Emergency_rovers.cpp.s
+BinarySearchTree/NodeBST.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/BinarySearchTree/NodeBST.cpp.s
+.PHONY : BinarySearchTree/NodeBST.cpp.s
 
 Load.o: Load.cpp.o
 
@@ -251,33 +224,6 @@ Load.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Load.cpp.s
 .PHONY : Load.cpp.s
 
-Mission.o: Mission.cpp.o
-
-.PHONY : Mission.o
-
-# target to build an object file
-Mission.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission.cpp.o
-.PHONY : Mission.cpp.o
-
-Mission.i: Mission.cpp.i
-
-.PHONY : Mission.i
-
-# target to preprocess a source file
-Mission.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission.cpp.i
-.PHONY : Mission.cpp.i
-
-Mission.s: Mission.cpp.s
-
-.PHONY : Mission.s
-
-# target to generate assembly for a file
-Mission.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission.cpp.s
-.PHONY : Mission.cpp.s
-
 MissionList.o: MissionList.cpp.o
 
 .PHONY : MissionList.o
@@ -305,113 +251,86 @@ MissionList.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.s
 .PHONY : MissionList.cpp.s
 
-Mountainous_rovers.o: Mountainous_rovers.cpp.o
+Mission_related/EmergencyMissions.o: Mission_related/EmergencyMissions.cpp.o
 
-.PHONY : Mountainous_rovers.o
-
-# target to build an object file
-Mountainous_rovers.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mountainous_rovers.cpp.o
-.PHONY : Mountainous_rovers.cpp.o
-
-Mountainous_rovers.i: Mountainous_rovers.cpp.i
-
-.PHONY : Mountainous_rovers.i
-
-# target to preprocess a source file
-Mountainous_rovers.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mountainous_rovers.cpp.i
-.PHONY : Mountainous_rovers.cpp.i
-
-Mountainous_rovers.s: Mountainous_rovers.cpp.s
-
-.PHONY : Mountainous_rovers.s
-
-# target to generate assembly for a file
-Mountainous_rovers.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mountainous_rovers.cpp.s
-.PHONY : Mountainous_rovers.cpp.s
-
-NodeBST.o: NodeBST.cpp.o
-
-.PHONY : NodeBST.o
+.PHONY : Mission_related/EmergencyMissions.o
 
 # target to build an object file
-NodeBST.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/NodeBST.cpp.o
-.PHONY : NodeBST.cpp.o
+Mission_related/EmergencyMissions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission_related/EmergencyMissions.cpp.o
+.PHONY : Mission_related/EmergencyMissions.cpp.o
 
-NodeBST.i: NodeBST.cpp.i
+Mission_related/EmergencyMissions.i: Mission_related/EmergencyMissions.cpp.i
 
-.PHONY : NodeBST.i
+.PHONY : Mission_related/EmergencyMissions.i
 
 # target to preprocess a source file
-NodeBST.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/NodeBST.cpp.i
-.PHONY : NodeBST.cpp.i
+Mission_related/EmergencyMissions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission_related/EmergencyMissions.cpp.i
+.PHONY : Mission_related/EmergencyMissions.cpp.i
 
-NodeBST.s: NodeBST.cpp.s
+Mission_related/EmergencyMissions.s: Mission_related/EmergencyMissions.cpp.s
 
-.PHONY : NodeBST.s
+.PHONY : Mission_related/EmergencyMissions.s
 
 # target to generate assembly for a file
-NodeBST.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/NodeBST.cpp.s
-.PHONY : NodeBST.cpp.s
+Mission_related/EmergencyMissions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission_related/EmergencyMissions.cpp.s
+.PHONY : Mission_related/EmergencyMissions.cpp.s
 
-PolarMission.o: PolarMission.cpp.o
+Mission_related/Mission.o: Mission_related/Mission.cpp.o
 
-.PHONY : PolarMission.o
+.PHONY : Mission_related/Mission.o
 
 # target to build an object file
-PolarMission.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/PolarMission.cpp.o
-.PHONY : PolarMission.cpp.o
+Mission_related/Mission.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission_related/Mission.cpp.o
+.PHONY : Mission_related/Mission.cpp.o
 
-PolarMission.i: PolarMission.cpp.i
+Mission_related/Mission.i: Mission_related/Mission.cpp.i
 
-.PHONY : PolarMission.i
+.PHONY : Mission_related/Mission.i
 
 # target to preprocess a source file
-PolarMission.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/PolarMission.cpp.i
-.PHONY : PolarMission.cpp.i
+Mission_related/Mission.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission_related/Mission.cpp.i
+.PHONY : Mission_related/Mission.cpp.i
 
-PolarMission.s: PolarMission.cpp.s
+Mission_related/Mission.s: Mission_related/Mission.cpp.s
 
-.PHONY : PolarMission.s
+.PHONY : Mission_related/Mission.s
 
 # target to generate assembly for a file
-PolarMission.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/PolarMission.cpp.s
-.PHONY : PolarMission.cpp.s
+Mission_related/Mission.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission_related/Mission.cpp.s
+.PHONY : Mission_related/Mission.cpp.s
 
-Polar_rovers.o: Polar_rovers.cpp.o
+Mission_related/PolarMission.o: Mission_related/PolarMission.cpp.o
 
-.PHONY : Polar_rovers.o
+.PHONY : Mission_related/PolarMission.o
 
 # target to build an object file
-Polar_rovers.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Polar_rovers.cpp.o
-.PHONY : Polar_rovers.cpp.o
+Mission_related/PolarMission.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission_related/PolarMission.cpp.o
+.PHONY : Mission_related/PolarMission.cpp.o
 
-Polar_rovers.i: Polar_rovers.cpp.i
+Mission_related/PolarMission.i: Mission_related/PolarMission.cpp.i
 
-.PHONY : Polar_rovers.i
+.PHONY : Mission_related/PolarMission.i
 
 # target to preprocess a source file
-Polar_rovers.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Polar_rovers.cpp.i
-.PHONY : Polar_rovers.cpp.i
+Mission_related/PolarMission.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission_related/PolarMission.cpp.i
+.PHONY : Mission_related/PolarMission.cpp.i
 
-Polar_rovers.s: Polar_rovers.cpp.s
+Mission_related/PolarMission.s: Mission_related/PolarMission.cpp.s
 
-.PHONY : Polar_rovers.s
+.PHONY : Mission_related/PolarMission.s
 
 # target to generate assembly for a file
-Polar_rovers.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Polar_rovers.cpp.s
-.PHONY : Polar_rovers.cpp.s
+Mission_related/PolarMission.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission_related/PolarMission.cpp.s
+.PHONY : Mission_related/PolarMission.cpp.s
 
 RoverList.o: RoverList.cpp.o
 
@@ -439,6 +358,87 @@ RoverList.s: RoverList.cpp.s
 RoverList.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.s
 .PHONY : RoverList.cpp.s
+
+Rover_related/Emergency_rovers.o: Rover_related/Emergency_rovers.cpp.o
+
+.PHONY : Rover_related/Emergency_rovers.o
+
+# target to build an object file
+Rover_related/Emergency_rovers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Rover_related/Emergency_rovers.cpp.o
+.PHONY : Rover_related/Emergency_rovers.cpp.o
+
+Rover_related/Emergency_rovers.i: Rover_related/Emergency_rovers.cpp.i
+
+.PHONY : Rover_related/Emergency_rovers.i
+
+# target to preprocess a source file
+Rover_related/Emergency_rovers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Rover_related/Emergency_rovers.cpp.i
+.PHONY : Rover_related/Emergency_rovers.cpp.i
+
+Rover_related/Emergency_rovers.s: Rover_related/Emergency_rovers.cpp.s
+
+.PHONY : Rover_related/Emergency_rovers.s
+
+# target to generate assembly for a file
+Rover_related/Emergency_rovers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Rover_related/Emergency_rovers.cpp.s
+.PHONY : Rover_related/Emergency_rovers.cpp.s
+
+Rover_related/Mountainous_rovers.o: Rover_related/Mountainous_rovers.cpp.o
+
+.PHONY : Rover_related/Mountainous_rovers.o
+
+# target to build an object file
+Rover_related/Mountainous_rovers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Rover_related/Mountainous_rovers.cpp.o
+.PHONY : Rover_related/Mountainous_rovers.cpp.o
+
+Rover_related/Mountainous_rovers.i: Rover_related/Mountainous_rovers.cpp.i
+
+.PHONY : Rover_related/Mountainous_rovers.i
+
+# target to preprocess a source file
+Rover_related/Mountainous_rovers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Rover_related/Mountainous_rovers.cpp.i
+.PHONY : Rover_related/Mountainous_rovers.cpp.i
+
+Rover_related/Mountainous_rovers.s: Rover_related/Mountainous_rovers.cpp.s
+
+.PHONY : Rover_related/Mountainous_rovers.s
+
+# target to generate assembly for a file
+Rover_related/Mountainous_rovers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Rover_related/Mountainous_rovers.cpp.s
+.PHONY : Rover_related/Mountainous_rovers.cpp.s
+
+Rover_related/Polar_rovers.o: Rover_related/Polar_rovers.cpp.o
+
+.PHONY : Rover_related/Polar_rovers.o
+
+# target to build an object file
+Rover_related/Polar_rovers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Rover_related/Polar_rovers.cpp.o
+.PHONY : Rover_related/Polar_rovers.cpp.o
+
+Rover_related/Polar_rovers.i: Rover_related/Polar_rovers.cpp.i
+
+.PHONY : Rover_related/Polar_rovers.i
+
+# target to preprocess a source file
+Rover_related/Polar_rovers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Rover_related/Polar_rovers.cpp.i
+.PHONY : Rover_related/Polar_rovers.cpp.i
+
+Rover_related/Polar_rovers.s: Rover_related/Polar_rovers.cpp.s
+
+.PHONY : Rover_related/Polar_rovers.s
+
+# target to generate assembly for a file
+Rover_related/Polar_rovers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Rover_related/Polar_rovers.cpp.s
+.PHONY : Rover_related/Polar_rovers.cpp.s
 
 main.o: main.cpp.o
 
@@ -479,36 +479,36 @@ help:
 	@echo "... BinarySearchTree.o"
 	@echo "... BinarySearchTree.i"
 	@echo "... BinarySearchTree.s"
-	@echo "... EmergencyMissions.o"
-	@echo "... EmergencyMissions.i"
-	@echo "... EmergencyMissions.s"
-	@echo "... Emergency_rovers.o"
-	@echo "... Emergency_rovers.i"
-	@echo "... Emergency_rovers.s"
+	@echo "... BinarySearchTree/NodeBST.o"
+	@echo "... BinarySearchTree/NodeBST.i"
+	@echo "... BinarySearchTree/NodeBST.s"
 	@echo "... Load.o"
 	@echo "... Load.i"
 	@echo "... Load.s"
-	@echo "... Mission.o"
-	@echo "... Mission.i"
-	@echo "... Mission.s"
 	@echo "... MissionList.o"
 	@echo "... MissionList.i"
 	@echo "... MissionList.s"
-	@echo "... Mountainous_rovers.o"
-	@echo "... Mountainous_rovers.i"
-	@echo "... Mountainous_rovers.s"
-	@echo "... NodeBST.o"
-	@echo "... NodeBST.i"
-	@echo "... NodeBST.s"
-	@echo "... PolarMission.o"
-	@echo "... PolarMission.i"
-	@echo "... PolarMission.s"
-	@echo "... Polar_rovers.o"
-	@echo "... Polar_rovers.i"
-	@echo "... Polar_rovers.s"
+	@echo "... Mission_related/EmergencyMissions.o"
+	@echo "... Mission_related/EmergencyMissions.i"
+	@echo "... Mission_related/EmergencyMissions.s"
+	@echo "... Mission_related/Mission.o"
+	@echo "... Mission_related/Mission.i"
+	@echo "... Mission_related/Mission.s"
+	@echo "... Mission_related/PolarMission.o"
+	@echo "... Mission_related/PolarMission.i"
+	@echo "... Mission_related/PolarMission.s"
 	@echo "... RoverList.o"
 	@echo "... RoverList.i"
 	@echo "... RoverList.s"
+	@echo "... Rover_related/Emergency_rovers.o"
+	@echo "... Rover_related/Emergency_rovers.i"
+	@echo "... Rover_related/Emergency_rovers.s"
+	@echo "... Rover_related/Mountainous_rovers.o"
+	@echo "... Rover_related/Mountainous_rovers.i"
+	@echo "... Rover_related/Mountainous_rovers.s"
+	@echo "... Rover_related/Polar_rovers.o"
+	@echo "... Rover_related/Polar_rovers.i"
+	@echo "... Rover_related/Polar_rovers.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

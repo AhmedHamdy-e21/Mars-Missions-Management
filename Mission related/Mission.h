@@ -11,7 +11,7 @@ using namespace std;
 
 class Mission
 {
-protected:
+private:
     bool  FormulationDayStamp=true;
     int TargetLocation;
     int MissionDuration;
@@ -22,16 +22,25 @@ public:
     Mission(int TargetLocation,int MissionDuration,int Significance)
     {
 
-        setCompletedMission(true);
+        setCompletedMission(false);
         setMisisonDuration(MissionDuration);
         setSignificance(Significance);
         setTargetLocation(TargetLocation);
     }
 
 
+
     void setTargetLocation(int TargetLocation)
     {
         this->TargetLocation=TargetLocation;
+    }
+    int getTargetLocation() const
+    {
+        return this->TargetLocation;
+    }
+    int getMissionDuration() const
+    {
+        return this->MissionDuration;
     }
     void setMisisonDuration(int MissionDuration)
     {
@@ -40,6 +49,10 @@ public:
     void setSignificance(int Significance)
     {
         this->Significance=Significance;
+    }
+    int getSignificance()
+    {
+        return this->Significance;
     }
 
     // Calculate completed missions according to ..
@@ -52,6 +65,9 @@ public:
     {
         return CompletedMission;
     }
+
+    virtual void PrintMission() =0;
+
 
 };
 

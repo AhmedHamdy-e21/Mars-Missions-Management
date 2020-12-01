@@ -1,5 +1,5 @@
 #pragma once
-#include "NodeBST.h"
+#include "BinarySearchTree/NodeBST.h"
 
 template<typename T>
 class BinarySearchTree

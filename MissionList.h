@@ -2,10 +2,10 @@
 // Created by raspberry on 2020-11-30.
 //
 #pragma once
-#include "Mission.h"
-#include "EmergencyMissions.h"
-#include "PolarMission.h"
-#include "MountainousMissions.h"
+#include "Mission related/Mission.h"
+#include "Mission related/EmergencyMissions.h"
+#include "Mission related/PolarMission.h"
+#include "Mission related/MountainousMissions.h"
 #include "Queue/LinkedQueue.h"
 // I was about to include sth
 
@@ -15,12 +15,12 @@ private:
     Mission** ML;   // all pointer to pointers should be implemented in the appropriate datatype
     Mission** inExectution;
     int NumberOfMissions=0;
-    LinkedQueue<Mission> AvailableEQueue;
+//    LinkedQueue<Mission> AvailableEQueue;
     int countEmergency=0;
     int countPolar=0;
     int countMountanous=0;
-    LinkedQueue<Mission> AvailableMQueue;
-    LinkedQueue<Mission> AvailablePQueue;
+//    LinkedQueue<Mission> AvailableMQueue;
+//    LinkedQueue<Mission> AvailablePQueue;
 
 
 public:
@@ -52,30 +52,37 @@ public:
 
     void AddMission(int TargetLocation,int MissionDuration,int Significance, char TYP)
     {
+//        LinkedQueue<Mission> AvailableEQueue;
         if (TYP == 'E')
         {
             ML[NumberOfMissions]=new EmergencyMissions(TargetLocation,MissionDuration,Significance);
-            AvailableEQueue.enqueue(*ML[NumberOfMissions]);
+//            AvailableEQueue.enqueue(*ML[NumberOfMissions]);
             this->IncrementEcount();
+            ML[NumberOfMissions]->getTargetLocation();
+            ML[NumberOfMissions]->PrintMission();
+
           IncrementNoOfMissions();
         }
         else if(TYP == 'M')
         {
             ML[NumberOfMissions]=new MountainousMissions(TargetLocation,MissionDuration,Significance);
-            AvailableMQueue.enqueue(*ML[NumberOfMissions]);
+//            AvailableMQueue.enqueue(*ML[NumberOfMissions]);
             this->IncrementMcount();
+            ML[NumberOfMissions]->PrintMission();
 
             IncrementNoOfMissions();
-
         }
+
         else if(TYP == 'P')
         {
             ML[NumberOfMissions]=new PolarMission(TargetLocation,MissionDuration,Significance);
-            AvailablePQueue.enqueue(*ML[NumberOfMissions]);
+//            AvailablePQueue.enqueue(*ML[NumberOfMissions]);
+            ML[NumberOfMissions]->PrintMission();
             this->IncrementPcount();
             IncrementNoOfMissions();
-
         }
+        cout<<"I'm printing all missions together now\n";
+
     }
 
 
@@ -87,11 +94,11 @@ public:
 
     void Print_Inexecution_Missions()
     {
-        cout<<"In-Execution Missions: "<<
+        cout<<"In-Execution Missions: ";
     }
     void Print_Completed_missions()
     {
-        cout<<"Completed_missions: "<<
+        cout<<"Completed_missions: ";
     }
 
 
@@ -109,6 +116,12 @@ public:
 
     void PrintAllMissions()
     {
+        for (int i = 0; i < NumberOfMissions; ++i) {
+            cout<<endl;
+            ML[i]->PrintMission();
+            cout<<endl;
+
+        }
 
     }
     void IncrementNoOfMissions()
