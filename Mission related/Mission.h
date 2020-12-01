@@ -17,8 +17,8 @@ private:
     int MissionDuration;
     int Significance;
     bool CompletedMission;
-    
     int ID;
+    int ED;
 
 public:
      virtual int getID()
@@ -29,8 +29,15 @@ public:
     {
         this->ID = ID;
     }
-    Mission(int ID,int TargetLocation,int MissionDuration,int Significance)
+    virtual int getDay()
     {
+
+         return ED;
+
+    }
+    Mission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance)
+    {
+         setED(ED);
 
         setCompletedMission(false);
         setMisisonDuration(MissionDuration);
@@ -46,6 +53,15 @@ public:
         setTargetLocation(0);
 
     };
+
+    virtual void setED(int ED)
+     {
+         this->ED=ED;
+     }
+     virtual int getED()
+     {
+         return this->ED;
+     }
 
 
 

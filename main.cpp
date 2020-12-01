@@ -79,7 +79,7 @@ void loadFile(RoverList& RL,MissionList& ML) {
             inputFile>> MIDUR;
             inputFile>> SIG;
 
-            ML.AddMission(ID,TLOC,MIDUR,SIG,TYP);
+            ML.AddMission(ED,ID,TLOC,MIDUR,SIG,TYP);
 
         }
 
@@ -102,22 +102,42 @@ void loadFile(RoverList& RL,MissionList& ML) {
     inputFile.close();
 
 }
-void initializeRover(int NoOfRover);
+
+void printInteractiveMode(int Day)
+{
+    cout<<"Current Day:   "<<Day<<endl;
+}
 
 int main() {
+    ////Initializations
     RoverList RL;
+
     MissionList ML;
-    loadFile(RL,ML);
-    cout<<"\n In main\n";
-    RL.PrintRovers();
-    ML.PrintAllMissions();
-    Mission element;
-    ML.getEQueue().dequeue(element);
-    element.PrintMission();
-    cout<<"\n In main\n";
     int Day=0;
+
+    //// Load function:
+
+    loadFile(RL,ML);
+
+
+
     while (false)
     {
+        int Mode;
+        cout<<"Enter The mode \n1- Interactive\n2-Silent\n3step_by-step\n";
+        cin>>Mode;
+
+
+
+        if(Mode==1)
+        {
+            printInteractiveMode(Day);
+        }
+
+
+
+
+
         Day++;
     }
 

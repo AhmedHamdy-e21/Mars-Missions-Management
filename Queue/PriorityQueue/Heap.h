@@ -10,7 +10,7 @@
 class Heap
 {
 private:
-    Node<T>* root;
+//    Node<T>* root;
 
 
 public:
