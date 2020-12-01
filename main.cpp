@@ -9,7 +9,7 @@
 #include <fstream>
 #include <string>
 using namespace std;
-void loadFile() {
+void loadFile(RoverList& RL,MissionList& ML) {
     ifstream inputFile;
 
     inputFile.open("Input Sample.txt");
@@ -38,13 +38,14 @@ void loadFile() {
     inputFile >> CP;
     inputFile >> CE;
     inputFile >> AutoP;
-    RoverList RL(M,P,E,SM,SP,SE, CM,CP, CE);
-//    RL.PrintRovers();
+    RL.setERoverList(E,SE,CE);
+    RL.setMRoverList(M,SM,CM);
+    RL.setPRoverList(P,SP,CP);
     cout<<"Done with print rover";
 
 
     inputFile >> EV;
-    MissionList ML(EV);
+    ML.setMissionList(EV);
     for (int j = 0; j < EV; j++)
     {
         string type;
@@ -101,10 +102,13 @@ void initializeRover(int NoOfRover);
 
 
 int main() {
-    loadFile();
+    RoverList RL;
+    MissionList ML;
+
+
+    loadFile(RL,ML);
     int Day=0;
-//    Mission MS(200,3,3);
-//    LinkedQueue<Rover> QM;
+
 
     while (false)
     {

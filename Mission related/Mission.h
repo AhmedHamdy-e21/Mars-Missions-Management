@@ -27,6 +27,14 @@ public:
         setSignificance(Significance);
         setTargetLocation(TargetLocation);
     }
+    Mission()
+    {
+        setCompletedMission(false);
+        setMisisonDuration(0);
+        setSignificance(0);
+        setTargetLocation(0);
+
+    };
 
 
 
@@ -66,7 +74,10 @@ public:
         return CompletedMission;
     }
 
-    virtual void PrintMission() =0;
+    virtual void PrintMission()
+    {
+     cout<<"In mission parent class \n";
+    }
 
 
 };

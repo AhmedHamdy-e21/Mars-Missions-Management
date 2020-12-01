@@ -30,12 +30,19 @@ private:
 
 
 public:
+    RoverList()
+    {
+        setNoofE(0);
+        setNoofP(0);
+        setNoofM(0);
+        setERoverList(0,0,0);
+        setMRoverList(0,0,0);
+        setPRoverList(0,0,0);
+
+
+    }
     RoverList(  int NoofM,int NoofP, int NoofE,int SpeedM,int SpeedP,int SpeedE,int CheckupDurationM,int CheckupDurationP,int CheckupDurationE)
     {
-        setNoofE(NoofE);
-        setNoofP(NoofP);
-        setNoofM(NoofM);
-        cout<<"I'm here\n";
         setERoverList(NoofE,SpeedE,CheckupDurationE);
         cout<<"SM"<<SpeedM<<endl;
         setMRoverList(NoofM,SpeedM,CheckupDurationM);
@@ -90,6 +97,7 @@ public:
 
     void setERoverList(int NoofE,int SpeedE,int CheckupDurationE)
     {
+        setNoofE( NoofE);
         ERoverList=new Emergency_rovers*[NoofE];
         for (int i=0; i<NoofE; i++)
         {
@@ -102,6 +110,7 @@ public:
 
     void setPRoverList(int NoofP,int SpeedP,int CheckupDurationP)
     {
+        setNoofP(NoofP);
         PRoverList=new Polar_rovers*[NoofP];
         for (int i=0; i<NoofP; i++)
         {
@@ -113,6 +122,7 @@ public:
 
     void setMRoverList(int NoofM,int SpeedM,int CheckupDurationM)
     {
+        setNoofM(NoofM);
         MRoverList=new Mountainous_rovers*[NoofM];
         for (int i=0; i<NoofM; i++)
         {

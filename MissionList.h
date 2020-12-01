@@ -15,15 +15,20 @@ private:
     Mission** ML;   // all pointer to pointers should be implemented in the appropriate datatype
     Mission** inExectution;
     int NumberOfMissions=0;
-//    LinkedQueue<Mission> AvailableEQueue;
+    LinkedQueue<Mission> AvailableEQueue;
     int countEmergency=0;
     int countPolar=0;
     int countMountanous=0;
-//    LinkedQueue<Mission> AvailableMQueue;
-//    LinkedQueue<Mission> AvailablePQueue;
+    LinkedQueue<Mission> AvailableMQueue;
+    LinkedQueue<Mission> AvailablePQueue;
 
 
 public:
+    MissionList()
+    {
+//        setMissionList(0);
+
+    }
     MissionList(int EV)
     {
         setMissionList(EV);
@@ -56,7 +61,7 @@ public:
         if (TYP == 'E')
         {
             ML[NumberOfMissions]=new EmergencyMissions(TargetLocation,MissionDuration,Significance);
-//            AvailableEQueue.enqueue(*ML[NumberOfMissions]);
+            AvailableEQueue.enqueue(*ML[NumberOfMissions]);
             this->IncrementEcount();
             ML[NumberOfMissions]->getTargetLocation();
             ML[NumberOfMissions]->PrintMission();
@@ -66,7 +71,7 @@ public:
         else if(TYP == 'M')
         {
             ML[NumberOfMissions]=new MountainousMissions(TargetLocation,MissionDuration,Significance);
-//            AvailableMQueue.enqueue(*ML[NumberOfMissions]);
+            AvailableMQueue.enqueue(*ML[NumberOfMissions]);
             this->IncrementMcount();
             ML[NumberOfMissions]->PrintMission();
 
@@ -76,7 +81,7 @@ public:
         else if(TYP == 'P')
         {
             ML[NumberOfMissions]=new PolarMission(TargetLocation,MissionDuration,Significance);
-//            AvailablePQueue.enqueue(*ML[NumberOfMissions]);
+            AvailablePQueue.enqueue(*ML[NumberOfMissions]);
             ML[NumberOfMissions]->PrintMission();
             this->IncrementPcount();
             IncrementNoOfMissions();
@@ -124,6 +129,22 @@ public:
         }
 
     }
+
+    LinkedQueue<Mission> getEQueue()
+    {
+        return this->AvailableEQueue;
+    }
+    LinkedQueue<Mission> getMQueue()
+    {
+        return this->AvailableMQueue;
+    }
+
+    LinkedQueue<Mission> getPQueue()
+    {
+        return this->AvailablePQueue;
+    }
+
+
     void IncrementNoOfMissions()
     {
         this->NumberOfMissions++;
