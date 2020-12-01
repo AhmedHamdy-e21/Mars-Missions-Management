@@ -17,15 +17,26 @@ private:
     int MissionDuration;
     int Significance;
     bool CompletedMission;
+    
+    int ID;
 
 public:
-    Mission(int TargetLocation,int MissionDuration,int Significance)
+     virtual int getID()
+    {
+        return ID;
+    }
+    virtual void setID(int ID)
+    {
+        this->ID = ID;
+    }
+    Mission(int ID,int TargetLocation,int MissionDuration,int Significance)
     {
 
         setCompletedMission(false);
         setMisisonDuration(MissionDuration);
         setSignificance(Significance);
         setTargetLocation(TargetLocation);
+        setID(ID);
     }
     Mission()
     {

@@ -31,6 +31,10 @@ CMakeFiles/Mars_Missions_Management.dir/Mission_related/PolarMission.cpp.o: ../M
 CMakeFiles/Mars_Missions_Management.dir/Mission_related/PolarMission.cpp.o: ../Mission\ related/PolarMission.cpp
 CMakeFiles/Mars_Missions_Management.dir/Mission_related/PolarMission.cpp.o: ../Mission\ related/PolarMission.h
 
+CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o: ../Queue/NodeQ.h
+CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o: ../Queue/PriorityQueue/Heap.cpp
+CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o: ../Queue/PriorityQueue/Heap.h
+
 CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.o: ../RoverList.cpp
 
 CMakeFiles/Mars_Missions_Management.dir/Rover_related/Emergency_rovers.cpp.o: ../Rover\ related/Emergency_rovers.cpp

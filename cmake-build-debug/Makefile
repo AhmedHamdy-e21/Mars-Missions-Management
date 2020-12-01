@@ -332,6 +332,33 @@ Mission_related/PolarMission.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission_related/PolarMission.cpp.s
 .PHONY : Mission_related/PolarMission.cpp.s
 
+Queue/PriorityQueue/Heap.o: Queue/PriorityQueue/Heap.cpp.o
+
+.PHONY : Queue/PriorityQueue/Heap.o
+
+# target to build an object file
+Queue/PriorityQueue/Heap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o
+.PHONY : Queue/PriorityQueue/Heap.cpp.o
+
+Queue/PriorityQueue/Heap.i: Queue/PriorityQueue/Heap.cpp.i
+
+.PHONY : Queue/PriorityQueue/Heap.i
+
+# target to preprocess a source file
+Queue/PriorityQueue/Heap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.i
+.PHONY : Queue/PriorityQueue/Heap.cpp.i
+
+Queue/PriorityQueue/Heap.s: Queue/PriorityQueue/Heap.cpp.s
+
+.PHONY : Queue/PriorityQueue/Heap.s
+
+# target to generate assembly for a file
+Queue/PriorityQueue/Heap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.s
+.PHONY : Queue/PriorityQueue/Heap.cpp.s
+
 RoverList.o: RoverList.cpp.o
 
 .PHONY : RoverList.o
@@ -497,6 +524,9 @@ help:
 	@echo "... Mission_related/PolarMission.o"
 	@echo "... Mission_related/PolarMission.i"
 	@echo "... Mission_related/PolarMission.s"
+	@echo "... Queue/PriorityQueue/Heap.o"
+	@echo "... Queue/PriorityQueue/Heap.i"
+	@echo "... Queue/PriorityQueue/Heap.s"
 	@echo "... RoverList.o"
 	@echo "... RoverList.i"
 	@echo "... RoverList.s"

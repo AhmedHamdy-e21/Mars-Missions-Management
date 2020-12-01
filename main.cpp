@@ -9,6 +9,29 @@
 #include <fstream>
 #include <string>
 using namespace std;
+template<typename T>
+void SameOrder(LinkedQueue <T> Q, LinkedQueue<T> Q1) {
+    T x, y;
+    while (!Q.isEmpty() && !Q1.isEmpty())
+    {
+        Q1.dequeue(x);
+        Q.dequeue(y);
+        if ((Q.isEmpty() && !Q1.isEmpty()) || (!Q.isEmpty() && Q1.isEmpty()))
+        {
+            cout << "\n\nThis Stack and this Queue are not of the Same Order\n";
+            return;
+        }
+        if (x == y) {
+
+        }
+        else
+        {
+            cout << "\n\n This Stack and this Queue are not of the Same Order\n";
+            return;
+        }
+    }
+    cout << "\n\nThis Stack and this Queue are of the Same Order\n";
+}
 void loadFile(RoverList& RL,MissionList& ML) {
     ifstream inputFile;
 
@@ -56,7 +79,7 @@ void loadFile(RoverList& RL,MissionList& ML) {
             inputFile>> MIDUR;
             inputFile>> SIG;
 
-            ML.AddMission(TLOC,MIDUR,SIG,TYP);
+            ML.AddMission(ID,TLOC,MIDUR,SIG,TYP);
 
         }
 
@@ -88,10 +111,11 @@ int main() {
     cout<<"\n In main\n";
     RL.PrintRovers();
     ML.PrintAllMissions();
-
+    Mission element;
+    ML.getEQueue().dequeue(element);
+    element.PrintMission();
     cout<<"\n In main\n";
     int Day=0;
-
     while (false)
     {
         Day++;

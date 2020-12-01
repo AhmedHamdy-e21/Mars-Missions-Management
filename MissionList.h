@@ -12,9 +12,13 @@
 class MissionList
 {
 private:
-    Mission** ML;   // all pointer to pointers should be implemented in the appropriate datatype
+    Mission** ML;   // all pointer to pointers should be implemented in the appropriate datatype This maybe be queue
+//    Mission** MLE;
+//    Mission** MLP;
+//    Mission** MLM;
     Mission** inExectution;
     int NumberOfMissions=0;
+    
     LinkedQueue<Mission> AvailableEQueue;
     int countEmergency=0;
     int countPolar=0;
@@ -25,6 +29,7 @@ private:
     int in_executionMissions;
 
 public:
+   
     MissionList()
     {
 //        setMissionList(0);
@@ -55,21 +60,21 @@ public:
         ML=new Mission*[EV];
     }
 
-    void AddMission(int TargetLocation,int MissionDuration,int Significance, char TYP)
+    void AddMission(int ID,int TargetLocation,int MissionDuration,int Significance, char TYP)
     {
 //        LinkedQueue<Mission> AvailableEQueue;
         if (TYP == 'E')
         {
-            ML[NumberOfMissions]=new EmergencyMissions(TargetLocation,MissionDuration,Significance);
+            ML[NumberOfMissions]=new EmergencyMissions(ID,TargetLocation,MissionDuration,Significance);
             AvailableEQueue.enqueue(*ML[NumberOfMissions]);
             this->IncrementEcount();
             ML[NumberOfMissions]->getTargetLocation();
-
           IncrementNoOfMissions();
         }
         else if(TYP == 'M')
         {
-            ML[NumberOfMissions]=new MountainousMissions(TargetLocation,MissionDuration,Significance);
+            ML[NumberOfMissions]=new MountainousMissions(ID, TargetLocation,MissionDuration,Significance);
+//            MLM[NumberOfMissions]=new MountainousMissions(ID, TargetLocation,MissionDuration,Significance);
             AvailableMQueue.enqueue(*ML[NumberOfMissions]);
             this->IncrementMcount();
 
@@ -78,7 +83,8 @@ public:
 
         else if(TYP == 'P')
         {
-            ML[NumberOfMissions]=new PolarMission(TargetLocation,MissionDuration,Significance);
+            ML[NumberOfMissions]=new PolarMission(ID,TargetLocation,MissionDuration,Significance);
+//            MLP[NumberOfMissions]=new PolarMission(ID,TargetLocation,MissionDuration,Significance);
             AvailablePQueue.enqueue(*ML[NumberOfMissions]);
             this->IncrementPcount();
             IncrementNoOfMissions();
@@ -86,6 +92,19 @@ public:
 
 
     }
+
+
+    //// This is not correct to make a list of each mission type because it's unnecessary
+//    void generateList()
+//    {
+//        for (int i = 0; i < countEmergency; ++i)
+//        {
+//            MLE[countEmergency]=new EmergencyMissions(ID,TargetLocation,MissionDuration,Significance);
+//
+//        }
+//
+//    }
+
 
     void Print_Waiting_Missions()
     {
@@ -118,7 +137,6 @@ public:
             cout<<endl;
 
         }
-
     }
 
     LinkedQueue<Mission> getEQueue()
@@ -148,6 +166,9 @@ public:
     {
         return in_executionMissions;
     }
+
+    //q
+    
 };
 
 

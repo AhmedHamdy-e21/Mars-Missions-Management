@@ -9,7 +9,7 @@
 class MountainousMissions : public Mission
         {
 public:
-            MountainousMissions(int TargetLocation,int MissionDuration,int Significance):Mission( TargetLocation, MissionDuration,Significance){};
+            MountainousMissions(int ID,int TargetLocation,int MissionDuration,int Significance):Mission(ID, TargetLocation, MissionDuration,Significance){};
     void PrintMission() override
     {
         cout<<"It's Mountainous mission right here with Target location "<< this->getTargetLocation();

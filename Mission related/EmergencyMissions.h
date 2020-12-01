@@ -9,7 +9,7 @@
 class EmergencyMissions : public Mission
 {
 public:
-    EmergencyMissions(int TargetLocation,int MissionDuration,int Significance):Mission( TargetLocation, MissionDuration,Significance){};
+    EmergencyMissions(int ID,int TargetLocation,int MissionDuration,int Significance):Mission(ID, TargetLocation, MissionDuration,Significance){};
 
     void PrintMission() override
     {

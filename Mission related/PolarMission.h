@@ -9,7 +9,7 @@
 class PolarMission : public Mission
 {
 public:
-    PolarMission(int TargetLocation,int MissionDuration,int Significance):Mission( TargetLocation, MissionDuration,Significance){};
+    PolarMission(int ID,int TargetLocation,int MissionDuration,int Significance):Mission(ID, TargetLocation, MissionDuration,Significance){};
     void PrintMission() override
     {
         cout<<"It's Polar mission right here with Target location "<< this->getTargetLocation();

@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Mars_Missions_Management.dir/Mission_related/EmergencyMissions.cpp.o"
   "CMakeFiles/Mars_Missions_Management.dir/Mission_related/Mission.cpp.o"
   "CMakeFiles/Mars_Missions_Management.dir/Mission_related/PolarMission.cpp.o"
+  "CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o"
   "CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.o"
   "CMakeFiles/Mars_Missions_Management.dir/Rover_related/Emergency_rovers.cpp.o"
   "CMakeFiles/Mars_Missions_Management.dir/Rover_related/Mountainous_rovers.cpp.o"

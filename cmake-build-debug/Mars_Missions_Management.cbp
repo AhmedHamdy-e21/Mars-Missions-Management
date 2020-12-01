@@ -124,6 +124,12 @@
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Queue/LinkedQueue.h">
 			<Option target="Mars_Missions_Management"/>
 		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Queue/PriorityQueue/Heap.cpp">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Queue/PriorityQueue/Heap.h">
+			<Option target="Mars_Missions_Management"/>
+		</Unit>
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Rover related/Emergency_rovers.cpp">
 			<Option target="Mars_Missions_Management"/>
 		</Unit>
