@@ -64,7 +64,6 @@ public:
             AvailableEQueue.enqueue(*ML[NumberOfMissions]);
             this->IncrementEcount();
             ML[NumberOfMissions]->getTargetLocation();
-            ML[NumberOfMissions]->PrintMission();
 
           IncrementNoOfMissions();
         }
@@ -73,7 +72,6 @@ public:
             ML[NumberOfMissions]=new MountainousMissions(TargetLocation,MissionDuration,Significance);
             AvailableMQueue.enqueue(*ML[NumberOfMissions]);
             this->IncrementMcount();
-            ML[NumberOfMissions]->PrintMission();
 
             IncrementNoOfMissions();
         }
@@ -82,11 +80,10 @@ public:
         {
             ML[NumberOfMissions]=new PolarMission(TargetLocation,MissionDuration,Significance);
             AvailablePQueue.enqueue(*ML[NumberOfMissions]);
-            ML[NumberOfMissions]->PrintMission();
             this->IncrementPcount();
             IncrementNoOfMissions();
         }
-        cout<<"I'm printing all missions together now\n";
+
 
     }
 

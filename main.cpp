@@ -30,7 +30,6 @@ void loadFile(RoverList& RL,MissionList& ML) {
     inputFile >> P;
     inputFile >> E;
     inputFile >> SM;
-    cout<<"Mountanous is M speed;"<<SM;
     inputFile >> SP;
     inputFile >> SE;
     inputFile >> N;
@@ -41,8 +40,6 @@ void loadFile(RoverList& RL,MissionList& ML) {
     RL.setERoverList(E,SE,CE);
     RL.setMRoverList(M,SM,CM);
     RL.setPRoverList(P,SP,CP);
-    cout<<"Done with print rover";
-
 
     inputFile >> EV;
     ML.setMissionList(EV);
@@ -58,9 +55,9 @@ void loadFile(RoverList& RL,MissionList& ML) {
             inputFile>> TLOC;
             inputFile>> MIDUR;
             inputFile>> SIG;
-            cout<<"I finished adding missions\n";
+
             ML.AddMission(TLOC,MIDUR,SIG,TYP);
-            cout<<"I finished adding missions\n";
+
         }
 
         else if (type == "X")
@@ -80,20 +77,6 @@ void loadFile(RoverList& RL,MissionList& ML) {
 
 
     inputFile.close();
-    cout << "The number of the mountain rover is  " << M << endl;
-    cout << "The number of the polar rover is  " << P << endl;
-    cout << "The number of the emergecy rover is  " << E << endl;
-    cout << "The speed of all mountainous rovers is  " << SM << endl;
-    cout << "The speed of all polar rovers is   " << SP << endl;
-    cout << "The speed of all emergency rovers is " <<SE << endl;
-    cout << "The number of missions the rover completes before performing a checkup is  " << N << endl;
-    cout << "The checkup duration in days for mountainous rovers is  " << CM << endl;
-    cout << "The checkup duration in days for polar rovers is  " << CP << endl;
-    cout << "The checkup duration in days for emergency rovers is  " <<CE << endl;
-    cout << "The number of days after which a mountainous mission is automatically promoted to an emergency mission. is  " << AutoP << endl;
-    cout << "The number of the events is  " << EV << endl;
-    cout << "The number of the events is  " << ID << endl;
-    cout << "The number of the events is  " << ED << endl;
 
 }
 
@@ -104,11 +87,12 @@ void initializeRover(int NoOfRover);
 int main() {
     RoverList RL;
     MissionList ML;
-
-
     loadFile(RL,ML);
+    cout<<"\n In main\n";
+    RL.PrintRovers();
+    ML.PrintAllMissions();
+    cout<<"\n In main\n";
     int Day=0;
-
 
     while (false)
     {
