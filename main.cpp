@@ -32,7 +32,7 @@ void SameOrder(LinkedQueue <T> Q, LinkedQueue<T> Q1) {
     }
     cout << "\n\nThis Stack and this Queue are of the Same Order\n";
 }
-void loadFile(RoverList& RL,MissionList& ML) {
+void loadFile(RoverList& RL,MissionList& ML,LinkedQueue<Mission>& CurrentE,LinkedQueue<Mission> & CurrentM,LinkedQueue<Mission> &CurrentP) {
     ifstream inputFile;
 
     inputFile.open("Input Sample.txt");
@@ -87,7 +87,7 @@ void loadFile(RoverList& RL,MissionList& ML) {
         {
             inputFile>> ED;
             inputFile>> ID;
-            ML.CancelMission(ED,ID);
+            ML.CancelMission(ED,ID,CurrentE,CurrentM,CurrentP);;
 
         }
         else if (type == "P")
@@ -113,31 +113,36 @@ int main() {
     RoverList RL;
 
     MissionList ML;
-    int Day=0;
+   LinkedQueue<Mission> CurrentE;
+   LinkedQueue<Mission> CurrentM;
+   LinkedQueue<Mission> CurrentP;
+
+
+
+    int Day=5;
 
     //// Load function:
 
-    loadFile(RL,ML);
+    loadFile(RL,ML,CurrentE,CurrentM,CurrentP);
 
 
 
-    while (false)
+
+    //// so we have all current missions in the three queues
+    //// Get available missions into a lists CurrentE,CurrentM,CurrentP
+
+    while (true)
     {
+        //// Get today's missions;
+        ML.getCurrentDayMissions(Day,CurrentE,CurrentM,CurrentP);
         int Mode;
         cout<<"Enter The mode \n1- Interactive\n2-Silent\n3step_by-step\n";
         cin>>Mode;
-
-
-
+        ////Mission cancellation function
         if(Mode==1)
         {
             printInteractiveMode(Day);
         }
-
-
-
-
-
         Day++;
     }
 

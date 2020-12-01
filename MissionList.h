@@ -113,7 +113,7 @@ public:
     {
         cout<<"Completed_missions: ";
     }
-    void CancelMission(int ED,int ID)
+    void CancelMission(int ED,int ID,LinkedQueue<Mission> CurrentE,LinkedQueue<Mission>  CurrentM,LinkedQueue<Mission> CurrentP)
     {
     }
     void PromoteMission(int ED,int ID)
@@ -155,34 +155,26 @@ public:
     }
 
     //// Revise the syntax and check the correspondance of symbols E P and M.
-    void GenerateCurrentQueue(int Day, int count,LinkedQueue<Mission> CurrentEMission,LinkedQueue<Mission> AllMissionsQueue )
+    void GenerateCurrentQueue(int Day, int count,LinkedQueue<Mission>& CurrentEMission,LinkedQueue<Mission> AllMissionsQueue )
     {
+        bool DequeueCheck;
+        Mission QueuedElement;
         for (int i = 0; i < count; ++i)
         {
-            bool DequeueCheck;
-            Mission QueuedElement;
             DequeueCheck=AllMissionsQueue.dequeue(QueuedElement);
             //// This is to check for every day and get the missions from the queues that have all missions
             if(DequeueCheck&& QueuedElement.getED()==Day)
             {
                 CurrentEMission.enqueue(QueuedElement);
-                DequeueCheck=AllMissionsQueue.dequeue(QueuedElement);
-
             }
             else if(DequeueCheck)
             {
                 AllMissionsQueue.enqueue(QueuedElement);
-                DequeueCheck=AllMissionsQueue.dequeue(QueuedElement);
             }
-            else
-            {
-                break;
-            }
-
         }
-
     }
-    LinkedQueue<Mission> getCurrentDayMissions(int Day,LinkedQueue<Mission> CurrentEMission,LinkedQueue<Mission> CurrentPMission,LinkedQueue<Mission> CurrentMMission)
+
+    void getCurrentDayMissions(int Day,LinkedQueue<Mission>& CurrentEMission,LinkedQueue<Mission>& CurrentPMission,LinkedQueue<Mission>& CurrentMMission)
     {
         //// This is more compact
         this->GenerateCurrentQueue(Day,countEmergency,CurrentEMission,AvailableEQueue);
@@ -266,7 +258,6 @@ public:
         }
 
 */
-
     }
 
     //q
