@@ -25,10 +25,6 @@ private:
     LinkedQueue<Rover> AvailableEQueue;
     LinkedQueue<Rover> AvailableMQueue;
     LinkedQueue<Rover> AvailablePQueue;
-
-
-
-
 public:
     RoverList()
     {
@@ -79,7 +75,6 @@ public:
         }
     }
 
-
     void setNoofE(int NoofE)
     {
         this->NoofE=NoofE;
@@ -92,8 +87,6 @@ public:
     {
         this->NoofM=NoofM;
     }
-
-
 
     void setERoverList(int NoofE,int SpeedE,int CheckupDurationE)
     {
@@ -118,8 +111,6 @@ public:
         }
     }
 
-
-
     void setMRoverList(int NoofM,int SpeedM,int CheckupDurationM)
     {
         setNoofM(NoofM);
@@ -129,8 +120,6 @@ public:
             MRoverList[i]= new Mountainous_rovers(SpeedM,CheckupDurationM);
         }
     }
-
-
 
     void PrintRovers()
     {
@@ -151,11 +140,7 @@ public:
             cout<<endl<<i<<endl;
         }
         cout<<"Done with printingggg";
-
     }
-
-
-
 };
 
 

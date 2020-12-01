@@ -21,7 +21,8 @@ private:
     int countMountanous=0;
     LinkedQueue<Mission> AvailableMQueue;
     LinkedQueue<Mission> AvailablePQueue;
-
+    int WatingMissions;
+    int in_executionMissions;
 
 public:
     MissionList()
@@ -48,7 +49,6 @@ public:
         this->countMountanous++;
 
     }
-
 
     void setMissionList(int EV)
     {
@@ -87,8 +87,6 @@ public:
 
     }
 
-
-
     void Print_Waiting_Missions()
     {
         cout<<"Waiting Missions: "<<"("<<"5"<<") "<<" "<<"6"<<" ("<<"8"<<")";
@@ -102,10 +100,6 @@ public:
     {
         cout<<"Completed_missions: ";
     }
-
-
-
-
 
     void CancelMission(int ED,int ID)
     {
@@ -141,10 +135,18 @@ public:
         return this->AvailablePQueue;
     }
 
-
     void IncrementNoOfMissions()
     {
         this->NumberOfMissions++;
+    }
+
+    int getWaitingMissions()
+    {
+        return WatingMissions;
+    }
+    int getIn_executionMissions()
+    {
+        return in_executionMissions;
     }
 };
 

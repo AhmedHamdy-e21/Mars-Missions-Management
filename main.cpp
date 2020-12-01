@@ -79,10 +79,7 @@ void loadFile(RoverList& RL,MissionList& ML) {
     inputFile.close();
 
 }
-
-
 void initializeRover(int NoOfRover);
-
 
 int main() {
     RoverList RL;
@@ -91,20 +88,13 @@ int main() {
     cout<<"\n In main\n";
     RL.PrintRovers();
     ML.PrintAllMissions();
+
     cout<<"\n In main\n";
     int Day=0;
 
     while (false)
     {
-
-
-
-
-
-
         Day++;
-
-
     }
 
 
