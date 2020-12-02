@@ -148,8 +148,6 @@ void Interactive(LinkedQueue<T> rovers, LinkedQueue<T> missions) {
     }
 }
 
-
-
     void printInteractiveMode(int Day)
 {
 
@@ -198,6 +196,9 @@ int main() {
         AvailableEQueue=RL.getAvailableEQueue();
         if(Mode==1)
         {
+            //// we need to get all needed values needed in the interactive mode just using the getters.
+            //// Then pass these values in the Interactive print function.
+
             printInteractiveMode(Day);
             Interactive(AvailableEQueue,CurrentE);
         }
