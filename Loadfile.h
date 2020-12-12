@@ -1,6 +1,6 @@
 void loadFile(RoverList& RL,MissionList& ML,LinkedQueue<Mission>& CurrentE,LinkedQueue<Mission> & CurrentM,LinkedQueue<Mission> &CurrentP) {
     ifstream inputFile;
-
+ 
     inputFile.open("Input Sample.txt");
     // Check for Error:
     if (inputFile.fail()) {
