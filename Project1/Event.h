@@ -2,7 +2,7 @@
 
 class Event
 {
-private: 
+protected:
 	int Event_Day;
 	int Mission_ID;
 public:

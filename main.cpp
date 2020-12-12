@@ -5,107 +5,14 @@
 #include "Queue/LinkedQueue.h"
 #include "MarsStation related/RoverList.h"
 #include "MarsStation related/MissionList.h"
+#include"MarsStation related/MarsStation.h"
 
-#include <fstream>
-#include <string>
+
 using namespace std;
-template<typename T>
-void SameOrder(LinkedQueue <T> Q, LinkedQueue<T> Q1) {
-    T x, y;
-    while (!Q.isEmpty() && !Q1.isEmpty())
-    {
-        Q1.dequeue(x);
-        Q.dequeue(y);
-        if ((Q.isEmpty() && !Q1.isEmpty()) || (!Q.isEmpty() && Q1.isEmpty()))
-        {
-            cout << "\n\nThis Stack and this Queue are not of the Same Order\n";
-            return;
-        }
-        if (x == y) {
-
-        }
-        else
-        {
-            cout << "\n\n This Stack and this Queue are not of the Same Order\n";
-            return;
-        }
-    }
-    cout << "\n\nThis Stack and this Queue are of the Same Order\n";
-}
-void loadFile(RoverList& RL,MissionList& ML,LinkedQueue<Mission>& CurrentE,LinkedQueue<Mission> & CurrentM,LinkedQueue<Mission> &CurrentP) {
-    ifstream inputFile;
-
-    inputFile.open("Input Sample.txt");
-    // Check for Error:
-    if (inputFile.fail()) {
-        cerr << "Error opening the file" << endl;
-        exit(1);
-    }
-    else
-    {
-        cout << "All is good" << endl;
-    }
-    int M,P,E,SM,SP,SE,N,CM,CP,CE,AutoP,EV,ED,ID,TLOC,MIDUR,SIG;
-    char F,TYP;
-
-    inputFile >> M;
-
-    inputFile >> P;
-    inputFile >> E;
-    inputFile >> SM;
-    inputFile >> SP;
-    inputFile >> SE;
-    inputFile >> N;
-    inputFile >> CM;
-    inputFile >> CP;
-    inputFile >> CE;
-    inputFile >> AutoP;
-    RL.setERoverList(E,SE,CE);
-    RL.setMRoverList(M,SM,CM);
-    RL.setPRoverList(P,SP,CP);
-
-    inputFile >> EV;
-    ML.setMissionList(EV);
-    for (int j = 0; j < EV; j++)
-    {
-        string type;
-        inputFile >> type;
-        if (type == "F")
-        {
-            inputFile >> TYP;
-            inputFile>> ED;
-            inputFile>> ID;
-            inputFile>> TLOC;
-            inputFile>> MIDUR;
-            inputFile>> SIG;
-
-            ML.AddMission(ED,ID,TLOC,MIDUR,SIG,TYP);
-
-        }
-
-        else if (type == "X")
-        {
-            inputFile>> ED;
-            inputFile>> ID;
-            ML.CancelMission(ED,ID,CurrentE,CurrentM,CurrentP);;
-
-        }
-        else if (type == "P")
-        {
-            inputFile>> ED;
-            inputFile>> ID;
-            ML.PromoteMission(ED,ID);
-        }
-    }
-
-
-    inputFile.close();
-
-}
 
 
 // This will be eliminated when implementing this array using linkedlist
-#define MAX_size 100
+/*#define MAX_size 100
 
 void Interactive(LinkedQueue<struct Rover> queue, LinkedQueue<struct Mission> queue1);
 
@@ -157,11 +64,23 @@ void Interactive(LinkedQueue<T> rovers, LinkedQueue<T> missions) {
     cout << "In=Execution Missions: " << "( " << Polar << " )  " << "[ " << Emergency << " ]  " << Mountain << "  " << endl;
     cout << "Completed Missions: " << "( " << Polar << " )  " << "[ " << Emergency << " ]  " << Mountain << "  " << endl;
     cout<<"Current Day:   "<<Day<<endl;
+    
 }
+*/
 
 int main() {
     ////Initializations
-    RoverList RL;
+    MarsStation Station = MarsStation();
+    Station.loadFile();
+    int Day_Counter = 1;
+    while (!Station.Must_Stop()) {
+        Station.Simulate(Day_Counter);
+    }
+
+
+
+
+    /*RoverList RL;
 
     MissionList ML;
    LinkedQueue<Mission> CurrentE;
@@ -207,6 +126,7 @@ int main() {
 
 
     return 0;
+    */
 }
 
 void Interactive(LinkedQueue<struct Rover> queue, LinkedQueue<struct Mission> queue1) {

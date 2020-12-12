@@ -34,6 +34,11 @@ public:
 //        setMissionList(0);
 
     }
+    bool isEmpty() {
+
+        return NumberOfMissions > 0;
+    }
+
     MissionList(int EV)
     {
         setMissionList(EV);

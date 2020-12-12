@@ -1,31 +1,16 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1006,5): warning MSB8027: Two or more files with the name of Mission.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are ..\Mission related\Mission.cpp, ..\Mission.cpp.
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1006,5): warning MSB8027: Two or more files with the name of Rover.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are ..\Rover related\Rover.cpp, ..\Rover.cpp.
-  BinarySearchTree.cpp
-  Load.cpp
   main.cpp
-D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\main.cpp(49,10): warning C4101: 'F': unreferenced local variable
-D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\main.cpp(110,42): warning C4099: 'Rover': type name first seen using 'class' now seen using 'struct'
+D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\main.cpp(132,42): warning C4099: 'Rover': type name first seen using 'class' now seen using 'struct'
 D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\Rover related\Rover.h(10): message : see declaration of 'Rover'
-D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\main.cpp(110,77): warning C4099: 'Mission': type name first seen using 'class' now seen using 'struct'
-D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\Mission related\Mission.h(12): message : see declaration of 'Mission'
-D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\main.cpp(154,37): warning C4101: 'currentday': unreferenced local variable
-D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\main.cpp(212,42): warning C4099: 'Rover': type name first seen using 'class' now seen using 'struct'
-D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\Rover related\Rover.h(10): message : see declaration of 'Rover'
-D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\main.cpp(212,77): warning C4099: 'Mission': type name first seen using 'class' now seen using 'struct'
+D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\main.cpp(132,77): warning C4099: 'Mission': type name first seen using 'class' now seen using 'struct'
 D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\Mission related\Mission.h(12): message : see declaration of 'Mission'
   MarsStation.cpp
+D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\MarsStation related\MarsStation.cpp(23,10): warning C4101: 'F': unreferenced local variable
   MissionList.cpp
-  RoverList.cpp
-  EmergencyMissions.cpp
-  Mission.cpp
-  MountainousMissions.cpp
-  PolarMission.cpp
   Mission.cpp
 c1xx : fatal error C1083: Cannot open source file: '..\Mission.cpp': No such file or directory
   Emergency_rovers.cpp
-  Mountainous_rovers.cpp
-  Polar_rovers.cpp
-  Rover.cpp
   Rover.cpp
 c1xx : fatal error C1083: Cannot open source file: '..\Rover.cpp': No such file or directory
   CancelEvent.cpp
@@ -33,6 +18,3 @@ c1xx : fatal error C1083: Cannot open source file: '..\Rover.cpp': No such file 
   FormulationEvent.cpp
   PromoteEvent.cpp
   Generating Code...
-D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\main.cpp(155): error C4700: uninitialized local variable 'Mountain' used
-D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\main.cpp(155): error C4700: uninitialized local variable 'Emergency' used
-D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\main.cpp(155): error C4700: uninitialized local variable 'Polar' used
