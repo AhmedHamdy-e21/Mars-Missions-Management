@@ -16,14 +16,7 @@ public:
     {
         cout<<"It's Polar mission right here with Target location "<< this->getTargetLocation();
     }
-    void setED(int ED)
-    {
-        this->ED=ED;
-    }
-     int getED()
-    {
-        return this->ED;
-    }
+   
 };
 
 

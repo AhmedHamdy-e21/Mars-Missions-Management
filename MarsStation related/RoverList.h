@@ -124,18 +124,18 @@ public:
     {
         for (int i = 0; i < NoofE; ++i)
         {
-            ERoverList[i]->PrintEmergency();
+            ERoverList[i]->Print();
         }
 
         for (int i = 0; i < NoofM; ++i)
         {
-          MRoverList[i]->PrintMountanious();
+          MRoverList[i]->Print();
         }
 
         for (int i = 0; i <NoofP; ++i)
         {
             cout<<"NO of  p"<<NoofP;
-           PRoverList[i]->PrintPolar();
+           PRoverList[i]->Print();
             cout<<endl<<i<<endl;
         }
         cout<<"Done with printingggg";

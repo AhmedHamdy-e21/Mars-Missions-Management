@@ -8,22 +8,13 @@
 
 class MountainousMissions : public Mission
         {
-private:
-            int ED;
 public:
    MountainousMissions(int ED,int ID,int TargetLocation,int MissionDuration,int Significance):Mission(ED,ID, TargetLocation, MissionDuration,Significance){};
     void PrintMission() override
     {
         cout<<"It's Mountainous mission right here with Target location "<< this->getTargetLocation();
     }
-    void setED(int ED)
-    {
-        this->ED=ED;
-    }
-     int getED()
-    {
-        return this->ED;
-    }
+    
 
 };
 

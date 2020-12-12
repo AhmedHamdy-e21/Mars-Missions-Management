@@ -35,9 +35,17 @@ public:
 	{
 		this->speed = speed;
 	}
+	virtual float getSpeed() const
+	{
+		return this->speed;
+	}
 	virtual void setCheckupDuration(int  check_up_duration)
 	{
 		this->check_up_duration = check_up_duration;
+	}
+	virtual int getCheckupDuration() const
+	{
+		return this->check_up_duration;
 	}
 	virtual void Print()
 	{
