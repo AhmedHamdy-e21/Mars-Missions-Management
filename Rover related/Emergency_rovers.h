@@ -6,11 +6,7 @@ private:
 	int check_up_duration;
 	int speed;
 public:
-    Emergency_rovers(int speed,int check_up_duration)
-    {
-        setSpeed(speed);
-        setCheckupDuration(check_up_duration);
-    }
+    Emergency_rovers(int speed,int check_up_duration) : Rover(speed, check_up_duration) {};
 
     void setSpeed(int speed)
     {
@@ -20,7 +16,7 @@ public:
     {
         this-> check_up_duration= check_up_duration;
     }
-    void PrintEmergency()
+    void Print() override
     {
         cout<<"\n I'm Emergency "<< this->speed<< this->check_up_duration;
     }

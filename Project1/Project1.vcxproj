@@ -138,15 +138,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Mission.h" />
-    <ClInclude Include="..\Rover.h" />
-    <ClInclude Include="Emergency_rovers.h" />
-    <ClInclude Include="Mountainous_rovers.h" />
-    <ClInclude Include="Polar_rovers.h" />
+    <ClCompile Include="..\BinarySearchTree\NodeBST.cpp" />
+    <ClCompile Include="..\MarsStation related\MarsStation.cpp" />
+    <ClCompile Include="..\MarsStation related\MissionList.cpp" />
+    <ClCompile Include="..\MarsStation related\RoverList.cpp" />
+    <ClCompile Include="..\Mission related\EmergencyMissions.cpp" />
+    <ClCompile Include="..\Mission related\Mission.cpp" />
+    <ClCompile Include="..\Mission related\MountainousMissions.cpp" />
+    <ClCompile Include="..\Mission related\PolarMission.cpp" />
+    <ClCompile Include="..\Mission.cpp" />
+    <ClCompile Include="..\Queue\PriorityQueue\Heap.cpp" />
+    <ClCompile Include="..\Rover related\Emergency_rovers.cpp" />
+    <ClCompile Include="..\Rover related\Mountainous_rovers.cpp" />
+    <ClCompile Include="..\Rover related\Polar_rovers.cpp" />
+    <ClCompile Include="..\Rover related\Rover.cpp" />
+    <ClCompile Include="..\Rover.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Mission.cpp" />
-    <ClCompile Include="..\Rover.cpp" />
+    <ClInclude Include="..\BinarySearchTree\NodeBST.h" />
+    <ClInclude Include="..\MarsStation related\MarsStation.h" />
+    <ClInclude Include="..\MarsStation related\MissionList.h" />
+    <ClInclude Include="..\MarsStation related\RoverList.h" />
+    <ClInclude Include="..\Mission related\EmergencyMissions.h" />
+    <ClInclude Include="..\Mission related\Mission.h" />
+    <ClInclude Include="..\Mission related\MountainousMissions.h" />
+    <ClInclude Include="..\Mission related\PolarMission.h" />
+    <ClInclude Include="..\Queue\LinkedQueue.h" />
+    <ClInclude Include="..\Queue\NodeQ.h" />
+    <ClInclude Include="..\Queue\PriorityQueue\Heap.h" />
+    <ClInclude Include="..\Queue\QueueADT.h" />
+    <ClInclude Include="..\Rover related\Emergency_rovers.h" />
+    <ClInclude Include="..\Rover related\Mountainous_rovers.h" />
+    <ClInclude Include="..\Rover related\Polar_rovers.h" />
+    <ClInclude Include="..\Rover related\Rover.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -129,15 +129,15 @@ public:
 
         }
     }
-    LinkedQueue<Mission> getEQueue()
+    virtual LinkedQueue<Mission> getEQueue()
     {
         return this->AvailableEQueue;
     }
-    LinkedQueue<Mission> getMQueue()
+    virtual LinkedQueue<Mission> getMQueue()
     {
         return this->AvailableMQueue;
     }
-    LinkedQueue<Mission> getPQueue()
+    virtual LinkedQueue<Mission> getPQueue()
     {
         return this->AvailablePQueue;
     }

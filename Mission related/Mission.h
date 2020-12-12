@@ -21,15 +21,15 @@ private:
     int ED;
 
 public:
-     virtual int getID()
+     virtual int getID()const
     {
         return ID;
     }
-    virtual void setID(int ID)
+    virtual void setID(int ID) 
     {
         this->ID = ID;
     }
-    virtual int getDay()
+    virtual int getDay() const
     {
 
          return ED;

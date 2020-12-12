@@ -26,5 +26,22 @@ public:
 	int get_start_time_of_current_mission();
 	void set_current_mission_duration(int duration);
 	int get_current_mission_duration();
+	Rover(int speed, int check_up_duration)
+	{
+		setSpeed(speed);
+		setCheckupDuration(check_up_duration);
+	}
+	virtual void setSpeed(int speed)
+	{
+		this->speed = speed;
+	}
+	virtual void setCheckupDuration(int  check_up_duration)
+	{
+		this->check_up_duration = check_up_duration;
+	}
+	virtual void Print()
+	{
+		cout << "\n I'm a rover  " << this->speed << this->check_up_duration;
+	}
 
 };

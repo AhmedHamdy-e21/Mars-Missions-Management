@@ -7,11 +7,7 @@ class Mountainous_rovers : public Rover
 		int check_up_duration;
 		int speed;
 	public:
-    Mountainous_rovers(int Speed,int check_up_duration)
-    {
-        setSpeed(Speed);
-        setCheckupDuration(check_up_duration);
-    }
+    Mountainous_rovers(int Speed,int check_up_duration) : Rover(speed, check_up_duration) {};
     void setSpeed(int speed)
     {
         this->speed=speed;
@@ -20,7 +16,7 @@ class Mountainous_rovers : public Rover
     {
         this-> check_up_duration= check_up_duration;
     }
-    void PrintMountanious()
+    void Print() override
     {
         cout<<"\n I'm Mountanous "<< this->speed<< this->check_up_duration;
     }

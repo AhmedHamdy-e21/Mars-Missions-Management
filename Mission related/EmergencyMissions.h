@@ -17,11 +17,11 @@ public:
     {
         cout<<"It's emergency mission right here with Target location "<< this->getTargetLocation();
     }
-    virtual void setED(int ED)
+     void setED(int ED)
     {
         this->ED=ED;
     }
-    virtual int getED()
+     int getED()
     {
         return this->ED;
     }
