@@ -2,11 +2,11 @@
 // Created by raspberry on 2020-11-30.
 //
 #pragma once
-#include "Mission related/Mission.h"
-#include "Mission related/EmergencyMissions.h"
-#include "Mission related/PolarMission.h"
-#include "Mission related/MountainousMissions.h"
-#include "Queue/LinkedQueue.h"
+#include "../Mission related/Mission.h"
+#include "../Mission related/EmergencyMissions.h"
+#include "../Mission related/PolarMission.h"
+#include "../Mission related/MountainousMissions.h"
+#include "../Queue/LinkedQueue.h"
 // I was about to include sth
 
 class MissionList

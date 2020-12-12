@@ -4,11 +4,11 @@
 
 #ifndef MARS_MISSIONS_MANAGEMENT_ROVERLIST_H
 #define MARS_MISSIONS_MANAGEMENT_ROVERLIST_H
-#include "Rover related/Rover.h"
-#include "Queue/LinkedQueue.h"
-#include "Rover related/Emergency_rovers.h"
-#include "Rover related/Polar_rovers.h"
-#include "Rover related/Mountainous_rovers.h"
+#include "../Rover related/Rover.h"
+#include "../Queue/LinkedQueue.h"
+#include "../Rover related/Emergency_rovers.h"
+#include "../Rover related/Polar_rovers.h"
+#include "../Rover related/Mountainous_rovers.h"
 
 class RoverList
 
