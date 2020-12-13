@@ -8,8 +8,6 @@
 
 class PolarMission : public Mission
 {
-private:
-    int ED;
 public:
     PolarMission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance):Mission(ED, ID, TargetLocation, MissionDuration,Significance){};
     void PrintMission() override

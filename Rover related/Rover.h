@@ -43,7 +43,7 @@ public:
 	{
 		this->check_up_duration = check_up_duration;
 	}
-	virtual int getCheckupDuration() const
+	virtual int getCheckupDuration() const   //Make sure in gitkraken
 	{
 		return this->check_up_duration;
 	}

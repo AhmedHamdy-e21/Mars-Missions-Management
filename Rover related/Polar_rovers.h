@@ -7,7 +7,7 @@ public:
 
     void Print() override
     {
-        cout<<"\n I'm Polar "<< this->getSpeed()<< this->getCheckupDuration();
+        cout<<"\n I'm Polar "<< this->getSpeed()<< this->getCheckupDuration(); //Make sure in gitkraken
     }
 
 };

@@ -12,7 +12,7 @@ class EmergencyMissions : public Mission
 public:
     EmergencyMissions(int ED,int ID,int TargetLocation,int MissionDuration,int Significance):Mission(ED,ID, TargetLocation, MissionDuration,Significance){};
 
-    void PrintMission() override
+    void PrintMission() override  //Make sure in gitkraken
     {
         cout<<"It's emergency mission right here with Target location "<< this->getTargetLocation();
     }
