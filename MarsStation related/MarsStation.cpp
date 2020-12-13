@@ -53,7 +53,7 @@ void MarsStation::loadFile()
             inputFile >> TLOC;
             inputFile >> MIDUR;
             inputFile >> SIG;
-            FormulationEvent F_event = FormulationEvent(TYP, TLOC, MIDUR, SIG, ED, ID);
+            FormulationEvent F_event = FormulationEvent(TYP, TLOC, MIDUR, SIG, ED, ID, ML, RL);
             Events.enqueue(F_event);
 
           //  ML.AddMission(ED, ID, TLOC, MIDUR, SIG, TYP);
@@ -66,7 +66,7 @@ void MarsStation::loadFile()
             inputFile >> ED;
             inputFile >> ID;
 
-            CancelEvent C_event = CancelEvent(ED, ID);
+            CancelEvent C_event = CancelEvent(ED, ID, ML, RL);
             Events.enqueue(C_event);
            // ML.CancelMission(ED, ID, CurrentE, CurrentM, CurrentP);;
 
@@ -76,7 +76,7 @@ void MarsStation::loadFile()
             inputFile >> ED;
             inputFile >> ID;
 
-            PromoteEvent P_event = PromoteEvent(ED, ID);
+            PromoteEvent P_event = PromoteEvent(ED, ID,ML,RL);
             Events.enqueue(P_event);
             //ML.PromoteMission(ED, ID);
         }
@@ -88,7 +88,8 @@ void MarsStation::loadFile()
 
 MarsStation::MarsStation()
 {
-
+    ML = MissionList();
+    RL = RoverList();
 }
 
 bool MarsStation::Must_Stop()

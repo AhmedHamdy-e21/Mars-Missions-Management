@@ -11,7 +11,9 @@ class PolarMission : public Mission
 private:
     int ED;
 public:
-    PolarMission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance):Mission(ED, ID, TargetLocation, MissionDuration,Significance){};
+    PolarMission(int ED, int ID, int TargetLocation, int MissionDuration, int Significance) :Mission(ED, ID, TargetLocation, MissionDuration, Significance) {
+        Type = polar;
+    };
     void PrintMission() override
     {
         cout<<"It's Polar mission right here with Target location "<< this->getTargetLocation();

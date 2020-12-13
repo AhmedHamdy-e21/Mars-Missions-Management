@@ -11,7 +11,9 @@ class EmergencyMissions : public Mission
 private:
     int ED;
 public:
-    EmergencyMissions(int ED,int ID,int TargetLocation,int MissionDuration,int Significance):Mission(ED,ID, TargetLocation, MissionDuration,Significance){};
+    EmergencyMissions(int ED, int ID, int TargetLocation, int MissionDuration, int Significance) :Mission(ED, ID, TargetLocation, MissionDuration, Significance) {
+        Type = Emergency;
+    };
 
     void PrintMission() override
     {

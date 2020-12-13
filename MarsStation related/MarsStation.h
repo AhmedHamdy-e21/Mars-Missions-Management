@@ -24,7 +24,6 @@ using namespace std;
 class MarsStation {
 private:
     RoverList RL;
-
     MissionList ML;
     LinkedQueue<Mission> CurrentE;
     LinkedQueue<Mission> CurrentM;

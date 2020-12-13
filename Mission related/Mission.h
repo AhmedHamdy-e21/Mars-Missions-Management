@@ -8,9 +8,11 @@
 using namespace std;
 
 
-
+enum status { Waiting, Executing, Completed };
+enum type {Mountainous, Emergency, polar};
 class Mission
 {
+    
 private:
     bool  FormulationDayStamp=true;
     int TargetLocation;
@@ -19,6 +21,10 @@ private:
     bool CompletedMission;
     int ID;
     int ED;
+    status state;
+
+protected:
+    type Type;
 
 public:
      virtual int getID()
@@ -44,6 +50,7 @@ public:
         setSignificance(Significance);
         setTargetLocation(TargetLocation);
         setID(ID);
+        state = Waiting;
     }
     Mission()
     {
@@ -51,7 +58,7 @@ public:
         setMisisonDuration(0);
         setSignificance(0);
         setTargetLocation(0);
-
+        state = Waiting;
     };
 
     virtual void setED(int ED)
@@ -106,7 +113,23 @@ public:
      cout<<"In mission parent class \n";
     }
 
+    void change_state(int state) {
 
+        this->state = status(state);
+    }
+
+    status get_status() {
+        return state;
+    }
+
+    type get_type() {
+        return Type;
+    }
+    void change_type(int typ) {
+
+        this-> Type = type(typ);
+    }
+  
 };
 
 

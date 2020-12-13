@@ -118,12 +118,35 @@ public:
     {
         cout<<"Completed_missions: ";
     }
-    void CancelMission(int ED,int ID,LinkedQueue<Mission> CurrentE,LinkedQueue<Mission>  CurrentM,LinkedQueue<Mission> CurrentP)
-    {
-    }
-    void PromoteMission(int ED,int ID)
-    {
+    void RemoveMission(int index) { // Need this funtion implemented
 
+      
+
+    }
+    void CancelMission(int ID)
+    {
+        for (int i = 0; i < NumberOfMissions; ++i) {
+            if (ML[i]->getID() == ID && ML[i]->get_status() == Waiting && ML[i]->get_type() == Mountainous) {
+
+                RemoveMission(i);
+                return;
+               
+            }
+
+        }
+    }
+    void PromoteMission(int ID)
+    {
+        for (int i = 0; i < NumberOfMissions; ++i) {
+            if (ML[i]->getID() == ID && ML[i]->get_status() == Waiting && ML[i]->get_type() == Mountainous) {
+
+                // Need to be completed to promote mountainous to Emergency
+                ML[i]->change_type(1);
+                return;
+
+            }
+        }
+        
     }
     void PrintAllMissions()
     {

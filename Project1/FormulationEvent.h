@@ -7,7 +7,7 @@ private:
 	int TLOC, MIDUR, SIG;
 
 public:
-	FormulationEvent(char TYP, int TLOC, int MIDUR, int SIG,int ED, int ID);
+	FormulationEvent(char TYP, int TLOC, int MIDUR, int SIG,int ED, int ID, MissionList ML, RoverList RL);
 	void Execute();
 };
 
