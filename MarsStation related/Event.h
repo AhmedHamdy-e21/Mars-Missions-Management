@@ -10,6 +10,8 @@ protected:
 	RoverList RL;
 	
 public:
+    Event();
 	virtual void Execute();
+	~Event();
 };
 

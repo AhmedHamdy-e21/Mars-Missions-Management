@@ -3,6 +3,7 @@
 //
 
 #include "MarsStation.h"
+#include "FormulationEvent.h"
 
 
 void MarsStation::loadFile()
@@ -95,4 +96,29 @@ MarsStation::MarsStation()
 bool MarsStation::Must_Stop()
 {
     return ML.isEmpty();
+}
+
+template<typename T>
+void MarsStation::SameOrder(LinkedQueue<T> Q, LinkedQueue<T> Q1) {
+    T x, y;
+    while (!Q.isEmpty() && !Q1.isEmpty())
+    {
+        Q1.dequeue(x);
+        Q.dequeue(y);
+        if ((Q.isEmpty() && !Q1.isEmpty()) || (!Q.isEmpty() && Q1.isEmpty()))
+        {
+            cout << "\n\nThis Stack and this Queue are not of the Same Order\n";
+            return;
+        }
+        if (x == y) {
+
+        }
+        else
+        {
+            cout << "\n\n This Stack and this Queue are not of the Same Order\n";
+            return;
+        }
+    }
+    cout << "\n\nThis Stack and this Queue are of the Same Order\n";
+
 }

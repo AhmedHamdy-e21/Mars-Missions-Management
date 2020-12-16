@@ -54,10 +54,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/135/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/137/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/135/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/137/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -194,35 +194,87 @@ CMakeFiles/Mars_Missions_Management.dir/Rover_related/Mountainous_rovers.cpp.s: 
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mars_Missions_Management.dir/Rover_related/Mountainous_rovers.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Rover related/Mountainous_rovers.cpp" -o CMakeFiles/Mars_Missions_Management.dir/Rover_related/Mountainous_rovers.cpp.s
 
-CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.o: CMakeFiles/Mars_Missions_Management.dir/flags.make
-CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.o: ../RoverList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.o -c "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/RoverList.cpp"
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.o: CMakeFiles/Mars_Missions_Management.dir/flags.make
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.o: ../MarsStation\ related/RoverList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.o -c "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/RoverList.cpp"
 
-CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/RoverList.cpp" > CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.i
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/RoverList.cpp" > CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.i
 
-CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/RoverList.cpp" -o CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.s
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/RoverList.cpp" -o CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.s
 
-CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o: CMakeFiles/Mars_Missions_Management.dir/flags.make
-CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o: ../MissionList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o -c "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MissionList.cpp"
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o: CMakeFiles/Mars_Missions_Management.dir/flags.make
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o: ../MarsStation\ related/MissionList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o -c "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/MissionList.cpp"
 
-CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MissionList.cpp" > CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.i
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/MissionList.cpp" > CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.i
 
-CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MissionList.cpp" -o CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.s
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/MissionList.cpp" -o CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.s
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: CMakeFiles/Mars_Missions_Management.dir/flags.make
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../MarsStation\ related/Event.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o -c "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/Event.cpp"
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/Event.cpp" > CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.i
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/Event.cpp" -o CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.s
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: CMakeFiles/Mars_Missions_Management.dir/flags.make
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../MarsStation\ related/FormulationEvent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o -c "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/FormulationEvent.cpp"
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/FormulationEvent.cpp" > CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.i
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/FormulationEvent.cpp" -o CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.s
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: CMakeFiles/Mars_Missions_Management.dir/flags.make
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../MarsStation\ related/PromoteEvent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o -c "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/PromoteEvent.cpp"
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/PromoteEvent.cpp" > CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.i
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/PromoteEvent.cpp" -o CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.s
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: CMakeFiles/Mars_Missions_Management.dir/flags.make
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../MarsStation\ related/CancelEvent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o -c "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/CancelEvent.cpp"
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/CancelEvent.cpp" > CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.i
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/MarsStation related/CancelEvent.cpp" -o CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.s
 
 CMakeFiles/Mars_Missions_Management.dir/Load.cpp.o: CMakeFiles/Mars_Missions_Management.dir/flags.make
 CMakeFiles/Mars_Missions_Management.dir/Load.cpp.o: ../Load.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Mars_Missions_Management.dir/Load.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Mars_Missions_Management.dir/Load.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mars_Missions_Management.dir/Load.cpp.o -c "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Load.cpp"
 
 CMakeFiles/Mars_Missions_Management.dir/Load.cpp.i: cmake_force
@@ -232,19 +284,6 @@ CMakeFiles/Mars_Missions_Management.dir/Load.cpp.i: cmake_force
 CMakeFiles/Mars_Missions_Management.dir/Load.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mars_Missions_Management.dir/Load.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Load.cpp" -o CMakeFiles/Mars_Missions_Management.dir/Load.cpp.s
-
-CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o: CMakeFiles/Mars_Missions_Management.dir/flags.make
-CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o: ../Queue/PriorityQueue/Heap.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o -c "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Queue/PriorityQueue/Heap.cpp"
-
-CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Queue/PriorityQueue/Heap.cpp" > CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.i
-
-CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/Queue/PriorityQueue/Heap.cpp" -o CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.s
 
 # Object files for target Mars_Missions_Management
 Mars_Missions_Management_OBJECTS = \
@@ -257,10 +296,13 @@ Mars_Missions_Management_OBJECTS = \
 "CMakeFiles/Mars_Missions_Management.dir/Rover_related/Emergency_rovers.cpp.o" \
 "CMakeFiles/Mars_Missions_Management.dir/Rover_related/Polar_rovers.cpp.o" \
 "CMakeFiles/Mars_Missions_Management.dir/Rover_related/Mountainous_rovers.cpp.o" \
-"CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.o" \
-"CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o" \
-"CMakeFiles/Mars_Missions_Management.dir/Load.cpp.o" \
-"CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o"
+"CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.o" \
+"CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o" \
+"CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o" \
+"CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o" \
+"CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o" \
+"CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o" \
+"CMakeFiles/Mars_Missions_Management.dir/Load.cpp.o"
 
 # External object files for target Mars_Missions_Management
 Mars_Missions_Management_EXTERNAL_OBJECTS =
@@ -274,13 +316,16 @@ Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/BinarySearchTr
 Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/Rover_related/Emergency_rovers.cpp.o
 Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/Rover_related/Polar_rovers.cpp.o
 Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/Rover_related/Mountainous_rovers.cpp.o
-Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.o
-Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o
+Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.o
+Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o
+Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o
+Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o
+Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o
+Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o
 Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/Load.cpp.o
-Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o
 Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/build.make
 Mars_Missions_Management: CMakeFiles/Mars_Missions_Management.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable Mars_Missions_Management"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/Mars-Missions-Management/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable Mars_Missions_Management"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Mars_Missions_Management.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

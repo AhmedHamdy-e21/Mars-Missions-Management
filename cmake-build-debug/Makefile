@@ -59,10 +59,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/135/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/137/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/135/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/137/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = "/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures 
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/135/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/137/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/135/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/137/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -224,32 +224,167 @@ Load.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Load.cpp.s
 .PHONY : Load.cpp.s
 
-MissionList.o: MissionList.cpp.o
+MarsStation_related/CancelEvent.o: MarsStation_related/CancelEvent.cpp.o
 
-.PHONY : MissionList.o
+.PHONY : MarsStation_related/CancelEvent.o
 
 # target to build an object file
-MissionList.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o
-.PHONY : MissionList.cpp.o
+MarsStation_related/CancelEvent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o
+.PHONY : MarsStation_related/CancelEvent.cpp.o
 
-MissionList.i: MissionList.cpp.i
+MarsStation_related/CancelEvent.i: MarsStation_related/CancelEvent.cpp.i
 
-.PHONY : MissionList.i
+.PHONY : MarsStation_related/CancelEvent.i
 
 # target to preprocess a source file
-MissionList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.i
-.PHONY : MissionList.cpp.i
+MarsStation_related/CancelEvent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.i
+.PHONY : MarsStation_related/CancelEvent.cpp.i
 
-MissionList.s: MissionList.cpp.s
+MarsStation_related/CancelEvent.s: MarsStation_related/CancelEvent.cpp.s
 
-.PHONY : MissionList.s
+.PHONY : MarsStation_related/CancelEvent.s
 
 # target to generate assembly for a file
-MissionList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.s
-.PHONY : MissionList.cpp.s
+MarsStation_related/CancelEvent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.s
+.PHONY : MarsStation_related/CancelEvent.cpp.s
+
+MarsStation_related/Event.o: MarsStation_related/Event.cpp.o
+
+.PHONY : MarsStation_related/Event.o
+
+# target to build an object file
+MarsStation_related/Event.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o
+.PHONY : MarsStation_related/Event.cpp.o
+
+MarsStation_related/Event.i: MarsStation_related/Event.cpp.i
+
+.PHONY : MarsStation_related/Event.i
+
+# target to preprocess a source file
+MarsStation_related/Event.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.i
+.PHONY : MarsStation_related/Event.cpp.i
+
+MarsStation_related/Event.s: MarsStation_related/Event.cpp.s
+
+.PHONY : MarsStation_related/Event.s
+
+# target to generate assembly for a file
+MarsStation_related/Event.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.s
+.PHONY : MarsStation_related/Event.cpp.s
+
+MarsStation_related/FormulationEvent.o: MarsStation_related/FormulationEvent.cpp.o
+
+.PHONY : MarsStation_related/FormulationEvent.o
+
+# target to build an object file
+MarsStation_related/FormulationEvent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o
+.PHONY : MarsStation_related/FormulationEvent.cpp.o
+
+MarsStation_related/FormulationEvent.i: MarsStation_related/FormulationEvent.cpp.i
+
+.PHONY : MarsStation_related/FormulationEvent.i
+
+# target to preprocess a source file
+MarsStation_related/FormulationEvent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.i
+.PHONY : MarsStation_related/FormulationEvent.cpp.i
+
+MarsStation_related/FormulationEvent.s: MarsStation_related/FormulationEvent.cpp.s
+
+.PHONY : MarsStation_related/FormulationEvent.s
+
+# target to generate assembly for a file
+MarsStation_related/FormulationEvent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.s
+.PHONY : MarsStation_related/FormulationEvent.cpp.s
+
+MarsStation_related/MissionList.o: MarsStation_related/MissionList.cpp.o
+
+.PHONY : MarsStation_related/MissionList.o
+
+# target to build an object file
+MarsStation_related/MissionList.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o
+.PHONY : MarsStation_related/MissionList.cpp.o
+
+MarsStation_related/MissionList.i: MarsStation_related/MissionList.cpp.i
+
+.PHONY : MarsStation_related/MissionList.i
+
+# target to preprocess a source file
+MarsStation_related/MissionList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.i
+.PHONY : MarsStation_related/MissionList.cpp.i
+
+MarsStation_related/MissionList.s: MarsStation_related/MissionList.cpp.s
+
+.PHONY : MarsStation_related/MissionList.s
+
+# target to generate assembly for a file
+MarsStation_related/MissionList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.s
+.PHONY : MarsStation_related/MissionList.cpp.s
+
+MarsStation_related/PromoteEvent.o: MarsStation_related/PromoteEvent.cpp.o
+
+.PHONY : MarsStation_related/PromoteEvent.o
+
+# target to build an object file
+MarsStation_related/PromoteEvent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o
+.PHONY : MarsStation_related/PromoteEvent.cpp.o
+
+MarsStation_related/PromoteEvent.i: MarsStation_related/PromoteEvent.cpp.i
+
+.PHONY : MarsStation_related/PromoteEvent.i
+
+# target to preprocess a source file
+MarsStation_related/PromoteEvent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.i
+.PHONY : MarsStation_related/PromoteEvent.cpp.i
+
+MarsStation_related/PromoteEvent.s: MarsStation_related/PromoteEvent.cpp.s
+
+.PHONY : MarsStation_related/PromoteEvent.s
+
+# target to generate assembly for a file
+MarsStation_related/PromoteEvent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.s
+.PHONY : MarsStation_related/PromoteEvent.cpp.s
+
+MarsStation_related/RoverList.o: MarsStation_related/RoverList.cpp.o
+
+.PHONY : MarsStation_related/RoverList.o
+
+# target to build an object file
+MarsStation_related/RoverList.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.o
+.PHONY : MarsStation_related/RoverList.cpp.o
+
+MarsStation_related/RoverList.i: MarsStation_related/RoverList.cpp.i
+
+.PHONY : MarsStation_related/RoverList.i
+
+# target to preprocess a source file
+MarsStation_related/RoverList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.i
+.PHONY : MarsStation_related/RoverList.cpp.i
+
+MarsStation_related/RoverList.s: MarsStation_related/RoverList.cpp.s
+
+.PHONY : MarsStation_related/RoverList.s
+
+# target to generate assembly for a file
+MarsStation_related/RoverList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.s
+.PHONY : MarsStation_related/RoverList.cpp.s
 
 Mission_related/EmergencyMissions.o: Mission_related/EmergencyMissions.cpp.o
 
@@ -331,60 +466,6 @@ Mission_related/PolarMission.s: Mission_related/PolarMission.cpp.s
 Mission_related/PolarMission.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Mission_related/PolarMission.cpp.s
 .PHONY : Mission_related/PolarMission.cpp.s
-
-Queue/PriorityQueue/Heap.o: Queue/PriorityQueue/Heap.cpp.o
-
-.PHONY : Queue/PriorityQueue/Heap.o
-
-# target to build an object file
-Queue/PriorityQueue/Heap.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o
-.PHONY : Queue/PriorityQueue/Heap.cpp.o
-
-Queue/PriorityQueue/Heap.i: Queue/PriorityQueue/Heap.cpp.i
-
-.PHONY : Queue/PriorityQueue/Heap.i
-
-# target to preprocess a source file
-Queue/PriorityQueue/Heap.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.i
-.PHONY : Queue/PriorityQueue/Heap.cpp.i
-
-Queue/PriorityQueue/Heap.s: Queue/PriorityQueue/Heap.cpp.s
-
-.PHONY : Queue/PriorityQueue/Heap.s
-
-# target to generate assembly for a file
-Queue/PriorityQueue/Heap.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.s
-.PHONY : Queue/PriorityQueue/Heap.cpp.s
-
-RoverList.o: RoverList.cpp.o
-
-.PHONY : RoverList.o
-
-# target to build an object file
-RoverList.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.o
-.PHONY : RoverList.cpp.o
-
-RoverList.i: RoverList.cpp.i
-
-.PHONY : RoverList.i
-
-# target to preprocess a source file
-RoverList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.i
-.PHONY : RoverList.cpp.i
-
-RoverList.s: RoverList.cpp.s
-
-.PHONY : RoverList.s
-
-# target to generate assembly for a file
-RoverList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mars_Missions_Management.dir/build.make CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.s
-.PHONY : RoverList.cpp.s
 
 Rover_related/Emergency_rovers.o: Rover_related/Emergency_rovers.cpp.o
 
@@ -512,9 +593,24 @@ help:
 	@echo "... Load.o"
 	@echo "... Load.i"
 	@echo "... Load.s"
-	@echo "... MissionList.o"
-	@echo "... MissionList.i"
-	@echo "... MissionList.s"
+	@echo "... MarsStation_related/CancelEvent.o"
+	@echo "... MarsStation_related/CancelEvent.i"
+	@echo "... MarsStation_related/CancelEvent.s"
+	@echo "... MarsStation_related/Event.o"
+	@echo "... MarsStation_related/Event.i"
+	@echo "... MarsStation_related/Event.s"
+	@echo "... MarsStation_related/FormulationEvent.o"
+	@echo "... MarsStation_related/FormulationEvent.i"
+	@echo "... MarsStation_related/FormulationEvent.s"
+	@echo "... MarsStation_related/MissionList.o"
+	@echo "... MarsStation_related/MissionList.i"
+	@echo "... MarsStation_related/MissionList.s"
+	@echo "... MarsStation_related/PromoteEvent.o"
+	@echo "... MarsStation_related/PromoteEvent.i"
+	@echo "... MarsStation_related/PromoteEvent.s"
+	@echo "... MarsStation_related/RoverList.o"
+	@echo "... MarsStation_related/RoverList.i"
+	@echo "... MarsStation_related/RoverList.s"
 	@echo "... Mission_related/EmergencyMissions.o"
 	@echo "... Mission_related/EmergencyMissions.i"
 	@echo "... Mission_related/EmergencyMissions.s"
@@ -524,12 +620,6 @@ help:
 	@echo "... Mission_related/PolarMission.o"
 	@echo "... Mission_related/PolarMission.i"
 	@echo "... Mission_related/PolarMission.s"
-	@echo "... Queue/PriorityQueue/Heap.o"
-	@echo "... Queue/PriorityQueue/Heap.i"
-	@echo "... Queue/PriorityQueue/Heap.s"
-	@echo "... RoverList.o"
-	@echo "... RoverList.i"
-	@echo "... RoverList.s"
 	@echo "... Rover_related/Emergency_rovers.o"
 	@echo "... Rover_related/Emergency_rovers.i"
 	@echo "... Rover_related/Emergency_rovers.s"

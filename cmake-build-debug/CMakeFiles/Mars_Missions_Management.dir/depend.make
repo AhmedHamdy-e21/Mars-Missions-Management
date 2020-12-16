@@ -10,15 +10,84 @@ CMakeFiles/Mars_Missions_Management.dir/BinarySearchTree/NodeBST.cpp.o: ../Binar
 
 CMakeFiles/Mars_Missions_Management.dir/Load.cpp.o: ../Load.cpp
 
-CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o: ../Mission\ related/EmergencyMissions.h
-CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o: ../Mission\ related/Mission.h
-CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o: ../Mission\ related/MountainousMissions.h
-CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o: ../Mission\ related/PolarMission.h
-CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o: ../MissionList.cpp
-CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o: ../MissionList.h
-CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o: ../Queue/LinkedQueue.h
-CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o: ../Queue/NodeQ.h
-CMakeFiles/Mars_Missions_Management.dir/MissionList.cpp.o: ../Queue/QueueADT.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../MarsStation\ related/CancelEvent.cpp
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../MarsStation\ related/CancelEvent.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../MarsStation\ related/Event.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../MarsStation\ related/MissionList.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../MarsStation\ related/RoverList.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../Mission\ related/EmergencyMissions.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../Mission\ related/Mission.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../Mission\ related/MountainousMissions.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../Mission\ related/PolarMission.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../Queue/LinkedQueue.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../Queue/NodeQ.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../Queue/QueueADT.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../Rover\ related/Emergency_rovers.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../Rover\ related/Mountainous_rovers.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../Rover\ related/Polar_rovers.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/CancelEvent.cpp.o: ../Rover\ related/Rover.h
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../MarsStation\ related/Event.cpp
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../MarsStation\ related/Event.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../MarsStation\ related/MissionList.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../MarsStation\ related/RoverList.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../Mission\ related/EmergencyMissions.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../Mission\ related/Mission.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../Mission\ related/MountainousMissions.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../Mission\ related/PolarMission.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../Queue/LinkedQueue.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../Queue/NodeQ.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../Queue/QueueADT.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../Rover\ related/Emergency_rovers.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../Rover\ related/Mountainous_rovers.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../Rover\ related/Polar_rovers.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/Event.cpp.o: ../Rover\ related/Rover.h
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../MarsStation\ related/Event.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../MarsStation\ related/FormulationEvent.cpp
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../MarsStation\ related/FormulationEvent.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../MarsStation\ related/MissionList.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../MarsStation\ related/RoverList.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../Mission\ related/EmergencyMissions.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../Mission\ related/Mission.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../Mission\ related/MountainousMissions.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../Mission\ related/PolarMission.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../Queue/LinkedQueue.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../Queue/NodeQ.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../Queue/QueueADT.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../Rover\ related/Emergency_rovers.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../Rover\ related/Mountainous_rovers.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../Rover\ related/Polar_rovers.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/FormulationEvent.cpp.o: ../Rover\ related/Rover.h
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o: ../MarsStation\ related/MissionList.cpp
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o: ../MarsStation\ related/MissionList.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o: ../Mission\ related/EmergencyMissions.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o: ../Mission\ related/Mission.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o: ../Mission\ related/MountainousMissions.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o: ../Mission\ related/PolarMission.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o: ../Queue/LinkedQueue.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o: ../Queue/NodeQ.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/MissionList.cpp.o: ../Queue/QueueADT.h
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../MarsStation\ related/Event.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../MarsStation\ related/MissionList.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../MarsStation\ related/PromoteEvent.cpp
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../MarsStation\ related/PromoteEvent.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../MarsStation\ related/RoverList.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../Mission\ related/EmergencyMissions.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../Mission\ related/Mission.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../Mission\ related/MountainousMissions.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../Mission\ related/PolarMission.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../Queue/LinkedQueue.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../Queue/NodeQ.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../Queue/QueueADT.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../Rover\ related/Emergency_rovers.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../Rover\ related/Mountainous_rovers.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../Rover\ related/Polar_rovers.h
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/PromoteEvent.cpp.o: ../Rover\ related/Rover.h
+
+CMakeFiles/Mars_Missions_Management.dir/MarsStation_related/RoverList.cpp.o: ../MarsStation\ related/RoverList.cpp
 
 CMakeFiles/Mars_Missions_Management.dir/Mission_related/EmergencyMissions.cpp.o: ../Mission\ related/EmergencyMissions.cpp
 CMakeFiles/Mars_Missions_Management.dir/Mission_related/EmergencyMissions.cpp.o: ../Mission\ related/EmergencyMissions.h
@@ -30,12 +99,6 @@ CMakeFiles/Mars_Missions_Management.dir/Mission_related/Mission.cpp.o: ../Missio
 CMakeFiles/Mars_Missions_Management.dir/Mission_related/PolarMission.cpp.o: ../Mission\ related/Mission.h
 CMakeFiles/Mars_Missions_Management.dir/Mission_related/PolarMission.cpp.o: ../Mission\ related/PolarMission.cpp
 CMakeFiles/Mars_Missions_Management.dir/Mission_related/PolarMission.cpp.o: ../Mission\ related/PolarMission.h
-
-CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o: ../Queue/NodeQ.h
-CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o: ../Queue/PriorityQueue/Heap.cpp
-CMakeFiles/Mars_Missions_Management.dir/Queue/PriorityQueue/Heap.cpp.o: ../Queue/PriorityQueue/Heap.h
-
-CMakeFiles/Mars_Missions_Management.dir/RoverList.cpp.o: ../RoverList.cpp
 
 CMakeFiles/Mars_Missions_Management.dir/Rover_related/Emergency_rovers.cpp.o: ../Rover\ related/Emergency_rovers.cpp
 CMakeFiles/Mars_Missions_Management.dir/Rover_related/Emergency_rovers.cpp.o: ../Rover\ related/Emergency_rovers.h
@@ -49,11 +112,18 @@ CMakeFiles/Mars_Missions_Management.dir/Rover_related/Polar_rovers.cpp.o: ../Rov
 CMakeFiles/Mars_Missions_Management.dir/Rover_related/Polar_rovers.cpp.o: ../Rover\ related/Polar_rovers.h
 CMakeFiles/Mars_Missions_Management.dir/Rover_related/Polar_rovers.cpp.o: ../Rover\ related/Rover.h
 
+CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../MarsStation\ related/CancelEvent.h
+CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../MarsStation\ related/Event.h
+CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../MarsStation\ related/FormulationEvent.h
+CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../MarsStation\ related/MarsStation.cpp
+CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../MarsStation\ related/MarsStation.h
+CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../MarsStation\ related/MissionList.h
+CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../MarsStation\ related/PromoteEvent.h
+CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../MarsStation\ related/RoverList.h
 CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../Mission\ related/EmergencyMissions.h
 CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../Mission\ related/Mission.h
 CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../Mission\ related/MountainousMissions.h
 CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../Mission\ related/PolarMission.h
-CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../MissionList.h
 CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../Queue/LinkedQueue.h
 CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../Queue/NodeQ.h
 CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../Queue/QueueADT.h
@@ -61,6 +131,5 @@ CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../Rover\ related/Emergency_
 CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../Rover\ related/Mountainous_rovers.h
 CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../Rover\ related/Polar_rovers.h
 CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../Rover\ related/Rover.h
-CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../RoverList.h
 CMakeFiles/Mars_Missions_Management.dir/main.cpp.o: ../main.cpp
 

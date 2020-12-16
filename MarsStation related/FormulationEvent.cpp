@@ -17,3 +17,7 @@ void FormulationEvent::Execute()
 {
 	ML.AddMission(Event_Day, Mission_ID, TLOC, MIDUR, SIG, TYP);
 }
+
+FormulationEvent::~FormulationEvent() {
+
+}
