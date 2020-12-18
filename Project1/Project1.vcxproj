@@ -145,6 +145,7 @@
     <ClInclude Include="..\MarsStation related\MissionList.h" />
     <ClInclude Include="..\MarsStation related\RoverList.h" />
     <ClInclude Include="..\Mission related\EmergencyMissions.h" />
+    <ClInclude Include="..\Mission related\Mission.h" />
     <ClInclude Include="..\Mission related\MountainousMissions.h" />
     <ClInclude Include="..\Mission related\PolarMission.h" />
     <ClInclude Include="..\Mission.h" />
@@ -172,12 +173,10 @@
     <ClCompile Include="..\Mission related\Mission.cpp" />
     <ClCompile Include="..\Mission related\MountainousMissions.cpp" />
     <ClCompile Include="..\Mission related\PolarMission.cpp" />
-    <ClCompile Include="..\Mission.cpp" />
     <ClCompile Include="..\Rover related\Emergency_rovers.cpp" />
     <ClCompile Include="..\Rover related\Mountainous_rovers.cpp" />
     <ClCompile Include="..\Rover related\Polar_rovers.cpp" />
     <ClCompile Include="..\Rover related\Rover.cpp" />
-    <ClCompile Include="..\Rover.cpp" />
     <ClCompile Include="CancelEvent.cpp" />
     <ClCompile Include="Event.cpp" />
     <ClCompile Include="FormulationEvent.cpp" />

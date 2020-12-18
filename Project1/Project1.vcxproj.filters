@@ -39,9 +39,6 @@
     <ClInclude Include="..\Loadfile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\MarsStation related\MarsStation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\MarsStation related\MissionList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -81,14 +78,14 @@
     <ClInclude Include="PromoteEvent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Mission related\Mission.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MarsStation related\MarsStation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Mission.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Rover.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\BinarySearchTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

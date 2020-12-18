@@ -6,6 +6,7 @@ PromoteEvent::PromoteEvent(int ED, int ID, MissionList ML, RoverList RL)
 	this->Mission_ID = ID;
 	this->ML = ML;
 	this->RL = RL;
+	this->eventType = Promotion;
 }
 
 void PromoteEvent::Execute()

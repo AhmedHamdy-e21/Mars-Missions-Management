@@ -9,5 +9,9 @@ private:
 public:
 	FormulationEvent(char TYP, int TLOC, int MIDUR, int SIG,int ED, int ID, MissionList ML, RoverList RL);
 	void Execute();
+	char get_type();
+	int get_target_location();
+	int get_mission_duration();
+	int get_mission_significance();
 };
 

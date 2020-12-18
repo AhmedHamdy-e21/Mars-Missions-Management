@@ -1,6 +1,9 @@
 #pragma once
 #include"../MarsStation related/MissionList.h"
 #include"../MarsStation related/RoverList.h"
+
+
+enum event { Formulation, Cancelation , Promotion};
 class Event
 {
 protected:
@@ -8,8 +11,12 @@ protected:
 	int Mission_ID;
 	MissionList ML;
 	RoverList RL;
+	event eventType;
 	
 public:
 	virtual void Execute();
+	int get_event_day();
+	int get_Mission_ID();
+	event get_event_type();
 };
 

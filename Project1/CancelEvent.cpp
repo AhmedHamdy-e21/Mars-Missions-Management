@@ -6,6 +6,7 @@ CancelEvent::CancelEvent(int ED, int ID, MissionList ML, RoverList RL)
 	this->Mission_ID = ID;
 	this->ML = ML;
 	this->RL = RL;
+	this->eventType = Cancelation;
 }
 
 void CancelEvent::Execute()

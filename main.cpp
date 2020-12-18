@@ -77,9 +77,6 @@ int main() {
         Station.Simulate(Day_Counter);
     }
 
-
-
-
     /*RoverList RL;
 
     MissionList ML;

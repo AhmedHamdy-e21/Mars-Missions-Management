@@ -84,6 +84,19 @@ void MarsStation::loadFile()
 
 
     inputFile.close();
+
+    // Testing Event output (OMNIA) 
+    
+    /*while (!Events.isEmpty()) {
+        Event E;
+        Events.dequeue(E);
+        cout << "Event day" << E.get_event_day() << endl;
+        cout <<"Event type" << E.get_event_type() << endl;
+        cout << "Mission ID:" <<E.get_Mission_ID() << endl;
+    }
+    */
+
+   
 }
 
 MarsStation::MarsStation()
@@ -95,4 +108,8 @@ MarsStation::MarsStation()
 bool MarsStation::Must_Stop()
 {
     return ML.isEmpty();
+}
+
+void MarsStation::Simulate(int Day)
+{
 }
