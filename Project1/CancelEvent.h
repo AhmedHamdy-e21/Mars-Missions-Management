@@ -6,4 +6,3 @@ public:
 	CancelEvent(int ED, int ID, MissionList ML, RoverList RL);
 	void Execute();
 };
-

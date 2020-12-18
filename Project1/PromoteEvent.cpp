@@ -1,12 +1,8 @@
 #include "PromoteEvent.h"
 
-PromoteEvent::PromoteEvent(int ED, int ID, MissionList ML, RoverList RL)
+PromoteEvent::PromoteEvent(int ED, int ID, MissionList ML, RoverList RL) : Event(ED, ID, ML, RL, Promotion)
 {
-	this->Event_Day = ED;
-	this->Mission_ID = ID;
-	this->ML = ML;
-	this->RL = RL;
-	this->eventType = Promotion;
+
 }
 
 void PromoteEvent::Execute()

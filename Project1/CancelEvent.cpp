@@ -1,12 +1,9 @@
 #include "CancelEvent.h"
 
-CancelEvent::CancelEvent(int ED, int ID, MissionList ML, RoverList RL)
+CancelEvent::CancelEvent(int ED, int ID, MissionList ML, RoverList RL) : Event(ED, ID, ML, RL, Cancelation)
 {
-	this->Event_Day = ED;
-	this->Mission_ID = ID;
-	this->ML = ML;
-	this->RL = RL;
-	this->eventType = Cancelation;
+
+	
 }
 
 void CancelEvent::Execute()
