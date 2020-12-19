@@ -21,11 +21,11 @@ private:
     bool CompletedMission;
     int ID;
     int ED;
-    status state;
+ 
 
 protected:
     type Type;
-
+    status state;
 public:
      virtual int getID()
     {

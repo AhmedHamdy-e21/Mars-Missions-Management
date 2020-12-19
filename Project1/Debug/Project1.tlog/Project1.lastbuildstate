@@ -1,2 +1,2 @@
-PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.25.28610:TargetPlatformVersion=10.0.18362.0:
-Debug|Win32|D:\Year 4\Data Structure\Final Project\Mars-Missions-Management\Project1\|
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v142:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0
+Debug|Win32|E:\Zewail\Aerospace\Year 4\Fall 2020\Data structure\Mars Mission Project\Mars-Missions-Management\Project1\|

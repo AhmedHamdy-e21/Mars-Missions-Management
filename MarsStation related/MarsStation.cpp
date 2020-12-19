@@ -110,7 +110,119 @@ bool MarsStation::Must_Stop()
 {
     return ML.isEmpty();
 }
+template<typename T>
+inline void MarsStation::AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<Mission> missions)
+{
+    T Rovers;
+    T Missions;
+    int i = 0;
+    int j = 0;
+    int x = 0;
+    int y = 0;
+    bool Qbool1, Q2bool;
+    int waitinglistmissions[100];
+    int waitinglistrovers[100];
+    int Executionlistmissions[100];
+    int Executionlistrovers[100];
+    Qbool1 = rovers.dequeue(Rovers);
+    Q2bool = missions.dequeue(Missions);
+    Qbool1 = rovers.dequeue(Rovers);
+    Q2bool = missions.dequeue(Missions);
+    while (Qbool1 || Q2bool) {
+
+        if (!Qbool1 && Q2bool) {
+            waitinglistmissions[j] = Missions;
+            j = j + 1;
+
+            Q2bool = missions.dequeue(Missions);
+        }
+        else if (Qbool1 && !Q2bool) {
+            waitinglistrovers[y] = Rovers;
+            y = y + 1;
+            Qbool1 = rovers.dequeue(Rovers);
+
+        }
+        else if (Qbool1 && Q2bool) {
+            Executionlistmissions[i] = Missions;
+            Executionlistrovers[x] = Rovers;
+            i = i + 1;
+            x = x + 1;
+            Qbool1 = rovers.dequeue(Rovers);
+            Q2bool = missions.dequeue(Missions);
+        }
+        else {
+            break;
+        }
+    }
+}
 
 void MarsStation::Simulate(int Day)
 {
+        loadFile();
+        Event F;
+        Mission M;
+        Mission E;
+        Mission P;
+        int WaitingM=0, WaitingP=0, WaitingE=0;
+        int ExcutingM=0, ExcutingP=0,ExcutingE=0;
+        int CompletedM=0, CompletedP=0, CompletedE=0;
+        ML.getCurrentDayMissions(Day, CurrentE, CurrentM, CurrentP);
+        int Mode;
+        cout << "Enter The mode \n1- Interactive\n2-Silent\n3step_by-step\n";
+        cin >> Mode;
+        
+        AvailableMQueue = RL.getAvailableMQueue();
+        AvailableEQueue = RL.getAvailableEQueue();
+        AvailablePQueue = RL.getAvailablePQueue();
+        if (Mode == 1)
+        {
+          //  AvaliableRovers(AvailableMQueue,CurrentM);
+            Events.dequeue(F);
+            if (F.get_event_type()==0)
+            {
+                CurrentM.dequeue(M);
+                CurrentE.dequeue(E);
+                CurrentP.dequeue(P);
+                if (M.get_status() == 0) {
+                    WaitingM = F.get_Mission_ID();
+                }
+                else if (M.get_status() == 1) {
+                    ExcutingM = F.get_Mission_ID();
+                }
+                else
+                {
+                    CompletedM = F.get_Mission_ID();
+                }
+                
+                if (E.get_status() == 0) {
+                    WaitingE = F.get_Mission_ID();
+                }  
+                else if (E.get_status() == 1) {
+                    ExcutingE = F.get_Mission_ID();
+                }
+                else
+                {
+                    CompletedE = F.get_Mission_ID();
+                }
+                if (P.get_status() == 0) {
+                    WaitingP = F.get_Mission_ID();
+                }
+                 else if (P.get_status() == 1) {
+                    ExcutingP = F.get_Mission_ID();
+                }
+                else
+                {
+                    CompletedP = F.get_Mission_ID();
+                }
+            }
+            
+            
+            cout << "Waiting Missions: " << WaitingM << " ( " <<WaitingP <<" )"<<" [ "<< WaitingP<<" ]"<< endl;
+            cout << "Executing Missions: " << ExcutingM << " ( " <<ExcutingP <<" )"<<" [ "<< ExcutingE<<" ]"<< endl;
+            cout << "Completed Missions: " << CompletedM << " ( " <<CompletedP <<" )"<<" [ "<< CompletedE<<" ]"<< endl;
+
+           
+        }
+        Day++;
+    
 }
