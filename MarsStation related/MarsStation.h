@@ -36,11 +36,9 @@ public:
     MarsStation();
     bool Must_Stop();
     void Simulate(int Day); // Implementation should be done by YASSER
-    template<typename T>
-    void AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<Mission> missions);
+    int AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<Mission> missions);
 
 };
 
 #endif //MARS_MISSIONS_MANAGEMENT_MARSSTATION_H
 
-        

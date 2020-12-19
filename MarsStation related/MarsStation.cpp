@@ -110,51 +110,91 @@ bool MarsStation::Must_Stop()
 {
     return ML.isEmpty();
 }
-template<typename T>
-inline void MarsStation::AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<Mission> missions)
+
+inline int MarsStation::AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<Mission> missions)
 {
-    T Rovers;
-    T Missions;
-    int i = 0;
-    int j = 0;
-    int x = 0;
-    int y = 0;
-    bool Qbool1, Q2bool;
-    int waitinglistmissions[100];
-    int waitinglistrovers[100];
-    int Executionlistmissions[100];
-    int Executionlistrovers[100];
-    Qbool1 = rovers.dequeue(Rovers);
-    Q2bool = missions.dequeue(Missions);
-    Qbool1 = rovers.dequeue(Rovers);
-    Q2bool = missions.dequeue(Missions);
-    while (Qbool1 || Q2bool) {
+    Rover R;
+    Mission M;
+    bool QboolR, QboolM;
+    int AvliableRovers;
+    QboolR = rovers.dequeue(R);
+    QboolM = missions.dequeue(M);
+    while (QboolM || QboolR) {
 
-        if (!Qbool1 && Q2bool) {
-            waitinglistmissions[j] = Missions;
-            j = j + 1;
+        if (!QboolM && QboolR) {
+           /* waitinglistmissions[j] = Missions;
+            j = j + 1;*/
 
-            Q2bool = missions.dequeue(Missions);
+            QboolM = missions.dequeue(M);
+        
         }
-        else if (Qbool1 && !Q2bool) {
-            waitinglistrovers[y] = Rovers;
-            y = y + 1;
-            Qbool1 = rovers.dequeue(Rovers);
-
+        else if (QboolM && !QboolR) {
+          /*  waitinglistrovers[y] = Rovers;
+            y = y + 1;*/
+            QboolR = rovers.dequeue(R);
+            AvliableRovers = M.getID();
+            return AvliableRovers;
         }
-        else if (Qbool1 && Q2bool) {
-            Executionlistmissions[i] = Missions;
+        else if (QboolM && QboolR) {
+           /* Executionlistmissions[i] = Missions;
             Executionlistrovers[x] = Rovers;
             i = i + 1;
-            x = x + 1;
-            Qbool1 = rovers.dequeue(Rovers);
-            Q2bool = missions.dequeue(Missions);
+            x = x + 1;*/
+            QboolR = rovers.dequeue(R);
+            QboolM = missions.dequeue(M);
         }
         else {
             break;
         }
     }
+    
 }
+
+//template<typename T>
+//inline void MarsStation::AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<Mission> missions)
+//{
+//    T Rovers;
+//    T Missions;
+//    int i = 0;
+//    int j = 0;
+//    int x = 0;
+//    int y = 0;
+//    bool Qbool1, Q2bool;
+//    int waitinglistmissions[100];
+//    int waitinglistrovers[100];
+//    int Executionlistmissions[100];
+//    int Executionlistrovers[100];
+//    Qbool1 = rovers.dequeue(Rovers);
+//    Q2bool = missions.dequeue(Missions);
+//    Qbool1 = rovers.dequeue(Rovers);
+//    Q2bool = missions.dequeue(Missions);
+//    while (Qbool1 || Q2bool) {
+//
+//        if (!Qbool1 && Q2bool) {
+//            waitinglistmissions[j] = Missions;
+//            j = j + 1;
+//
+//            Q2bool = missions.dequeue(Missions);
+//        }
+//        else if (Qbool1 && !Q2bool) {
+//            waitinglistrovers[y] = Rovers;
+//            y = y + 1;
+//            Qbool1 = rovers.dequeue(Rovers);
+//
+//        }
+//        else if (Qbool1 && Q2bool) {
+//            Executionlistmissions[i] = Missions;
+//            Executionlistrovers[x] = Rovers;
+//            i = i + 1;
+//            x = x + 1;
+//            Qbool1 = rovers.dequeue(Rovers);
+//            Q2bool = missions.dequeue(Missions);
+//        }
+//        else {
+//            break;
+//        }
+//    }
+//}
 
 void MarsStation::Simulate(int Day)
 {
@@ -163,6 +203,7 @@ void MarsStation::Simulate(int Day)
         Mission M;
         Mission E;
         Mission P;
+        int AvaliableM = 0, AvaliableE = 0, AvaliableP = 0;
         int WaitingM=0, WaitingP=0, WaitingE=0;
         int ExcutingM=0, ExcutingP=0,ExcutingE=0;
         int CompletedM=0, CompletedP=0, CompletedE=0;
@@ -175,8 +216,10 @@ void MarsStation::Simulate(int Day)
         AvailableEQueue = RL.getAvailableEQueue();
         AvailablePQueue = RL.getAvailablePQueue();
         if (Mode == 1)
-        {
-          //  AvaliableRovers(AvailableMQueue,CurrentM);
+        {   
+            AvaliableM = AvaliableRovers(AvailableMQueue, CurrentM);
+            AvaliableP = AvaliableRovers(AvailablePQueue, CurrentP);
+            AvaliableE = AvaliableRovers(AvailableEQueue, CurrentE);
             Events.dequeue(F);
             if (F.get_event_type()==0)
             {
@@ -216,8 +259,8 @@ void MarsStation::Simulate(int Day)
                 }
             }
             
-            
-            cout << "Waiting Missions: " << WaitingM << " ( " <<WaitingP <<" )"<<" [ "<< WaitingP<<" ]"<< endl;
+            cout << "Avaliable Rovers: " << AvaliableM << " ( " << AvaliableP << " )" << " [ " << AvaliableE << " ]" << endl;
+            cout << "Waiting Missions: " << WaitingM << " ( " <<WaitingP <<" )"<<" [ "<< WaitingE<<" ]"<< endl;
             cout << "Executing Missions: " << ExcutingM << " ( " <<ExcutingP <<" )"<<" [ "<< ExcutingE<<" ]"<< endl;
             cout << "Completed Missions: " << CompletedM << " ( " <<CompletedP <<" )"<<" [ "<< CompletedE<<" ]"<< endl;
 
