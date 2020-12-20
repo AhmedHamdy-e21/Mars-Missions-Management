@@ -33,3 +33,8 @@
 #CmakeLists
 CMakeLists.txt
 cmake-build-debug
+*.log
+*.suo
+*.db
+*.tlog
+*.pdb
