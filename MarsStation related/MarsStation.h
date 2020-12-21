@@ -33,10 +33,12 @@ private:
 public:
     void loadFile();
     LinkedQueue<Event> Events;
+    LinkedQueue<FormulationEvent> Formaulation_Event;
     MarsStation();
     bool Must_Stop();
     void Simulate(int Day); // Implementation should be done by YASSER
     int AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<Mission> missions);
+   
 
 };
 

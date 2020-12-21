@@ -1,5 +1,9 @@
 #include "FormulationEvent.h"
 
+FormulationEvent::FormulationEvent()
+{
+}
+
 FormulationEvent::FormulationEvent(char TYP, int TLOC, int MIDUR, int SIG, int ED, int ID, MissionList ML, RoverList RL): Event(ED, ID, ML, RL, Formulation)
 {
 	this->TYP = TYP;

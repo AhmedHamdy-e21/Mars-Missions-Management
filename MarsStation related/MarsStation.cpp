@@ -55,6 +55,7 @@ void MarsStation::loadFile()
             inputFile >> SIG;
             FormulationEvent F_event = FormulationEvent(TYP, TLOC, MIDUR, SIG, ED, ID, ML, RL);
             Events.enqueue(F_event);
+            Formaulation_Event.enqueue(F_event);
 
           //  ML.AddMission(ED, ID, TLOC, MIDUR, SIG, TYP);
 
@@ -150,63 +151,19 @@ inline int MarsStation::AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<M
     
 }
 
-//template<typename T>
-//inline void MarsStation::AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<Mission> missions)
-//{
-//    T Rovers;
-//    T Missions;
-//    int i = 0;
-//    int j = 0;
-//    int x = 0;
-//    int y = 0;
-//    bool Qbool1, Q2bool;
-//    int waitinglistmissions[100];
-//    int waitinglistrovers[100];
-//    int Executionlistmissions[100];
-//    int Executionlistrovers[100];
-//    Qbool1 = rovers.dequeue(Rovers);
-//    Q2bool = missions.dequeue(Missions);
-//    Qbool1 = rovers.dequeue(Rovers);
-//    Q2bool = missions.dequeue(Missions);
-//    while (Qbool1 || Q2bool) {
-//
-//        if (!Qbool1 && Q2bool) {
-//            waitinglistmissions[j] = Missions;
-//            j = j + 1;
-//
-//            Q2bool = missions.dequeue(Missions);
-//        }
-//        else if (Qbool1 && !Q2bool) {
-//            waitinglistrovers[y] = Rovers;
-//            y = y + 1;
-//            Qbool1 = rovers.dequeue(Rovers);
-//
-//        }
-//        else if (Qbool1 && Q2bool) {
-//            Executionlistmissions[i] = Missions;
-//            Executionlistrovers[x] = Rovers;
-//            i = i + 1;
-//            x = x + 1;
-//            Qbool1 = rovers.dequeue(Rovers);
-//            Q2bool = missions.dequeue(Missions);
-//        }
-//        else {
-//            break;
-//        }
-//    }
-//}
 
 void MarsStation::Simulate(int Day)
 {
         loadFile();
-        Event F;
+        FormulationEvent F;
+        int ID;
         Mission M;
         Mission E;
         Mission P;
         int AvaliableM = 0, AvaliableE = 0, AvaliableP = 0;
-        int WaitingM=0, WaitingP=0, WaitingE=0;
-        int ExcutingM=0, ExcutingP=0,ExcutingE=0;
-        int CompletedM=0, CompletedP=0, CompletedE=0;
+        LinkedQueue<int> WaitingM, WaitingP, WaitingE;
+        LinkedQueue<int> ExcutingM, ExcutingP,ExcutingE;
+        LinkedQueue<int> CompletedM, CompletedP, CompletedE;
         ML.getCurrentDayMissions(Day, CurrentE, CurrentM, CurrentP);
         int Mode;
         cout << "Enter The mode \n1- Interactive\n2-Silent\n3step_by-step\n";
@@ -217,55 +174,67 @@ void MarsStation::Simulate(int Day)
         AvailablePQueue = RL.getAvailablePQueue();
         if (Mode == 1)
         {   
-            AvaliableM = AvaliableRovers(AvailableMQueue, CurrentM);
+            AvaliableM = AvaliableRovers(AvailableMQueue, CurrentM);// kolo linked quueue
             AvaliableP = AvaliableRovers(AvailablePQueue, CurrentP);
             AvaliableE = AvaliableRovers(AvailableEQueue, CurrentE);
-            Events.dequeue(F);
-            if (F.get_event_type()==0)
+            while (Formaulation_Event.dequeue(F))
             {
                 CurrentM.dequeue(M);
                 CurrentE.dequeue(E);
                 CurrentP.dequeue(P);
+
                 if (M.get_status() == 0) {
-                    WaitingM = F.get_Mission_ID();
+                    WaitingM.enqueue(F.get_Mission_ID());
                 }
                 else if (M.get_status() == 1) {
-                    ExcutingM = F.get_Mission_ID();
+                    ExcutingM.enqueue( F.get_Mission_ID());
                 }
-                else
-                {
-                    CompletedM = F.get_Mission_ID();
+                else if (M.get_status() ==2 )
+                { 
+                    CompletedM.enqueue( F.get_Mission_ID());
                 }
-                
                 if (E.get_status() == 0) {
-                    WaitingE = F.get_Mission_ID();
-                }  
-                else if (E.get_status() == 1) {
-                    ExcutingE = F.get_Mission_ID();
+                    WaitingE.enqueue( F.get_Mission_ID());
                 }
-                else
+                else if (E.get_status() == 1) {
+                    ExcutingE.enqueue(F.get_Mission_ID());
+                }
+                else if (E.get_status() == 2)
                 {
-                    CompletedE = F.get_Mission_ID();
+                    CompletedE.enqueue(F.get_Mission_ID());
                 }
                 if (P.get_status() == 0) {
-                    WaitingP = F.get_Mission_ID();
+                    WaitingP.enqueue( F.get_Mission_ID());
                 }
-                 else if (P.get_status() == 1) {
-                    ExcutingP = F.get_Mission_ID();
+                else if (P.get_status() == 1) {
+                    ExcutingP.enqueue( F.get_Mission_ID());
                 }
-                else
+                else if (P.get_status() == 2)
                 {
-                    CompletedP = F.get_Mission_ID();
+                    CompletedP.enqueue(F.get_Mission_ID());
                 }
             }
             
-            cout << "Avaliable Rovers: " << AvaliableM << " ( " << AvaliableP << " )" << " [ " << AvaliableE << " ]" << endl;
-            cout << "Waiting Missions: " << WaitingM << " ( " <<WaitingP <<" )"<<" [ "<< WaitingE<<" ]"<< endl;
-            cout << "Executing Missions: " << ExcutingM << " ( " <<ExcutingP <<" )"<<" [ "<< ExcutingE<<" ]"<< endl;
-            cout << "Completed Missions: " << CompletedM << " ( " <<CompletedP <<" )"<<" [ "<< CompletedE<<" ]"<< endl;
-
-           
+            Formaulation_Event.dequeue(F);
         }
+
         Day++;
-    
+        cout << "\nWaiting Missions: ";
+        while (WaitingE.dequeue(ID) && WaitingM.dequeue(ID) && WaitingP.dequeue(ID))
+        {
+            cout << WaitingM.peek(ID) << " ( " << WaitingP.peek(ID) << " )" << " [ " << WaitingE.peek(ID) << " ]";           
+            WaitingE.dequeue(ID); WaitingM.dequeue(ID); WaitingP.dequeue(ID);
+        } 
+        cout << "\nExcuting Missions: ";
+        while (ExcutingM.dequeue(ID) && ExcutingP.dequeue(ID) && ExcutingE.dequeue(ID))
+        {
+            cout << ExcutingM.peek(ID) << " ( " << ExcutingP.peek(ID) << " )" << " [ " << ExcutingE.peek(ID) << " ]";           
+            ExcutingM.dequeue(ID); ExcutingE.dequeue(ID); ExcutingP.dequeue(ID);
+        } cout << "\nCompleted Missions: ";
+        while (CompletedM.dequeue(ID) && CompletedP.dequeue(ID) && CompletedE.dequeue(ID))
+        {
+            cout << CompletedM.peek(ID) << " ( " << CompletedP.peek(ID) << " )" << " [ " << CompletedE.peek(ID) << " ]";         
+            CompletedM.dequeue(ID); CompletedE.dequeue(ID); CompletedP.dequeue(ID);
+        }
+            
 }
