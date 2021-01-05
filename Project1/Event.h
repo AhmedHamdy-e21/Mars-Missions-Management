@@ -9,13 +9,13 @@ class Event
 protected:
 	int Event_Day;
 	int Mission_ID;
-	MissionList ML;
-	RoverList RL;
+	MissionList * ML;
+	RoverList * RL;
 	event eventType;
 	
 public:
 	Event();
-	Event(int Event_Day, int Mission_ID, MissionList ML, RoverList RL, event eventType);
+	Event(int Event_Day, int Mission_ID, MissionList* ML, RoverList * RL, event eventType);
 	virtual void Execute() const;
 	int get_event_day();
 	int get_Mission_ID();

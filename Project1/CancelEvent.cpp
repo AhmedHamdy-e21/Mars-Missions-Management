@@ -1,6 +1,6 @@
 #include "CancelEvent.h"
 
-CancelEvent::CancelEvent(int ED, int ID, MissionList ML, RoverList RL) : Event(ED, ID, ML, RL, Cancelation)
+CancelEvent::CancelEvent(int ED, int ID, MissionList * ML, RoverList *RL) : Event(ED, ID, ML, RL, Cancelation)
 {
 
 	
@@ -8,5 +8,5 @@ CancelEvent::CancelEvent(int ED, int ID, MissionList ML, RoverList RL) : Event(E
 
 void CancelEvent::Execute()
 {
-	ML.CancelMission(Mission_ID);
+	ML->CancelMission(Mission_ID);
 }

@@ -4,7 +4,7 @@ FormulationEvent::FormulationEvent()
 {
 }
 
-FormulationEvent::FormulationEvent(char TYP, int TLOC, int MIDUR, int SIG, int ED, int ID, MissionList ML, RoverList RL): Event(ED, ID, ML, RL, Formulation)
+FormulationEvent::FormulationEvent(char TYP, int TLOC, int MIDUR, int SIG, int ED, int ID, MissionList *ML, RoverList *RL): Event(ED, ID, ML, RL, Formulation)
 {
 	this->TYP = TYP;
 	this->TLOC = TLOC;
@@ -17,7 +17,7 @@ FormulationEvent::FormulationEvent(char TYP, int TLOC, int MIDUR, int SIG, int E
 
 void FormulationEvent::Execute()
 {
-	ML.AddMission(Event_Day, Mission_ID, TLOC, MIDUR, SIG, TYP);
+	ML->AddMission(Event_Day, Mission_ID, TLOC, MIDUR, SIG, TYP);
 }
 
 char FormulationEvent::get_type()

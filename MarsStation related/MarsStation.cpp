@@ -53,7 +53,7 @@ void MarsStation::loadFile()
             inputFile >> TLOC;
             inputFile >> MIDUR;
             inputFile >> SIG;
-            FormulationEvent F_event = FormulationEvent(TYP, TLOC, MIDUR, SIG, ED, ID, ML, RL);
+            FormulationEvent F_event = FormulationEvent(TYP, TLOC, MIDUR, SIG, ED, ID, &ML, &RL);
             Events.enqueue(F_event);
             Formaulation_Event.enqueue(F_event);
 
@@ -67,7 +67,7 @@ void MarsStation::loadFile()
             inputFile >> ED;
             inputFile >> ID;
 
-            CancelEvent C_event = CancelEvent(ED, ID, ML, RL);
+            CancelEvent C_event = CancelEvent(ED, ID, &ML, &RL);
             Events.enqueue(C_event);
            // ML.CancelMission(ED, ID, CurrentE, CurrentM, CurrentP);;
 
@@ -77,7 +77,7 @@ void MarsStation::loadFile()
             inputFile >> ED;
             inputFile >> ID;
 
-            PromoteEvent P_event = PromoteEvent(ED, ID,ML,RL);
+            PromoteEvent P_event = PromoteEvent(ED, ID,&ML,&RL);
             Events.enqueue(P_event);
             //ML.PromoteMission(ED, ID);
         }
@@ -154,7 +154,7 @@ inline int MarsStation::AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<M
 
 void MarsStation::Simulate(int Day)
 {
-        loadFile();
+        //loadFile(); // ya teb2a hena ya fil main 
         FormulationEvent F;
         int ID;
         Mission M;
@@ -168,73 +168,135 @@ void MarsStation::Simulate(int Day)
         int Mode;
         cout << "Enter The mode \n1- Interactive\n2-Silent\n3step_by-step\n";
         cin >> Mode;
-        
+        FormulationEvent fe;
+        LinkedQueue<FormulationEvent> Formaulation_Event_bk;
+
+        while (Formaulation_Event.dequeue(fe)) {
+            fe.Execute(); 
+            Formaulation_Event_bk.enqueue(fe);
+        }
+        while (Formaulation_Event_bk.dequeue(fe)) {
+            Formaulation_Event.enqueue(fe);
+        }
         AvailableMQueue = RL.getAvailableMQueue();
         AvailableEQueue = RL.getAvailableEQueue();
         AvailablePQueue = RL.getAvailablePQueue();
+        CurrentE = ML.getEQueue();  
+        CurrentP = ML.getPQueue();
+        CurrentM = ML.getMQueue();
         if (Mode == 1)
         {   
-            AvaliableM = AvaliableRovers(AvailableMQueue, CurrentM);// kolo linked quueue
+            AvaliableM = AvaliableRovers(AvailableMQueue, CurrentM);
             AvaliableP = AvaliableRovers(AvailablePQueue, CurrentP);
             AvaliableE = AvaliableRovers(AvailableEQueue, CurrentE);
-            while (Formaulation_Event.dequeue(F))
+            while (Formaulation_Event.dequeue(F)) //BUG! will need to be edited after we have completed & execution
             {
-                CurrentM.dequeue(M);
-                CurrentE.dequeue(E);
-                CurrentP.dequeue(P);
 
-                if (M.get_status() == 0) {
-                    WaitingM.enqueue(F.get_Mission_ID());
+
+                
+                CurrentM.peek(M);
+                if (F.get_Mission_ID() == M.getID()) {
+                    CurrentM.dequeue(M);
+                    if (M.get_status() == 0) {
+                        WaitingM.enqueue(F.get_Mission_ID());
+                    }
+                    else if (M.get_status() == 1) {
+                        ExcutingM.enqueue(F.get_Mission_ID());
+                    }
+                    else if (M.get_status() == 2)
+                    {
+                        CompletedM.enqueue(F.get_Mission_ID());
+                    }
                 }
-                else if (M.get_status() == 1) {
-                    ExcutingM.enqueue( F.get_Mission_ID());
+                CurrentE.peek(E);
+                if (F.get_Mission_ID() == E.getID()) {
+                    CurrentE.dequeue(E);
+                    if (E.get_status() == 0) {
+                        WaitingE.enqueue(F.get_Mission_ID());
+                    }
+                    else if (E.get_status() == 1) {
+                        ExcutingE.enqueue(F.get_Mission_ID());
+                    }
+                    else if (E.get_status() == 2)
+                    {
+                        CompletedE.enqueue(F.get_Mission_ID());
+                    }
                 }
-                else if (M.get_status() ==2 )
-                { 
-                    CompletedM.enqueue( F.get_Mission_ID());
-                }
-                if (E.get_status() == 0) {
-                    WaitingE.enqueue( F.get_Mission_ID());
-                }
-                else if (E.get_status() == 1) {
-                    ExcutingE.enqueue(F.get_Mission_ID());
-                }
-                else if (E.get_status() == 2)
-                {
-                    CompletedE.enqueue(F.get_Mission_ID());
-                }
-                if (P.get_status() == 0) {
-                    WaitingP.enqueue( F.get_Mission_ID());
-                }
-                else if (P.get_status() == 1) {
-                    ExcutingP.enqueue( F.get_Mission_ID());
-                }
-                else if (P.get_status() == 2)
-                {
-                    CompletedP.enqueue(F.get_Mission_ID());
+                CurrentP.peek(P);
+                if (F.get_Mission_ID() == P.getID())  {
+                    CurrentP.dequeue(P);
+                    if (P.get_status() == 0) {
+                        WaitingP.enqueue(F.get_Mission_ID());
+                    }
+
+                    else if (P.get_status() == 1) {
+                        ExcutingP.enqueue(F.get_Mission_ID());
+                    }
+                    else if (P.get_status() == 2)
+                    {
+                        CompletedP.enqueue(F.get_Mission_ID());
+                    }
                 }
             }
             
-            Formaulation_Event.dequeue(F);
+
         }
 
         Day++;
+        int id1 = 0, id2 =0 , id3 =0;
         cout << "\nWaiting Missions: ";
-        while (WaitingE.dequeue(ID) && WaitingM.dequeue(ID) && WaitingP.dequeue(ID))
+        bool e = WaitingE.dequeue(id1);
+        bool m = WaitingM.dequeue(id2);
+        bool p = WaitingP.dequeue(id3);
+        while (e || m || p )
         {
-            cout << WaitingM.peek(ID) << " ( " << WaitingP.peek(ID) << " )" << " [ " << WaitingE.peek(ID) << " ]";           
-            WaitingE.dequeue(ID); WaitingM.dequeue(ID); WaitingP.dequeue(ID);
+            if (e)
+                cout << "[" <<id1 << "]";
+            if (m)
+                cout <<" "<<id2<< " ";
+            if(p)
+                cout << "(" << id3 <<")";
+
+             e = WaitingE.dequeue(id1);
+             m = WaitingM.dequeue(id2);
+             p = WaitingP.dequeue(id3);
         } 
         cout << "\nExcuting Missions: ";
-        while (ExcutingM.dequeue(ID) && ExcutingP.dequeue(ID) && ExcutingE.dequeue(ID))
+
+        e = ExcutingE.dequeue(id1);
+        m = ExcutingM.dequeue(id2);
+        p = ExcutingP.dequeue(id3);
+        while (e || m || p)
         {
-            cout << ExcutingM.peek(ID) << " ( " << ExcutingP.peek(ID) << " )" << " [ " << ExcutingE.peek(ID) << " ]";           
-            ExcutingM.dequeue(ID); ExcutingE.dequeue(ID); ExcutingP.dequeue(ID);
-        } cout << "\nCompleted Missions: ";
-        while (CompletedM.dequeue(ID) && CompletedP.dequeue(ID) && CompletedE.dequeue(ID))
+            if (e)
+                cout << "[" << id1 << "]";
+            if (m)
+                cout << " " << id2 << " ";
+            if (p)
+                cout << "(" << id3 << ")";
+
+            e = ExcutingE.dequeue(id1);
+            m = ExcutingM.dequeue(id2);
+            p = ExcutingP.dequeue(id3);
+
+        } 
+        cout << "\nCompleted Missions: ";
+
+        e = CompletedE.dequeue(id1);
+        m = CompletedM.dequeue(id2);
+        p = CompletedP.dequeue(id3);
+        while (e || m || p)
         {
-            cout << CompletedM.peek(ID) << " ( " << CompletedP.peek(ID) << " )" << " [ " << CompletedE.peek(ID) << " ]";         
-            CompletedM.dequeue(ID); CompletedE.dequeue(ID); CompletedP.dequeue(ID);
+            if (e)
+                cout << "[" << id1 << "]";
+            if (m)
+                cout << " " << id2 << " ";
+            if (p)
+                cout << "(" << id3 << ")";
+
+            e= CompletedE.dequeue(id1);
+            m = CompletedM.dequeue(id2);
+            p = CompletedP.dequeue(id3);
         }
             
 }
