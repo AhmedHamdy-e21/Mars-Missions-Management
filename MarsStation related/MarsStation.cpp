@@ -19,7 +19,7 @@ void MarsStation::loadFile()
     {
         cout << "All is good" << endl;
     }
-    int M, P, E, SM, SP, SE, N, CM, CP, CE, AutoP, EV, ED, ID, TLOC, MIDUR, SIG;
+    int M, P, E, SM, SP, SE, N, CM, CP, CE, EV, ED, ID, TLOC, MIDUR, SIG;
     char F, TYP;
 
     inputFile >> M;
@@ -151,10 +151,20 @@ inline int MarsStation::AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<M
     
 }
 
+void MarsStation::CancelMission(int id)
+{
+    ML.CancelMission(id);
+}
+
+void MarsStation::PromoteMission(int id)
+{
+    ML.PromoteMission(id);
+}
+
 
 void MarsStation::Simulate(int Day)
 {
-        //loadFile(); // ya teb2a hena ya fil main 
+
         FormulationEvent F;
         int ID;
         Mission M;
@@ -164,19 +174,22 @@ void MarsStation::Simulate(int Day)
         LinkedQueue<int> WaitingM, WaitingP, WaitingE;
         LinkedQueue<int> ExcutingM, ExcutingP,ExcutingE;
         LinkedQueue<int> CompletedM, CompletedP, CompletedE;
-        ML.getCurrentDayMissions(Day, CurrentE, CurrentM, CurrentP);
+
+        ML.getCurrentDayMissions(Day, CurrentE, CurrentM, CurrentP,AutoP);
         int Mode;
         cout << "Enter The mode \n1- Interactive\n2-Silent\n3step_by-step\n";
         cin >> Mode;
-        FormulationEvent fe;
-        LinkedQueue<FormulationEvent> Formaulation_Event_bk;
+        if (Day == 1) {
+            FormulationEvent fe;
+            LinkedQueue<FormulationEvent> Formaulation_Event_bk;
 
-        while (Formaulation_Event.dequeue(fe)) {
-            fe.Execute(); 
-            Formaulation_Event_bk.enqueue(fe);
-        }
-        while (Formaulation_Event_bk.dequeue(fe)) {
-            Formaulation_Event.enqueue(fe);
+            while (Formaulation_Event.dequeue(fe)) {
+                fe.Execute();
+                Formaulation_Event_bk.enqueue(fe);
+            }
+            while (Formaulation_Event_bk.dequeue(fe)) {
+                Formaulation_Event.enqueue(fe);
+            }
         }
         AvailableMQueue = RL.getAvailableMQueue();
         AvailableEQueue = RL.getAvailableEQueue();
@@ -241,8 +254,6 @@ void MarsStation::Simulate(int Day)
             
 
         }
-
-        Day++;
         int id1 = 0, id2 =0 , id3 =0;
         cout << "\nWaiting Missions: ";
         bool e = WaitingE.dequeue(id1);

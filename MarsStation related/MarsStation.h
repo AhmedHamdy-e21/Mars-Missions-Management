@@ -30,6 +30,8 @@ private:
     LinkedQueue<Rover> AvailableMQueue;
     LinkedQueue<Rover> AvailablePQueue;
 
+    int AutoP;
+
 public:
     void loadFile();
     LinkedQueue<Event> Events;
@@ -38,6 +40,8 @@ public:
     bool Must_Stop();
     void Simulate(int Day); // Implementation should be done by YASSER
     int AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<Mission> missions);
+    void CancelMission(int id);
+    void PromoteMission(int id);
    
 
 };

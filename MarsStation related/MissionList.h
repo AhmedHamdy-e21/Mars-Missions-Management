@@ -7,7 +7,7 @@
 #include "../Mission related/PolarMission.h"
 #include "../Mission related/MountainousMissions.h"
 #include "../Queue/LinkedQueue.h"
-// I was about to include sth
+
 
 class MissionList
 {
@@ -118,15 +118,35 @@ public:
     {
         cout<<"Completed_missions: ";
     }
-    void RemoveMission(int index) { // Need this funtion implemented
+    void RemoveMission(int index) {
+        int id = ML[index]->getID();
+        if (ML[index]->get_status() == Waiting && ML[index]->get_type() == Mountainous) {
+            delete ML[index];
+            removeFromMQueueWithID(id);
+            NumberOfMissions--, WatingMissions--, countMountanous--;
+        }
+        else cout << "Mission with ID: "<<id<<" can't be cancelled!!!\n";
 
-      
+    }
 
+    void removeFromMQueueWithID(int id) {
+        LinkedQueue<Mission> tempQ;
+        Mission tmp;
+        while (AvailableMQueue.peek(tmp)) {
+            AvailableMQueue.dequeue(tmp);
+            if (tmp.getID() == id)continue;
+            tempQ.enqueue(tmp);
+        }
+
+        while (tempQ.peek(tmp)) {
+            tempQ.dequeue(tmp);
+            AvailableMQueue.enqueue(tmp);
+        }
     }
     void CancelMission(int ID)
     {
         for (int i = 0; i < NumberOfMissions; ++i) {
-            if (ML[i]->getID() == ID && ML[i]->get_status() == Waiting && ML[i]->get_type() == Mountainous) {
+            if (ML[i]->getID() == ID) {
 
                 RemoveMission(i);
                 return;
@@ -140,8 +160,10 @@ public:
         for (int i = 0; i < NumberOfMissions; ++i) {
             if (ML[i]->getID() == ID && ML[i]->get_status() == Waiting && ML[i]->get_type() == Mountainous) {
 
-                // Need to be completed to promote mountainous to Emergency
+                removeFromMQueueWithID(ID);
                 ML[i]->change_type(1);
+                AvailableEQueue.enqueue(*ML[i]);
+                countMountanous--, countEmergency++;
                 return;
 
             }
@@ -183,12 +205,16 @@ public:
     }
 
     //// Revise the syntax and check the correspondance of symbols E P and M.
-    void GenerateCurrentQueue(int Day, int count,LinkedQueue<Mission>& CurrentEMission,LinkedQueue<Mission> AllMissionsQueue )
+    void GenerateCurrentQueue(int Day, int count,LinkedQueue<Mission>& CurrentEMission,LinkedQueue<Mission> AllMissionsQueue, int AutoP )
     {
         bool DequeueCheck;
         Mission QueuedElement;
         for (int i = 0; i < count; ++i)
         {
+            if (QueuedElement.get_type() == Mountainous && QueuedElement.get_status() == Waiting && Day - QueuedElement.getED() >= AutoP) {
+                PromoteMission(QueuedElement.getID());
+                continue;
+            }
             DequeueCheck=AllMissionsQueue.dequeue(QueuedElement);
             //// This is to check for every day and get the missions from the queues that have all missions
             if(DequeueCheck&& QueuedElement.getED()==Day)
@@ -203,10 +229,11 @@ public:
     }
 
 
-    void getCurrentDayMissions(int Day,LinkedQueue<Mission>& CurrentEMission,LinkedQueue<Mission>& CurrentPMission,LinkedQueue<Mission>& CurrentMMission)
+    void getCurrentDayMissions(int Day,LinkedQueue<Mission>& CurrentEMission,LinkedQueue<Mission>& CurrentPMission,LinkedQueue<Mission>& CurrentMMission, int AutoP)
     {
         //// This is more compact
-        this->GenerateCurrentQueue(Day,countEmergency,CurrentEMission,AvailableEQueue);
+        this->GenerateCurrentQueue(Day, countMountanous, CurrentMMission, AvailableMQueue,AutoP);
+        this->GenerateCurrentQueue(Day,countEmergency,CurrentEMission,AvailableEQueue,AutoP);
         /*
         for (int i = 0; i < countEmergency; ++i)
         {
@@ -233,7 +260,7 @@ public:
         }
 */
 
-        this->GenerateCurrentQueue(Day,countPolar,CurrentPMission,AvailablePQueue);
+        this->GenerateCurrentQueue(Day,countPolar,CurrentPMission,AvailablePQueue,AutoP);
 
         /*
         for (int i = 0; i < countPolar; ++i)
@@ -260,7 +287,7 @@ public:
 
         }
 */
-        this->GenerateCurrentQueue(Day,countMountanous,CurrentMMission,AvailableMQueue);
+
 /*
         for (int i = 0; i < countMountanous; ++i)
         {

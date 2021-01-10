@@ -74,7 +74,7 @@ int main() {
     Station.loadFile();
     int Day_Counter = 1;
     while (!Station.Must_Stop()) {
-        Station.Simulate(Day_Counter);
+        Station.Simulate(Day_Counter++);
     }
 
     /*RoverList RL;
