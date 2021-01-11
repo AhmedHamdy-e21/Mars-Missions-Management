@@ -15,8 +15,7 @@ FormulationEvent::FormulationEvent(char TYP, int TLOC, int MIDUR, int SIG, int E
 
 }
 
-void FormulationEvent::Execute()
-{
+void FormulationEvent::Execute() { 
 	ML->AddMission(Event_Day, Mission_ID, TLOC, MIDUR, SIG, TYP);
 }
 

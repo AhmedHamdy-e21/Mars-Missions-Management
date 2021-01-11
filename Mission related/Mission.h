@@ -21,6 +21,7 @@ private:
     int ID;
     int ED;
     int WaitingDays;
+    int ExecutionDays;
  
 
 protected:
@@ -91,10 +92,13 @@ public:
     }
 
     
-    void setCompletionDay(int day)
+    void setCompletionDay(int today, int ExecutionDays)
     {
-        completionDay=day;
+        completionDay=today+ExecutionDays;
+        
+        this->ExecutionDays = ExecutionDays;
 
+        this->WaitingDays = today - ED;
     }
 
     int getCompletionDay() {
@@ -129,15 +133,16 @@ public:
         this-> Type = type(typ);
     }
 
-    void set_WaitingDays(int  WaitingDays) {
 
-        this->WaitingDays = WaitingDays;
-    }
 
     int get_WaitingDays() {
         return WaitingDays;
     }
-  
+    
+
+    int  get_ExecutionDays() {
+        return ExecutionDays;
+    }
 };
 
 

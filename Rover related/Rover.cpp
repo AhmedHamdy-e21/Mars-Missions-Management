@@ -65,22 +65,19 @@ int Rover::getAvailiabilityDay()
 	return availableAtDay;
 }
 
-void Rover::getAssigned(int start_day, int duration, int targetLocation)
+void Rover::getAssigned(int start_day, int duration)
 {
 	available = 0;
-	availableAtDay = start_day + duration + ((targetLocation/speed)*2);
+	availableAtDay = start_day + duration;
 	number_to_next_checkup--;
 	if (number_to_next_checkup == 0)
-		availableAtDay += check_up_duration, number_to_next_checkup =  Number_of_missions_to_checkup_after;
-	set_ExucutionDays(duration + ((targetLocation / speed) * 2));
+		availableAtDay += check_up_duration, number_to_next_checkup = Number_of_missions_to_checkup_after;
 }
 
-void Rover::set_ExucutionDays(int ExecutionDays)
+
+
+float Rover::getSpeed()
 {
-	this->ExecutionDays = ExecutionDays;
+	return speed;
 }
 
-int Rover::get_ExecutionDays()
-{
-	return ExecutionDays;
-}

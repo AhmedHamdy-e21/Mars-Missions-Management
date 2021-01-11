@@ -27,7 +27,7 @@ private:
 
 public:
     void loadFile();
-    LinkedQueue<Event> Events;
+    LinkedQueue<Event > Events;
     LinkedQueue<FormulationEvent> Formaulation_Event;
     LinkedQueue<CancelEvent> Cancelation_Event;
     LinkedQueue<PromoteEvent> Promotion_Event;

@@ -13,9 +13,16 @@ Event::Event(int Event_Day, int Mission_ID, MissionList *ML, RoverList *RL, even
 	this->eventType = eventType;
 }
 
-void Event::Execute() const
-{
-}
+
+
+
+
+
+
+
+
+
+
 
 
 

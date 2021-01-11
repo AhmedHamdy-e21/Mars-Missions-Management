@@ -70,7 +70,6 @@ public:
             ML[NumberOfMissions]=new EmergencyMissions(ED,ID,TargetLocation,MissionDuration,Significance);
             AvailableEQueue.enqueue(*ML[NumberOfMissions]);
             this->IncrementEcount();
-            ML[NumberOfMissions]->getTargetLocation();
           IncrementNoOfMissions();
         }
         else if(TYP == 'M')
@@ -211,8 +210,11 @@ public:
         Mission QueuedElement;
         for (int i = 0; i < count; ++i)
         {
-           
             DequeueCheck=AllMissionsQueue.dequeue(QueuedElement);
+            if (DequeueCheck) {
+                if (!checkID(AllMissionsQueue, QueuedElement.getID()))
+                    AllMissionsQueue.enqueue(QueuedElement);
+            }
             if (DequeueCheck && QueuedElement.get_type() == Mountainous && QueuedElement.get_status() == Waiting && Day - QueuedElement.getED() >= AutoP) {
                 PromoteMission(QueuedElement.getID());
                 continue;
@@ -220,20 +222,21 @@ public:
             //// This is to check for every day and get the missions from the queues that have all missions
             if(DequeueCheck&& QueuedElement.getED()<=Day && QueuedElement.get_status() == Waiting)
             {
-                CurrentEMission.enqueue(QueuedElement);
+                if (!checkID(CurrentEMission, QueuedElement.getID()))
+                    CurrentEMission.enqueue(QueuedElement);
             }
-            else if(DequeueCheck)
-            {
-                AllMissionsQueue.enqueue(QueuedElement);
-            }
+
         }
     }
 
-
+    LinkedQueue<Mission> getMMissions() {
+        return AvailableMQueue;
+    }
     void getCurrentDayMissions(int Day,LinkedQueue<Mission>& CurrentEMission,LinkedQueue<Mission>& CurrentPMission,LinkedQueue<Mission>& CurrentMMission, int AutoP)
     {
         //// This is more compact
         this->GenerateCurrentQueue(Day, countMountanous, CurrentMMission, AvailableMQueue,AutoP);
+
         this->GenerateCurrentQueue(Day,countEmergency,CurrentEMission,AvailableEQueue,AutoP);
         this->GenerateCurrentQueue(Day,countPolar,CurrentPMission,AvailablePQueue,AutoP);
     }
@@ -250,20 +253,22 @@ public:
     {
         bool DequeueCheck;
         Mission QueuedElement;
+
         for (int i = 0; i < count; ++i)
         {
             DequeueCheck = AllMissionsQueue.dequeue(QueuedElement);
+
             if (DequeueCheck)
             {
+                if (!checkID(AllMissionsQueue, QueuedElement.getID()))
+                    AllMissionsQueue.enqueue(QueuedElement);
                 if (QueuedElement.get_status() != Completed && QueuedElement.getCompletedMission(day)) {
                     changeStateByID(QueuedElement.getID(), Completed);
                     QueuedElement.change_state(Completed);
                 }
-                CurrentEMission.enqueue(QueuedElement);
-            }
-            else if (DequeueCheck)
-            {
-                AllMissionsQueue.enqueue(QueuedElement);
+
+                if (!checkID(CurrentEMission, QueuedElement.getID()))
+                    CurrentEMission.enqueue(QueuedElement);
             }
         }
     }
@@ -277,14 +282,14 @@ public:
         LinkedQueue<Mission> tmpQ;
         while (AvailableMQueue.dequeue(m)) {
             if (m.getID() == ID)
-                m.change_state(Executing);
+                m.change_state(new_state);
             tmpQ.enqueue(m);
         }
         while (tmpQ.dequeue(m)) {
             AvailableMQueue.enqueue(m);
         }
         while (AvailableEQueue.dequeue(m)) {
-            if (m.getID() == ID)m.change_state(Executing);
+            if (m.getID() == ID)m.change_state(new_state);
             tmpQ.enqueue(m);
 
         }
@@ -292,7 +297,7 @@ public:
             AvailableEQueue.enqueue(m);
         }
         while (AvailablePQueue.dequeue(m)) {
-            if (m.getID() == ID)m.change_state(Executing);
+            if (m.getID() == ID)m.change_state(new_state);
             tmpQ.enqueue(m);
 
         }
@@ -301,22 +306,22 @@ public:
         }
     }
 
-    void changeCDByID(int ID, int day) {
+    void changeCDByID(int ID, int today, int realduration ) {
         for (int i = 0;i < NumberOfMissions;i++) {
-            if (ML[i]->getID() == ID) ML[i]->setCompletionDay(day);
+            if (ML[i]->getID() == ID) ML[i]->setCompletionDay(today,realduration);
         }
         Mission m;
         LinkedQueue<Mission> tmpQ;
         while (AvailableMQueue.dequeue(m)) {
             if (m.getID() == ID)
-                m.setCompletionDay(day);
+                m.setCompletionDay(today, realduration);
             tmpQ.enqueue(m);
         }
         while (tmpQ.dequeue(m)) {
             AvailableMQueue.enqueue(m);
         }
         while (AvailableEQueue.dequeue(m)) {
-            if (m.getID() == ID)m.setCompletionDay(day);
+            if (m.getID() == ID)m.setCompletionDay(today, realduration);
             tmpQ.enqueue(m);
 
         }
@@ -324,13 +329,26 @@ public:
             AvailableEQueue.enqueue(m);
         }
         while (AvailablePQueue.dequeue(m)) {
-            if (m.getID() == ID)m.setCompletionDay(day);
+            if (m.getID() == ID)m.setCompletionDay(today, realduration);
             tmpQ.enqueue(m);
 
         }
         while (tmpQ.dequeue(m)) {
             AvailablePQueue.enqueue(m);
         }
+    }
+
+    bool checkID(LinkedQueue<Mission>& queue, int id) {
+        Mission tmp;
+        bool q = 0;
+        LinkedQueue<Mission> tmpQ;
+        while (queue.dequeue(tmp)) {
+            if (tmp.getID() == id) q = 1;
+            tmpQ.enqueue(tmp);
+        }
+        while (tmpQ.dequeue(tmp))
+            queue.enqueue(tmp);
+        return q;
     }
  
     

@@ -10,7 +10,7 @@ CancelEvent::CancelEvent(int ED, int ID, MissionList * ML, RoverList *RL) : Even
 	
 }
 
-void CancelEvent::Execute()
+void CancelEvent::Execute() 
 {
 	ML->CancelMission(Mission_ID);
 }

@@ -1,6 +1,4 @@
-//
-// Created by raspberry on 2020-11-24.
-//
+
 
 #include "MarsStation.h"
 
@@ -40,6 +38,7 @@ void MarsStation::loadFile()
 
     inputFile >> EV;
     ML.setMissionList(EV);
+    
     for (int j = 0; j < EV; j++)
     {
         string type;
@@ -56,6 +55,7 @@ void MarsStation::loadFile()
             FormulationEvent F_event = FormulationEvent(TYP, TLOC, MIDUR, SIG, ED, ID, &ML, &RL);
             Events.enqueue(F_event);
             Formaulation_Event.enqueue(F_event);
+
 
           //  ML.AddMission(ED, ID, TLOC, MIDUR, SIG, TYP);
 
@@ -129,95 +129,68 @@ void MarsStation::PromoteMission(int id)
 }
 
  void MarsStation::AssignMissions(int Day){
-    LinkedQueue<Mission> EMList, MMList, PMList;
-    LinkedQueue<Rover*> ERList, MRList, PRList;
-    ML.getCurrentDayMissions(Day, EMList, PMList, MMList, AutoP);
-    MRList = RL.getAvailableMQueue(Day);
-    ERList = RL.getAvailableEQueue(Day);
-    PRList = RL.getAvailablePQueue(Day);
+     LinkedQueue<Mission> EMList, MMList, PMList;
+     LinkedQueue<Rover*> ERList, MRList, PRList;
+     ML.getCurrentDayMissions(Day, EMList, PMList, MMList, AutoP);
+     MRList = RL.getAvailableMQueue(Day);
+     ERList = RL.getAvailableEQueue(Day);
+     PRList = RL.getAvailablePQueue(Day);
 
-    Mission tmpM;
-    while (EMList.peek(tmpM)) {
-        Rover* tmpR;
-        if (ERList.peek(tmpR)) {
-            EMList.dequeue(tmpM);
-            ERList.dequeue(tmpR);
+     Mission tmpM;
+     while (EMList.peek(tmpM)) {
+         Rover* tmpR;
+         if (ERList.peek(tmpR)) {
+             EMList.dequeue(tmpM);
+             ERList.dequeue(tmpR);
+             tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+             ML.changeStateByID(tmpM.getID(), Executing);
+             int realDuration = tmpM.getMissionDuration() + ceil(tmpM.getTargetLocation()*1.0 / ((double)tmpR->getSpeed()*24) )*2;
+             ML.changeCDByID(tmpM.getID(), Day , realDuration);
+         }
+         else if (MRList.peek(tmpR)) {
+             EMList.dequeue(tmpM);
+             MRList.dequeue(tmpR);
+             tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+             ML.changeStateByID(tmpM.getID(), Executing);
+             int realDuration = tmpM.getMissionDuration() + ceil((tmpM.getTargetLocation() * 1.0 )/((double)tmpR->getSpeed()*24) )* 2; // 1 km/hour yeb2a kam Km/24
+             ML.changeCDByID(tmpM.getID(), Day , realDuration);
+         }
+         else if (PRList.peek(tmpR)) {
+             EMList.dequeue(tmpM);
+             PRList.dequeue(tmpR);
+             tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+             ML.changeStateByID(tmpM.getID(), Executing);
+             int realDuration = tmpM.getMissionDuration() + ceil((tmpM.getTargetLocation() * 1.0) / ((double)tmpR->getSpeed() * 24)) * 2;
+             ML.changeCDByID(tmpM.getID(), Day , realDuration);
+         }
+         else break;
+     }
+     while (PMList.peek(tmpM)) {
+         Rover* tmpR;
+         if (PRList.peek(tmpR)) {
+             PMList.dequeue(tmpM);
+             PRList.dequeue(tmpR);
+             tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+             ML.changeStateByID(tmpM.getID(), Executing);
+             int realDuration = tmpM.getMissionDuration() + ceil((tmpM.getTargetLocation() * 1.0) / ((double)tmpR->getSpeed() * 24)) * 2;
+             ML.changeCDByID(tmpM.getID(), Day , realDuration);
+         }
+         else break;
+     }
+     while (MMList.peek(tmpM)) {
+         Rover* tmpR;
+         if (MRList.peek(tmpR)) {
+             MMList.dequeue(tmpM);
+             MRList.dequeue(tmpR);
+             tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+             ML.changeStateByID(tmpM.getID(), Executing);
+             int realDuration = tmpM.getMissionDuration() + ceil((tmpM.getTargetLocation() * 1.0) / ((double)tmpR->getSpeed() * 24)) * 2;
+             ML.changeCDByID(tmpM.getID(), Day , realDuration);
+         }
+         else break;
+     }
 
-            int ExecutionDays = tmpR->get_ExecutionDays();
 
-            tmpM.set_WaitingDays(Day - tmpM.getED());
-
-           // int WaitingDays = Day - tmpM.getED();
-
-            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration(), tmpM.getTargetLocation());
-            ML.changeStateByID(tmpM.getID(), Executing);
-           // ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
-            ML.changeCDByID(tmpM.getID(), Day + ExecutionDays);     //CD= FD+WD+ED = FD + (Today- FD) +Execution days= Today +Execution Days
-            
-        }
-        else if (MRList.peek(tmpR)) {
-            EMList.dequeue(tmpM);
-            MRList.dequeue(tmpR);
-
-            int ExecutionDays = tmpR->get_ExecutionDays();
-
-            tmpM.set_WaitingDays(Day - tmpM.getED());
-
-            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration(), tmpM.getTargetLocation());
-            ML.changeStateByID(tmpM.getID(), Executing);
-            //ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
-            ML.changeCDByID(tmpM.getID(), Day + ExecutionDays);     //CD= FD+WD+ED = FD + (Today- FD) +Execution days= Today +Execution Days
-        }
-        else if (PRList.peek(tmpR)) {
-            EMList.dequeue(tmpM);
-            PRList.dequeue(tmpR);
-
-            int ExecutionDays = tmpR->get_ExecutionDays();
-
-            tmpM.set_WaitingDays(Day - tmpM.getED());
-
-            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration(), tmpM.getTargetLocation());
-            ML.changeStateByID(tmpM.getID(),Executing);
-            //ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
-            ML.changeCDByID(tmpM.getID(), Day + ExecutionDays);     //CD= FD+WD+ED = FD + (Today- FD) +Execution days= Today +Execution Days
-        }
-        else break;
-    }
-    while (PMList.peek(tmpM)) {
-        Rover* tmpR;
-        if (PRList.peek(tmpR)) {
-            PMList.dequeue(tmpM);
-            PRList.dequeue(tmpR);
-
-            int ExecutionDays = tmpR->get_ExecutionDays();
-
-            tmpM.set_WaitingDays(Day - tmpM.getED());
-
-            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration(), tmpM.getTargetLocation());
-            ML.changeStateByID(tmpM.getID(), Executing);
-           // ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
-            ML.changeCDByID(tmpM.getID(), Day + ExecutionDays);     //CD= FD+WD+ED = FD + (Today- FD) +Execution days= Today +Execution Days
-        }
-        else break;
-    }
-    while (MMList.peek(tmpM)) {
-        Rover* tmpR;
-        if (MRList.peek(tmpR)) {
-            MMList.dequeue(tmpM);
-            MRList.dequeue(tmpR);
-
-            int ExecutionDays = tmpR->get_ExecutionDays();
-
-            tmpM.set_WaitingDays(Day - tmpM.getED());
-
-            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration(), tmpM.getTargetLocation());
-            ML.changeStateByID(tmpM.getID(), Executing);
-           // ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
-
-            ML.changeCDByID(tmpM.getID(), Day + ExecutionDays);     //CD= FD+WD+ED = FD + (Today- FD) +Execution days= Today +Execution Days
-        }
-        else break;
-    }
 
 }
 
@@ -225,9 +198,9 @@ void MarsStation::PromoteMission(int id)
 void MarsStation::Simulate(int Day)
 {
 
-        FormulationEvent F;
-        CancelEvent C;
-        PromoteEvent Pr;
+       FormulationEvent F;
+     
+    
 
         int ID;
         Mission M;
@@ -239,9 +212,10 @@ void MarsStation::Simulate(int Day)
         LinkedQueue<int> CompletedM, CompletedP, CompletedE;
 
         int Mode;
-        cout << "Enter The mode \n1- Interactive\n2-Silent\n3step_by-step\n";
+        cout << "\nEnter The mode \n1- Interactive\n2-Silent\n3step_by-step\n";
         cin >> Mode;
         FormulationEvent fe;
+
         LinkedQueue<FormulationEvent> Formaulation_Event_bk;
         while (Formaulation_Event.peek(fe)) {
             Formaulation_Event.dequeue(fe);
@@ -254,8 +228,7 @@ void MarsStation::Simulate(int Day)
             Formaulation_Event.enqueue(fe);
         }
 
-
-        CancelEvent Ce;
+       CancelEvent Ce;
         LinkedQueue<CancelEvent> Cancelation_Event_bk;
         while (Cancelation_Event.peek(Ce)) {
             Cancelation_Event.dequeue(Ce);
@@ -277,6 +250,7 @@ void MarsStation::Simulate(int Day)
             else Promotion_Event_bk.enqueue(Pe);
 
         }
+
         while (Promotion_Event_bk.dequeue(Pe)) {
             Promotion_Event.enqueue(Pe);
         }
@@ -289,78 +263,34 @@ void MarsStation::Simulate(int Day)
         {   
             AssignMissions(Day);
             LinkedQueue<Mission> EMList, MMList, PMList;
+           // MMList = ML.getMMissions();
             ML.getAllMissions(EMList, PMList, MMList,Day);
             Mission m;
             while (EMList.dequeue(m)) {
                 if (m.get_status() == Waiting) WaitingE.enqueue(m.getID());
                 else if (m.get_status() == Executing) ExcutingE.enqueue(m.getID());
                 else if (m.get_status() == Completed) CompletedE.enqueue(m.getID());
+
+                
             }
             while (PMList.dequeue(m)) {
                 if (m.get_status() == Waiting) WaitingP.enqueue(m.getID());
                 else if (m.get_status() == Executing) ExcutingP.enqueue(m.getID());
                 else if (m.get_status() == Completed) CompletedP.enqueue(m.getID());
+
+               
             }
             while (MMList.dequeue(m)) {
                 if (m.get_status() == Waiting) WaitingM.enqueue(m.getID());
                 else if (m.get_status() == Executing) ExcutingM.enqueue(m.getID());
                 else if (m.get_status() == Completed) CompletedM.enqueue(m.getID());
+
+               
             }
-            //AvaliableM = AvaliableRovers(AvailableMQueue, CurrentM);
-            //AvaliableP = AvaliableRovers(AvailablePQueue, CurrentP);
-            //AvaliableE = AvaliableRovers(AvailableEQueue, CurrentE);
-           /* while (Formaulation_Event.dequeue(F)) //BUG! will need to be edited after we have completed & execution
-            {
-
-
-                
-                CurrentM.peek(M);
-                if (F.get_Mission_ID() == M.getID()) {
-                    CurrentM.dequeue(M);
-                    if (M.get_status() == 0) {
-                        WaitingM.enqueue(F.get_Mission_ID());
-                    }
-                    else if (M.get_status() == 1) {
-                        ExcutingM.enqueue(F.get_Mission_ID());
-                    }
-                    else if (M.get_status() == 2)
-                    {
-                        CompletedM.enqueue(F.get_Mission_ID());
-                    }
-                }
-                CurrentE.peek(E);
-                if (F.get_Mission_ID() == E.getID()) {
-                    CurrentE.dequeue(E);
-                    if (E.get_status() == 0) {
-                        WaitingE.enqueue(F.get_Mission_ID());
-                    }
-                    else if (E.get_status() == 1) {
-                        ExcutingE.enqueue(F.get_Mission_ID());
-                    }
-                    else if (E.get_status() == 2)
-                    {
-                        CompletedE.enqueue(F.get_Mission_ID());
-                    }
-                }
-                CurrentP.peek(P);
-                if (F.get_Mission_ID() == P.getID())  {
-                    CurrentP.dequeue(P);
-                    if (P.get_status() == 0) {
-                        WaitingP.enqueue(F.get_Mission_ID());
-                    }
-
-                    else if (P.get_status() == 1) {
-                        ExcutingP.enqueue(F.get_Mission_ID());
-                    }
-                    else if (P.get_status() == 2)
-                    {
-                        CompletedP.enqueue(F.get_Mission_ID());
-                    }
-                }
-            }*/
-            
+           
 
         }
+
         int id1 = 0, id2 =0 , id3 =0;
         cout << "\nWaiting Missions: ";
         bool e = WaitingE.dequeue(id1);
@@ -416,5 +346,67 @@ void MarsStation::Simulate(int Day)
             m = CompletedM.dequeue(id2);
             p = CompletedP.dequeue(id3);
         }
+
+
+        int counter_Mountainous_missions = 0; //missions
+        int counter_Emergency_missions= 0; //missions
+        int counter_polar_missions= 0; //missions
+
+        int counter_Mountainous_rovers=0; //rovers
+        int counter_Emergency_rovers=0; //rovers
+        int counter_polar_rovers=0; //rovers
+
+        Rover* R;
+        Mission Mi;
+        LinkedQueue<Rover*> ERList, MRList, PRList;
+        MRList = RL.getAvailableMQueue(Day);
+        ERList = RL.getAvailableEQueue(Day);
+        PRList = RL.getAvailablePQueue(Day);
+
+        while (ERList.dequeue(R))
+        {
+            counter_Emergency_rovers++;
+        }
+        while (MRList.dequeue(R))
+        {
+            counter_Mountainous_rovers++;
+        }
+
+        while (PRList.dequeue(R))
+        {
+            counter_polar_rovers++;
+        }
+
+        
+
+        LinkedQueue<Mission> EMList, MMList, PMList;
+
+        ML.getCurrentDayMissions(Day, EMList, PMList, MMList, AutoP);
+        
+        while (EMList.dequeue(Mi))
+        {
+            counter_Emergency_missions++;
+        }
+        while (PMList.dequeue(Mi))
+        {
+            counter_polar_missions++;
+        }
+
+        while (MMList.dequeue(Mi))
+        {
             
+            counter_Mountainous_missions++;
+        }
+
+        cout << "\nCurrent Day: " << Day;
+        cout << "\nTotal count of Available Emergency Rovers: "<< counter_Emergency_rovers;
+        cout << "\nTotal count of Available Polar Rovers: "<< counter_polar_rovers ;
+        cout << "\nTotal count of Available Mountainous Rovers: "<< counter_Mountainous_rovers;
+
+        cout << "\nTotal count of Waiting Emergency Missions: " << counter_Emergency_missions;
+        cout << "\nTotal count of Waiting Polar Rovers: " << counter_polar_missions;
+        cout << "\nTotal count of Waiting Mountainous Rovers: " << counter_Mountainous_missions;
+
+
+        
 }

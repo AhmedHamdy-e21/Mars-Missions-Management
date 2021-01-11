@@ -9,7 +9,7 @@ PromoteEvent::PromoteEvent(int ED, int ID, MissionList *ML, RoverList *RL) : Eve
 
 }
 
-void PromoteEvent::Execute()
+void PromoteEvent::Execute() 
 {
 	ML->PromoteMission(Mission_ID);
 	
