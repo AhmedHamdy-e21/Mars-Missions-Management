@@ -69,6 +69,7 @@ void MarsStation::loadFile()
 
             CancelEvent C_event = CancelEvent(ED, ID, &ML, &RL);
             Events.enqueue(C_event);
+            Cancelation_Event.enqueue(C_event);
            // ML.CancelMission(ED, ID, CurrentE, CurrentM, CurrentP);;
 
         }
@@ -79,6 +80,7 @@ void MarsStation::loadFile()
 
             PromoteEvent P_event = PromoteEvent(ED, ID,&ML,&RL);
             Events.enqueue(P_event);
+            Promotion_Event.enqueue(P_event);
             //ML.PromoteMission(ED, ID);
         }
     }
@@ -140,23 +142,44 @@ void MarsStation::PromoteMission(int id)
         if (ERList.peek(tmpR)) {
             EMList.dequeue(tmpM);
             ERList.dequeue(tmpR);
-            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+
+            int ExecutionDays = tmpR->get_ExecutionDays();
+
+            tmpM.set_WaitingDays(Day - tmpM.getED());
+
+           // int WaitingDays = Day - tmpM.getED();
+
+            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration(), tmpM.getTargetLocation());
             ML.changeStateByID(tmpM.getID(), Executing);
-            ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+           // ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+            ML.changeCDByID(tmpM.getID(), Day + ExecutionDays);     //CD= FD+WD+ED = FD + (Today- FD) +Execution days= Today +Execution Days
+            
         }
         else if (MRList.peek(tmpR)) {
             EMList.dequeue(tmpM);
             MRList.dequeue(tmpR);
-            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+
+            int ExecutionDays = tmpR->get_ExecutionDays();
+
+            tmpM.set_WaitingDays(Day - tmpM.getED());
+
+            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration(), tmpM.getTargetLocation());
             ML.changeStateByID(tmpM.getID(), Executing);
-            ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+            //ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+            ML.changeCDByID(tmpM.getID(), Day + ExecutionDays);     //CD= FD+WD+ED = FD + (Today- FD) +Execution days= Today +Execution Days
         }
         else if (PRList.peek(tmpR)) {
             EMList.dequeue(tmpM);
             PRList.dequeue(tmpR);
-            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+
+            int ExecutionDays = tmpR->get_ExecutionDays();
+
+            tmpM.set_WaitingDays(Day - tmpM.getED());
+
+            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration(), tmpM.getTargetLocation());
             ML.changeStateByID(tmpM.getID(),Executing);
-            ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+            //ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+            ML.changeCDByID(tmpM.getID(), Day + ExecutionDays);     //CD= FD+WD+ED = FD + (Today- FD) +Execution days= Today +Execution Days
         }
         else break;
     }
@@ -165,9 +188,15 @@ void MarsStation::PromoteMission(int id)
         if (PRList.peek(tmpR)) {
             PMList.dequeue(tmpM);
             PRList.dequeue(tmpR);
-            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+
+            int ExecutionDays = tmpR->get_ExecutionDays();
+
+            tmpM.set_WaitingDays(Day - tmpM.getED());
+
+            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration(), tmpM.getTargetLocation());
             ML.changeStateByID(tmpM.getID(), Executing);
-            ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+           // ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+            ML.changeCDByID(tmpM.getID(), Day + ExecutionDays);     //CD= FD+WD+ED = FD + (Today- FD) +Execution days= Today +Execution Days
         }
         else break;
     }
@@ -176,9 +205,16 @@ void MarsStation::PromoteMission(int id)
         if (MRList.peek(tmpR)) {
             MMList.dequeue(tmpM);
             MRList.dequeue(tmpR);
-            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+
+            int ExecutionDays = tmpR->get_ExecutionDays();
+
+            tmpM.set_WaitingDays(Day - tmpM.getED());
+
+            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration(), tmpM.getTargetLocation());
             ML.changeStateByID(tmpM.getID(), Executing);
-            ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+           // ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+
+            ML.changeCDByID(tmpM.getID(), Day + ExecutionDays);     //CD= FD+WD+ED = FD + (Today- FD) +Execution days= Today +Execution Days
         }
         else break;
     }
@@ -190,6 +226,9 @@ void MarsStation::Simulate(int Day)
 {
 
         FormulationEvent F;
+        CancelEvent C;
+        PromoteEvent Pr;
+
         int ID;
         Mission M;
         Mission E;
@@ -216,6 +255,33 @@ void MarsStation::Simulate(int Day)
         }
 
 
+        CancelEvent Ce;
+        LinkedQueue<CancelEvent> Cancelation_Event_bk;
+        while (Cancelation_Event.peek(Ce)) {
+            Cancelation_Event.dequeue(Ce);
+            if (Ce.get_event_day() == Day)
+                Ce.Execute();
+            else Cancelation_Event_bk.enqueue(Ce);
+
+        }
+        while (Cancelation_Event_bk.dequeue(Ce)) {
+            Cancelation_Event.enqueue(Ce);
+        }
+
+        PromoteEvent Pe;
+        LinkedQueue<PromoteEvent> Promotion_Event_bk;
+        while (Promotion_Event.peek(Pe)) {
+            Promotion_Event.dequeue(Pe);
+            if (Pe.get_event_day() == Day)
+                Pe.Execute();
+            else Promotion_Event_bk.enqueue(Pe);
+
+        }
+        while (Promotion_Event_bk.dequeue(Pe)) {
+            Promotion_Event.enqueue(Pe);
+        }
+
+        
 
         
 

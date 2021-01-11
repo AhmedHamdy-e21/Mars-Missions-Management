@@ -20,6 +20,7 @@ private:
     int completionDay = INT_MAX;
     int ID;
     int ED;
+    int WaitingDays;
  
 
 protected:
@@ -89,12 +90,18 @@ public:
         return this->Significance;
     }
 
-    // Calculate completed missions according to ..
+    
     void setCompletionDay(int day)
     {
         completionDay=day;
 
     }
+
+    int getCompletionDay() {
+
+        return completionDay;
+    }
+
     bool getCompletedMission(int today)
     {
         return completionDay<=today;
@@ -120,6 +127,15 @@ public:
     void change_type(int typ) {
 
         this-> Type = type(typ);
+    }
+
+    void set_WaitingDays(int  WaitingDays) {
+
+        this->WaitingDays = WaitingDays;
+    }
+
+    int get_WaitingDays() {
+        return WaitingDays;
     }
   
 };

@@ -17,6 +17,7 @@ private:
 	int current_mission_duration;
 	bool available = 1;
 	int availableAtDay = -1;
+	int ExecutionDays;
 
 public:
 	//void Assign_mission(current_time)  // el mafrod akhodha men class tany
@@ -34,5 +35,7 @@ public:
 	void setAvailaibilityDay(int availableAtDay);
 	bool checkavailability();
 	int getAvailiabilityDay();
-	void getAssigned(int start_day,int duration);
+	void getAssigned(int start_day,int duration, int targetLocation);
+	void set_ExucutionDays(int ExecutionDays);
+	int  get_ExecutionDays();
 };

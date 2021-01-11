@@ -29,6 +29,9 @@ public:
     void loadFile();
     LinkedQueue<Event> Events;
     LinkedQueue<FormulationEvent> Formaulation_Event;
+    LinkedQueue<CancelEvent> Cancelation_Event;
+    LinkedQueue<PromoteEvent> Promotion_Event;
+
     MarsStation();
     bool Must_Stop();
     void Simulate(int Day); // Implementation should be done by YASSER
