@@ -10,7 +10,7 @@ void MarsStation::loadFile()
     ifstream inputFile;
 
     inputFile.open("../Input Sample.txt");
-    // Check for Error:
+    
     if (inputFile.fail()) {
         cerr << "Error opening the file" << endl;
         exit(1);
@@ -34,9 +34,9 @@ void MarsStation::loadFile()
     inputFile >> CP;
     inputFile >> CE;
     inputFile >> AutoP;
-    RL.setERoverList(E, SE, CE);
-    RL.setMRoverList(M, SM, CM);
-    RL.setPRoverList(P, SP, CP);
+    RL = RoverList(
+        M, P, E, SM, SP, SE, CM, CP, CE, N
+    );
 
     inputFile >> EV;
     ML.setMissionList(EV);
@@ -109,47 +109,12 @@ MarsStation::MarsStation()
 
 bool MarsStation::Must_Stop()
 {
-    return ML.isEmpty();
+    bool x = ML.getEQueue().isEmpty();
+    bool y = ML.getPQueue().isEmpty();
+    bool z = ML.getMQueue().isEmpty();
+    return x && y && z && Formaulation_Event.isEmpty();
 }
 
-inline int MarsStation::AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<Mission> missions)
-{
-    Rover R;
-    Mission M;
-    bool QboolR, QboolM;
-    int AvliableRovers;
-    QboolR = rovers.dequeue(R);
-    QboolM = missions.dequeue(M);
-    while (QboolM || QboolR) {
-
-        if (!QboolM && QboolR) {
-           /* waitinglistmissions[j] = Missions;
-            j = j + 1;*/
-
-            QboolM = missions.dequeue(M);
-        
-        }
-        else if (QboolM && !QboolR) {
-          /*  waitinglistrovers[y] = Rovers;
-            y = y + 1;*/
-            QboolR = rovers.dequeue(R);
-            AvliableRovers = M.getID();
-            return AvliableRovers;
-        }
-        else if (QboolM && QboolR) {
-           /* Executionlistmissions[i] = Missions;
-            Executionlistrovers[x] = Rovers;
-            i = i + 1;
-            x = x + 1;*/
-            QboolR = rovers.dequeue(R);
-            QboolM = missions.dequeue(M);
-        }
-        else {
-            break;
-        }
-    }
-    
-}
 
 void MarsStation::CancelMission(int id)
 {
@@ -161,6 +126,65 @@ void MarsStation::PromoteMission(int id)
     ML.PromoteMission(id);
 }
 
+ void MarsStation::AssignMissions(int Day){
+    LinkedQueue<Mission> EMList, MMList, PMList;
+    LinkedQueue<Rover*> ERList, MRList, PRList;
+    ML.getCurrentDayMissions(Day, EMList, PMList, MMList, AutoP);
+    MRList = RL.getAvailableMQueue(Day);
+    ERList = RL.getAvailableEQueue(Day);
+    PRList = RL.getAvailablePQueue(Day);
+
+    Mission tmpM;
+    while (EMList.peek(tmpM)) {
+        Rover* tmpR;
+        if (ERList.peek(tmpR)) {
+            EMList.dequeue(tmpM);
+            ERList.dequeue(tmpR);
+            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+            ML.changeStateByID(tmpM.getID(), Executing);
+            ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+        }
+        else if (MRList.peek(tmpR)) {
+            EMList.dequeue(tmpM);
+            MRList.dequeue(tmpR);
+            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+            ML.changeStateByID(tmpM.getID(), Executing);
+            ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+        }
+        else if (PRList.peek(tmpR)) {
+            EMList.dequeue(tmpM);
+            PRList.dequeue(tmpR);
+            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+            ML.changeStateByID(tmpM.getID(),Executing);
+            ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+        }
+        else break;
+    }
+    while (PMList.peek(tmpM)) {
+        Rover* tmpR;
+        if (PRList.peek(tmpR)) {
+            PMList.dequeue(tmpM);
+            PRList.dequeue(tmpR);
+            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+            ML.changeStateByID(tmpM.getID(), Executing);
+            ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+        }
+        else break;
+    }
+    while (MMList.peek(tmpM)) {
+        Rover* tmpR;
+        if (MRList.peek(tmpR)) {
+            MMList.dequeue(tmpM);
+            MRList.dequeue(tmpR);
+            tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
+            ML.changeStateByID(tmpM.getID(), Executing);
+            ML.changeCDByID(tmpM.getID(), Day + tmpM.getMissionDuration());
+        }
+        else break;
+    }
+
+}
+
 
 void MarsStation::Simulate(int Day)
 {
@@ -170,39 +194,56 @@ void MarsStation::Simulate(int Day)
         Mission M;
         Mission E;
         Mission P;
-        int AvaliableM = 0, AvaliableE = 0, AvaliableP = 0;
+        //int AvaliableM = 0, AvaliableE = 0, AvaliableP = 0;
         LinkedQueue<int> WaitingM, WaitingP, WaitingE;
         LinkedQueue<int> ExcutingM, ExcutingP,ExcutingE;
         LinkedQueue<int> CompletedM, CompletedP, CompletedE;
 
-        ML.getCurrentDayMissions(Day, CurrentE, CurrentM, CurrentP,AutoP);
         int Mode;
         cout << "Enter The mode \n1- Interactive\n2-Silent\n3step_by-step\n";
         cin >> Mode;
-        if (Day == 1) {
-            FormulationEvent fe;
-            LinkedQueue<FormulationEvent> Formaulation_Event_bk;
-
-            while (Formaulation_Event.dequeue(fe)) {
+        FormulationEvent fe;
+        LinkedQueue<FormulationEvent> Formaulation_Event_bk;
+        while (Formaulation_Event.peek(fe)) {
+            Formaulation_Event.dequeue(fe);
+            if (fe.get_event_day() == Day)
                 fe.Execute();
-                Formaulation_Event_bk.enqueue(fe);
-            }
-            while (Formaulation_Event_bk.dequeue(fe)) {
-                Formaulation_Event.enqueue(fe);
-            }
+            else Formaulation_Event_bk.enqueue(fe);
+           
         }
-        AvailableMQueue = RL.getAvailableMQueue();
-        AvailableEQueue = RL.getAvailableEQueue();
-        AvailablePQueue = RL.getAvailablePQueue();
-        CurrentE = ML.getEQueue();  
-        CurrentP = ML.getPQueue();
-        CurrentM = ML.getMQueue();
+        while (Formaulation_Event_bk.dequeue(fe)) {
+            Formaulation_Event.enqueue(fe);
+        }
+
+
+
+        
+
         if (Mode == 1)
         {   
-            AvaliableM = AvaliableRovers(AvailableMQueue, CurrentM);
-            AvaliableP = AvaliableRovers(AvailablePQueue, CurrentP);
-            AvaliableE = AvaliableRovers(AvailableEQueue, CurrentE);
-            while (Formaulation_Event.dequeue(F)) //BUG! will need to be edited after we have completed & execution
+            AssignMissions(Day);
+            LinkedQueue<Mission> EMList, MMList, PMList;
+            ML.getAllMissions(EMList, PMList, MMList,Day);
+            Mission m;
+            while (EMList.dequeue(m)) {
+                if (m.get_status() == Waiting) WaitingE.enqueue(m.getID());
+                else if (m.get_status() == Executing) ExcutingE.enqueue(m.getID());
+                else if (m.get_status() == Completed) CompletedE.enqueue(m.getID());
+            }
+            while (PMList.dequeue(m)) {
+                if (m.get_status() == Waiting) WaitingP.enqueue(m.getID());
+                else if (m.get_status() == Executing) ExcutingP.enqueue(m.getID());
+                else if (m.get_status() == Completed) CompletedP.enqueue(m.getID());
+            }
+            while (MMList.dequeue(m)) {
+                if (m.get_status() == Waiting) WaitingM.enqueue(m.getID());
+                else if (m.get_status() == Executing) ExcutingM.enqueue(m.getID());
+                else if (m.get_status() == Completed) CompletedM.enqueue(m.getID());
+            }
+            //AvaliableM = AvaliableRovers(AvailableMQueue, CurrentM);
+            //AvaliableP = AvaliableRovers(AvailablePQueue, CurrentP);
+            //AvaliableE = AvaliableRovers(AvailableEQueue, CurrentE);
+           /* while (Formaulation_Event.dequeue(F)) //BUG! will need to be edited after we have completed & execution
             {
 
 
@@ -250,7 +291,7 @@ void MarsStation::Simulate(int Day)
                         CompletedP.enqueue(F.get_Mission_ID());
                     }
                 }
-            }
+            }*/
             
 
         }

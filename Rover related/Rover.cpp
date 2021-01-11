@@ -4,6 +4,15 @@
 
 #include "Rover.h"
 
+Rover::Rover()
+{
+}
+
+Rover::Rover(int spd, int check_up, int missions_to_check)
+{
+	speed = spd, check_up_duration = check_up, number_to_next_checkup = missions_to_check, Number_of_missions_to_checkup_after = missions_to_check;
+}
+
 void Rover::set_Number_of_Missions_to_checkup_after(int N_missions)
 {
 	 Number_of_missions_to_checkup_after= N_missions;
@@ -32,4 +41,36 @@ void Rover::set_current_mission_duration(int duration)
 int Rover::get_current_mission_duration()
 {
 	return current_mission_duration;
+}
+
+void Rover::setAvailablity(bool available)
+{
+	this-> available = available;
+	if (available)
+		setAvailaibilityDay(-1);
+}
+
+void Rover::setAvailaibilityDay(int availableAtDay)
+{
+	this->availableAtDay = availableAtDay;
+}
+
+bool Rover::checkavailability()
+{
+	return available;
+}
+
+int Rover::getAvailiabilityDay()
+{
+	return availableAtDay;
+}
+
+void Rover::getAssigned(int start_day, int duration)
+{
+	available = 0;
+	availableAtDay = start_day + duration;
+	number_to_next_checkup--;
+	if (number_to_next_checkup == 0)
+		availableAtDay += check_up_duration, number_to_next_checkup = Number_of_missions_to_checkup_after;
+
 }

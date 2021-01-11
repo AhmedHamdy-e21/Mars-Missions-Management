@@ -14,11 +14,10 @@ class Mission
 {
     
 private:
-    bool  FormulationDayStamp=true;
     int TargetLocation;
     int MissionDuration;
     int Significance;
-    bool CompletedMission;
+    int completionDay = INT_MAX;
     int ID;
     int ED;
  
@@ -35,17 +34,11 @@ public:
     {
         this->ID = ID;
     }
-    virtual int getDay()
-    {
 
-         return ED;
-
-    }
     Mission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance)
     {
          setED(ED);
 
-        setCompletedMission(false);
         setMisisonDuration(MissionDuration);
         setSignificance(Significance);
         setTargetLocation(TargetLocation);
@@ -54,7 +47,6 @@ public:
     }
     Mission()
     {
-        setCompletedMission(false);
         setMisisonDuration(0);
         setSignificance(0);
         setTargetLocation(0);
@@ -98,14 +90,14 @@ public:
     }
 
     // Calculate completed missions according to ..
-    void setCompletedMission(bool BOOL)
+    void setCompletionDay(int day)
     {
-        CompletedMission=BOOL;
+        completionDay=day;
 
     }
-    bool getCompletedMission()
+    bool getCompletedMission(int today)
     {
-        return CompletedMission;
+        return completionDay<=today;
     }
 
     virtual void PrintMission()

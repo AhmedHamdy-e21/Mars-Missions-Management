@@ -2,27 +2,13 @@
 
 class Polar_rovers: public Rover
 {
-private:
-	int check_up_duration;
-	int speed;
+
 public:
-    Polar_rovers(int speed,int check_up_duration)
+    Polar_rovers(int Speed, int check_up_duration, int check_up_missions) : Rover(Speed, check_up_duration, check_up_missions)
     {
-        setSpeed(speed);
-        setCheckupDuration(check_up_duration);
+
     }
 
-    void setSpeed(int speed)
-    {
-        this->speed=speed;
-    }
-    void setCheckupDuration(int  check_up_duration)
-    {
-        this-> check_up_duration= check_up_duration;
-    }
-    void PrintPolar()
-    {
-        cout<<"\n I'm Polar "<< this->speed<< this->check_up_duration;
-    }
+ 
 
 };

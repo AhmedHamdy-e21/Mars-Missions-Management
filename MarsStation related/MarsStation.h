@@ -22,13 +22,6 @@ class MarsStation {
 private:
     RoverList RL;
     MissionList ML;
-    LinkedQueue<Mission> CurrentE;
-    LinkedQueue<Mission> CurrentM;
-    LinkedQueue<Mission> CurrentP;
-
-    LinkedQueue<Rover> AvailableEQueue;
-    LinkedQueue<Rover> AvailableMQueue;
-    LinkedQueue<Rover> AvailablePQueue;
 
     int AutoP;
 
@@ -42,6 +35,9 @@ public:
     int AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<Mission> missions);
     void CancelMission(int id);
     void PromoteMission(int id);
+
+	void AssignMissions(int Day);
+   
    
 
 };
