@@ -34,13 +34,12 @@ public:
 
     MarsStation();
     bool Must_Stop();
-    void Simulate(int Day); // Implementation should be done by YASSER
+    void Simulate(int Day); 
     int AvaliableRovers(LinkedQueue<Rover> rovers, LinkedQueue<Mission> missions);
     void CancelMission(int id);
     void PromoteMission(int id);
-
 	void AssignMissions(int Day);
-   
+  
    
 
 };

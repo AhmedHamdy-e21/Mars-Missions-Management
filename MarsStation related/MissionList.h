@@ -12,13 +12,9 @@
 class MissionList
 {
 private:
-    Mission** ML;   // all pointer to pointers should be implemented in the appropriate datatype This maybe be queue
-//    Mission** MLE;
-//    Mission** MLP;
-//    Mission** MLM;
+    Mission** ML;  
     Mission** inExectution;
     int NumberOfMissions=0;
-
     LinkedQueue<Mission> AvailableEQueue;
     int countEmergency=0;
     int countPolar=0;
@@ -27,6 +23,7 @@ private:
     LinkedQueue<Mission> AvailablePQueue;
     int WatingMissions;
     int in_executionMissions;
+    int CountMissionAuto_P=0;
 
 public:
     MissionList()
@@ -93,18 +90,7 @@ public:
 
 
     }
-/*
-    //// This is not correct to make a list of each mission type because it's unnecessary
-//    void generateList()
-//    {
-//        for (int i = 0; i < countEmergency; ++i)
-//        {
-//            MLE[countEmergency]=new EmergencyMissions(ID,TargetLocation,MissionDuration,Significance);
-//
-//        }
-//
-//    }
-*/
+
     void Print_Waiting_Missions()
     {
         cout<<"Waiting Missions: "<<"("<<"5"<<") "<<" "<<"6"<<" ("<<"8"<<")";
@@ -203,7 +189,7 @@ public:
         return in_executionMissions;
     }
 
-    //// Revise the syntax and check the correspondance of symbols E P and M.
+
     void GenerateCurrentQueue(int Day, int count,LinkedQueue<Mission>& CurrentEMission,LinkedQueue<Mission> AllMissionsQueue, int AutoP )
     {
         bool DequeueCheck;
@@ -217,6 +203,7 @@ public:
             }
             if (DequeueCheck && QueuedElement.get_type() == Mountainous && QueuedElement.get_status() == Waiting && Day - QueuedElement.getED() >= AutoP) {
                 PromoteMission(QueuedElement.getID());
+                CountMissionAuto_P++;
                 continue;
             }
             //// This is to check for every day and get the missions from the queues that have all missions
@@ -350,8 +337,27 @@ public:
             queue.enqueue(tmp);
         return q;
     }
- 
-    
+    int getcountEmergency()
+    {
+        return countEmergency;
+    }   
+    int getcountPolar()
+    {
+        return countPolar;
+    }   
+    int getcountMountanous()
+    {
+        return countMountanous;
+    }
+    int getNumberOfMissions()
+    {
+        return NumberOfMissions;
+    } 
+    int getCountMissionAuto_P()
+    {
+        return CountMissionAuto_P;
+    }
+   
 };
 
 

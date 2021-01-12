@@ -39,21 +39,8 @@ public:
     RoverList(int NoofM, int NoofP, int NoofE, int SpeedM, int SpeedP, int SpeedE, int CheckupDurationM, int CheckupDurationP, int CheckupDurationE, int N)
     {
         setERoverList(NoofE, SpeedE, CheckupDurationE,N);
-        cout << "SM" << SpeedM << endl;
         setMRoverList(NoofM, SpeedM, CheckupDurationM,N);
         setPRoverList(NoofP, SpeedP, CheckupDurationP,N);
-        cout << "Number of polar is " << NoofP;
-
-        // I need to add all rovers to the availability Queues
-        // Then dequeue the ones who got missions.
-        // The one who finishes the mission will be added again to the queue, BUT CHECK the number of missions in order to make it CHECKUP or not. THIS IS a member function.
-
-        //// initialize 3 queues for each available type rovers
-
-
-
-        //// These initializations will be conducted in RoverList class.
-        // Then there will queue and dequeue functions there.
     }
    
 
@@ -78,9 +65,6 @@ public:
         {
             ERoverList[i] = new Emergency_rovers(SpeedE, CheckupDurationE,n);
         }
-        cout << "initialized successfull";
-
-
     }
 
     void setPRoverList(int NoofP, int SpeedP, int CheckupDurationP,int n)

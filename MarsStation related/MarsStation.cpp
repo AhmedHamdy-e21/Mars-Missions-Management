@@ -15,7 +15,7 @@ void MarsStation::loadFile()
     }
     else
     {
-        cout << "All is good" << endl;
+       
     }
     int M, P, E, SM, SP, SE, N, CM, CP, CE, EV, ED, ID, TLOC, MIDUR, SIG;
     char F, TYP;
@@ -88,16 +88,7 @@ void MarsStation::loadFile()
 
     inputFile.close();
 
-    // Testing Event output (OMNIA) 
-    
-   /* while (!Events.isEmpty()) {
-        Event E;
-        Events.dequeue(E);
-        cout << "Event day" << E.get_event_day() << endl;
-        cout <<"Event type" << E.get_event_type() << endl;
-        cout << "Mission ID:" <<E.get_Mission_ID() << endl;
-    }
-    */
+ 
     
 
    
@@ -144,7 +135,7 @@ void MarsStation::PromoteMission(int id)
              ERList.dequeue(tmpR);
              tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
              ML.changeStateByID(tmpM.getID(), Executing);
-             int realDuration = tmpM.getMissionDuration() + ceil(tmpM.getTargetLocation()*1.0 / ((double)tmpR->getSpeed()*24) )*2;
+             int realDuration = tmpM.getMissionDuration() + ceil(tmpM.getTargetLocation()*1.0 / ((double)tmpR->getSpeed()*25) )*2;
              ML.changeCDByID(tmpM.getID(), Day , realDuration);
          }
          else if (MRList.peek(tmpR)) {
@@ -152,7 +143,7 @@ void MarsStation::PromoteMission(int id)
              MRList.dequeue(tmpR);
              tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
              ML.changeStateByID(tmpM.getID(), Executing);
-             int realDuration = tmpM.getMissionDuration() + ceil((tmpM.getTargetLocation() * 1.0 )/((double)tmpR->getSpeed()*24) )* 2; // 1 km/hour yeb2a kam Km/24
+             int realDuration = tmpM.getMissionDuration() + ceil((tmpM.getTargetLocation() * 1.0 )/((double)tmpR->getSpeed()*25) )* 2; // 1 km/hour yeb2a kam Km/24
              ML.changeCDByID(tmpM.getID(), Day , realDuration);
          }
          else if (PRList.peek(tmpR)) {
@@ -160,7 +151,7 @@ void MarsStation::PromoteMission(int id)
              PRList.dequeue(tmpR);
              tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
              ML.changeStateByID(tmpM.getID(), Executing);
-             int realDuration = tmpM.getMissionDuration() + ceil((tmpM.getTargetLocation() * 1.0) / ((double)tmpR->getSpeed() * 24)) * 2;
+             int realDuration = tmpM.getMissionDuration() + ceil((tmpM.getTargetLocation() * 1.0) / ((double)tmpR->getSpeed() * 25)) * 2;
              ML.changeCDByID(tmpM.getID(), Day , realDuration);
          }
          else break;
@@ -172,7 +163,7 @@ void MarsStation::PromoteMission(int id)
              PRList.dequeue(tmpR);
              tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
              ML.changeStateByID(tmpM.getID(), Executing);
-             int realDuration = tmpM.getMissionDuration() + ceil((tmpM.getTargetLocation() * 1.0) / ((double)tmpR->getSpeed() * 24)) * 2;
+             int realDuration = tmpM.getMissionDuration() + ceil((tmpM.getTargetLocation() * 1.0) / ((double)tmpR->getSpeed() * 25)) * 2;
              ML.changeCDByID(tmpM.getID(), Day , realDuration);
          }
          else break;
@@ -184,7 +175,7 @@ void MarsStation::PromoteMission(int id)
              MRList.dequeue(tmpR);
              tmpR->getAssigned(tmpM.getED(), tmpM.getMissionDuration());
              ML.changeStateByID(tmpM.getID(), Executing);
-             int realDuration = tmpM.getMissionDuration() + ceil((tmpM.getTargetLocation() * 1.0) / ((double)tmpR->getSpeed() * 24)) * 2;
+             int realDuration = tmpM.getMissionDuration() + ceil((tmpM.getTargetLocation() * 1.0) / ((double)tmpR->getSpeed() * 25)) * 2;
              ML.changeCDByID(tmpM.getID(), Day , realDuration);
          }
          else break;
@@ -197,11 +188,7 @@ void MarsStation::PromoteMission(int id)
 
 void MarsStation::Simulate(int Day)
 {
-
        FormulationEvent F;
-     
-    
-
         int ID;
         Mission M;
         Mission E;
@@ -210,7 +197,12 @@ void MarsStation::Simulate(int Day)
         LinkedQueue<int> WaitingM, WaitingP, WaitingE;
         LinkedQueue<int> ExcutingM, ExcutingP,ExcutingE;
         LinkedQueue<int> CompletedM, CompletedP, CompletedE;
-
+        LinkedQueue<int> CompletionDays;
+        LinkedQueue<int> WaitingDays;
+        LinkedQueue<int> ExcutingDays;
+        LinkedQueue<int> IDoutput;
+        LinkedQueue<int> FormulatedDays;
+        int CD, ED, FD, WD, ID5;
         int Mode;
         cout << "\nEnter The mode \n1- Interactive\n2-Silent\n3step_by-step\n";
         cin >> Mode;
@@ -254,11 +246,6 @@ void MarsStation::Simulate(int Day)
         while (Promotion_Event_bk.dequeue(Pe)) {
             Promotion_Event.enqueue(Pe);
         }
-
-        
-
-        
-
         if (Mode == 1)
         {   
             AssignMissions(Day);
@@ -269,21 +256,40 @@ void MarsStation::Simulate(int Day)
             while (EMList.dequeue(m)) {
                 if (m.get_status() == Waiting) WaitingE.enqueue(m.getID());
                 else if (m.get_status() == Executing) ExcutingE.enqueue(m.getID());
-                else if (m.get_status() == Completed) CompletedE.enqueue(m.getID());
-
+                else if (m.get_status() == Completed) {
+                    CompletedE.enqueue(m.getID());
+                    CompletionDays.enqueue(m.getCompletionDay());
+                    FormulatedDays.enqueue(m.getED());
+                    WaitingDays.enqueue(m.get_WaitingDays());
+                    ExcutingDays.enqueue(m.get_ExecutionDays());
+                    IDoutput.enqueue(m.getID());
+                    
+                }
                 
             }
             while (PMList.dequeue(m)) {
                 if (m.get_status() == Waiting) WaitingP.enqueue(m.getID());
                 else if (m.get_status() == Executing) ExcutingP.enqueue(m.getID());
-                else if (m.get_status() == Completed) CompletedP.enqueue(m.getID());
+                else if (m.get_status() == Completed) {
+                    CompletedP.enqueue(m.getID()); CompletionDays.enqueue(m.getCompletionDay());
+                    FormulatedDays.enqueue(m.getED());
+                    WaitingDays.enqueue(m.get_WaitingDays());
+                    ExcutingDays.enqueue(m.get_ExecutionDays());
+                    IDoutput.enqueue(m.getID());
+                }
 
                
             }
             while (MMList.dequeue(m)) {
                 if (m.get_status() == Waiting) WaitingM.enqueue(m.getID());
                 else if (m.get_status() == Executing) ExcutingM.enqueue(m.getID());
-                else if (m.get_status() == Completed) CompletedM.enqueue(m.getID());
+                else if (m.get_status() == Completed) {
+                    CompletedM.enqueue(m.getID()); CompletionDays.enqueue(m.getCompletionDay());
+                    FormulatedDays.enqueue(m.getED());
+                    WaitingDays.enqueue(m.get_WaitingDays());
+                    ExcutingDays.enqueue(m.get_ExecutionDays());
+                    IDoutput.enqueue(m.getID());
+                }
 
                
             }
@@ -380,33 +386,82 @@ void MarsStation::Simulate(int Day)
         
 
         LinkedQueue<Mission> EMList, MMList, PMList;
-
-        ML.getCurrentDayMissions(Day, EMList, PMList, MMList, AutoP);
         
+        ML.getCurrentDayMissions(Day, EMList, PMList, MMList, AutoP);
+
+
+
         while (EMList.dequeue(Mi))
         {
             counter_Emergency_missions++;
+                   
         }
         while (PMList.dequeue(Mi))
         {
             counter_polar_missions++;
         }
-
         while (MMList.dequeue(Mi))
         {
             
             counter_Mountainous_missions++;
+           
         }
 
         cout << "\nCurrent Day: " << Day;
         cout << "\nTotal count of Available Emergency Rovers: "<< counter_Emergency_rovers;
         cout << "\nTotal count of Available Polar Rovers: "<< counter_polar_rovers ;
         cout << "\nTotal count of Available Mountainous Rovers: "<< counter_Mountainous_rovers;
-
         cout << "\nTotal count of Waiting Emergency Missions: " << counter_Emergency_missions;
         cout << "\nTotal count of Waiting Polar Rovers: " << counter_polar_missions;
         cout << "\nTotal count of Waiting Mountainous Rovers: " << counter_Mountainous_missions;
-
+        cout << "\n total number of Montanious Missions:  " << ML.getcountMountanous();
+        cout << "\n total number of Emergency Missions:  " << ML.getcountEmergency();
+        cout << "\n total number of Polar Missions:  " << ML.getcountPolar();
+        LinkedQueue<Mission> TotalMMission, TotalEMission, TotalPMission;
+        ML.getAllMissions(TotalEMission, TotalPMission, TotalPMission, Day);
+        //int TotalMissions = TotalEmissions + TotalPmissions + TotalMmissions;
+        ofstream MyFile("Output.txt");
+        MyFile << "CD" << "\t" << "ID" << "\t" << "FD" << "\t" << "WD" << "\t" << "ED" << "\t" << endl;
+        int CD1= CompletionDays.dequeue(CD);
+        int WD1 = WaitingDays.dequeue(WD);
+        int FD1 = FormulatedDays.dequeue(FD);
+        int ID51 = IDoutput.dequeue(ID5);
+        int ED1= ExcutingDays.dequeue(ED);
+        int totalExecutingsdays = 1;//This is equal to one in order not to enter either an infinite loop or an error occurs
+        int totalWaitingdays = 1;
+        int countED = 1;
+        int countWD = 1;
+        int min = 100;
+        while (CD1)
+        {
+            if(min>CD){
+                min = CD;
+               
+            }
+            MyFile << CD << "\t" << ID5 << "\t" << FD << "\t" << WD << "\t" << ED << "\t" << endl;
+            CD1 = CompletionDays.dequeue(CD);
+            WD1 = WaitingDays.dequeue(WD);
+            FD1 = FormulatedDays.dequeue(FD);
+            ID51 = IDoutput.dequeue(ID5);
+            ED1 = ExcutingDays.dequeue(ED);
+            totalExecutingsdays = totalExecutingsdays + ED;
+            countED++;
+            totalWaitingdays = totalWaitingdays + WD;
+            countWD++;
+           
+        }
+        float averageEecx = totalExecutingsdays / countED;
+        double averageWating = totalWaitingdays / countWD;// needs to be implemented right
+        int Auto_Percentage=0;
+        if (!TotalMMission.isEmpty()) {
+             Auto_Percentage = (ML.getCountMissionAuto_P() / ML.getcountMountanous()) * 100;
+        }
+        MyFile << "Missions:  " << ML.getNumberOfMissions() <<  " [M: " <<  ML.getcountMountanous() << " P: " << ML.getcountPolar() << " E: " << ML.getcountEmergency() << "  ] " << endl;
+        MyFile << "Avg Waiting=  " << averageWating << ",  ";
+        MyFile << "Avg Exec=  " << ceil(averageEecx) << endl;
+        MyFile << "Auto-promoted=  " << Auto_Percentage << endl;
+        MyFile.close();
 
         
 }
+

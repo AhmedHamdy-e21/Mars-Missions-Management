@@ -1,0 +1,10 @@
+CD	ID	FD	WD	ED	
+31	3	5	0	26	
+49	4	6	0	43	
+36	6	25	0	11	
+14	1	2	0	12	
+29	2	5	0	24	
+69	5	18	0	51	
+Missions:  6 [M: 3 P: 2 E: 1  ] 
+Avg Waiting=  0,  Avg Exec=  27
+Auto-promoted=  0
