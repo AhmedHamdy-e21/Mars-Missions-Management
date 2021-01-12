@@ -28,121 +28,43 @@ protected:
     type Type;
     status state;
 public:
-     virtual int getID()
-    {
-        return ID;
-    }
-    virtual void setID(int ID)
-    {
-        this->ID = ID;
-    }
-
-    Mission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance)
-    {
-         setED(ED);
-
-        setMisisonDuration(MissionDuration);
-        setSignificance(Significance);
-        setTargetLocation(TargetLocation);
-        setID(ID);
-        state = Waiting;
-    }
-    Mission()
-    {
-        setMisisonDuration(0);
-        setSignificance(0);
-        setTargetLocation(0);
-        state = Waiting;
-    };
-
-    virtual void setED(int ED)
-     {
-         this->ED=ED;
-     }
-     virtual int getED()
-     {
-         return this->ED;
-     }
+    virtual int getID();
+    virtual void setID(int ID);
+    Mission(int ED, int ID, int TargetLocation, int MissionDuration, int Significance);
+    Mission();
+    virtual void setED(int ED);
+    virtual int getED();
 
 
 
-    void setTargetLocation(int TargetLocation)
-    {
-        this->TargetLocation=TargetLocation;
-    }
-    int getTargetLocation() const
-    {
-        return this->TargetLocation;
-    }
-    int getMissionDuration() const
-    {
-        return this->MissionDuration;
-    }
-    void setMisisonDuration(int MissionDuration)
-    {
-        this->MissionDuration=MissionDuration;
-    }
-    void setSignificance(int Significance)
-    {
-        this->Significance=Significance;
-    }
-    int getSignificance()
-    {
-        return this->Significance;
-    }
+    void setTargetLocation(int TargetLocation);
+    int getTargetLocation() const;
+    int getMissionDuration() const;
+    void setMisisonDuration(int MissionDuration);
+    void setSignificance(int Significance);
+    int getSignificance();
 
     
-    void setCompletionDay(int today, int ExecutionDays)
-    {
-        completionDay=today+ExecutionDays;
-        
-        this->ExecutionDays = ExecutionDays;
+    void setCompletionDay(int today, int ExecutionDays);
+    int getCompletionDay();
 
-        this->WaitingDays = today - ED;
-    }
+    bool getCompletedMission(int today);
 
-    int getCompletionDay() {
+    virtual void PrintMission();
 
-        return completionDay;
-    }
+    void change_state(int state);
 
-    bool getCompletedMission(int today)
-    {
-        return completionDay<=today;
-    }
+    status get_status();
 
-    virtual void PrintMission()
-    {
-     cout<<"In mission parent class \n";
-    }
+    type get_type();
 
-    void change_state(int state) {
-
-        this->state = status(state);
-    }
-
-    status get_status() {
-        return state;
-    }
-
-    type get_type() {
-        return Type;
-    }
-    void change_type(int typ) {
-
-        this-> Type = type(typ);
-    }
+    void change_type(int typ);
 
 
-
-    int get_WaitingDays() {
-        return WaitingDays;
-    }
+    int get_WaitingDays();
     
 
-    int  get_ExecutionDays() {
-        return ExecutionDays;
-    }
+    int  get_ExecutionDays();
 };
 
 

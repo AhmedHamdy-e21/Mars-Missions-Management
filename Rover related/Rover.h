@@ -11,8 +11,8 @@ class Rover {
 private:
 	int Number_of_missions_to_checkup_after;
 	int number_to_next_checkup;
-	int check_up_duration; // constant in subclassess,hence, no getters and setters
-	float speed; // constant in subclasses,hence, no getters and setters
+	int check_up_duration; 
+	float speed; 
 	int start_time_of_current_mission;
 	int current_mission_duration;
 	bool available = 1;
@@ -20,9 +20,7 @@ private:
 	
 
 public:
-	//void Assign_mission(current_time)  // el mafrod akhodha men class tany
-	// void checkup( number of missions ) // hatakhod 3adad el missions ely rover 3amltha
-	// time WhenAvailable() //should return time that rover will be available in
+	
 	Rover();
 	Rover(int spd, int check_up, int missions_to_check);
 	void set_Number_of_Missions_to_checkup_after(int N_missions);

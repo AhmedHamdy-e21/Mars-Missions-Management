@@ -4,10 +4,7 @@ class Polar_rovers: public Rover
 {
 
 public:
-    Polar_rovers(int Speed, int check_up_duration, int check_up_missions) : Rover(Speed, check_up_duration, check_up_missions)
-    {
-
-    }
+    Polar_rovers(int Speed, int check_up_duration, int check_up_missions) ;
 
  
 

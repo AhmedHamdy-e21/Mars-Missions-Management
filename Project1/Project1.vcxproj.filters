@@ -15,28 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Mission.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Rover.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Mountainous_rovers.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Emergency_rovers.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Polar_rovers.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\BinarySearchTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Interactive.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Loadfile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\MarsStation related\MissionList.h">
